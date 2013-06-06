@@ -42,3 +42,359 @@ Command-line arguments:  -os win32 -ws win32 -arch x86 -data E:\Dropbox\!Uni\EG4
 
 !ENTRY org.eclipse.cdt.core 1 0 2013-06-06 11:01:48.437
 !MESSAGE Indexed '4TimerSampleTest' (10 sources, 22 headers) in 0.36 sec: 3,155 declarations; 2,609 references; 5 unresolved inclusions; 1 syntax errors; 0 unresolved names (0.00%)
+!SESSION 2013-06-06 12:22:30.503 -----------------------------------------------
+eclipse.buildId=I20070613-1755
+java.version=1.6.0_15
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data E:\Dropbox\!Uni\EG4012 - Thesis\ThrillVibrationMonitor
+
+!ENTRY org.eclipse.core.resources 2 10035 2013-06-06 12:22:31.610
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 2 0 2013-06-06 12:22:31.906
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-06-06 12:22:31.906
+!MESSAGE Commands should really have a category: plug-in='com.freescale.core.debugger.ui.cdt', id='com.freescale.cdt.debug.cw.core.ui.rse.export.template', categoryId='com.freescale.categories.rse.freescale'
+
+!ENTRY com.freescale.processorexpert.core 1 0 2013-06-06 12:22:36.700
+!MESSAGE Plugin com.freescale.processorexpert.core.service ProcessorExpertServiceProvider
+
+!ENTRY com.freescale.core.ide.wizard.ui 2 0 2013-06-06 12:22:38.354
+!MESSAGE External elements location 'C:\Freescale\CW MCU v10.4\eclipse\../MCU/lib/wizard_data/mqx/4.0/arm' does not exist
+
+!ENTRY com.freescale.core.ide.wizard.ui 2 0 2013-06-06 12:22:38.357
+!MESSAGE External elements location 'C:\Freescale\CW MCU v10.4\eclipse\../MCU/lib/wizard_data/mqx/4.0/ppc' does not exist
+
+!ENTRY com.freescale.core.ide.wizard.ui 2 0 2013-06-06 12:22:38.360
+!MESSAGE External elements location 'C:\Freescale\CW MCU v10.4\eclipse\../MCU/lib/wizard_data/mqx/4.0/patches' does not exist
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-06-06 13:29:47.882
+!MESSAGE Type Specification file not found:  "Init_RVA_HCS12\Init_RVA_HCS12" (ADC)
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-06-06 13:29:48.048
+!MESSAGE Type specification was not found "typeFHCS12RVAEnableRVA" symbol: RVAEnableRVA
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-06 13:56:26.822
+!MESSAGE NLS unused message: trace_trigger_dv_error_title in: com.freescale.sa.mcu.analysispoints.nls.ui
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-06 13:56:26.834
+!MESSAGE NLS unused message: trace_trigger_dv_error_message in: com.freescale.sa.mcu.analysispoints.nls.ui
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-06-06 17:43:49.289
+!MESSAGE Indexed '6SDEraseTest' (11 sources, 23 headers) in 2.55 sec: 3,169 declarations; 2,667 references; 5 unresolved inclusions; 1 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY com.freescale.processorexpert.ui.projectpanel 4 0 2013-06-06 17:54:33.026
+!MESSAGE Cannot open PE project:\2TimerTest\ProcessorExpert.pe
+
+!ENTRY com.freescale.processorexpert.ui.projectpanel 4 0 2013-06-06 17:54:33.061
+!MESSAGE Cannot open PE project:\2TimerTest\ProcessorExpert.pe
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-06-06 17:54:34.591
+!MESSAGE Type Specification file not found:  "Init_RVA_HCS12\Init_RVA_HCS12" (ADC)
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-06-06 17:54:34.751
+!MESSAGE Type specification was not found "typeFHCS12RVAEnableRVA" symbol: RVAEnableRVA
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-06-06 17:54:36.376
+!MESSAGE Type Specification file not found:  "Init_RVA_HCS12\Init_RVA_HCS12" (ADC)
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-06-06 17:54:36.399
+!MESSAGE Type specification was not found "typeFHCS12RVAEnableRVA" symbol: RVAEnableRVA
+
+!ENTRY com.freescale.processorexpert.ui.projectpanel 4 0 2013-06-06 17:54:37.436
+!MESSAGE Cannot open PE project:\3SampleTest\ProcessorExpert.pe
+
+!ENTRY com.freescale.processorexpert.ui.projectpanel 4 0 2013-06-06 17:54:37.462
+!MESSAGE Cannot open PE project:\3SampleTest\ProcessorExpert.pe
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-06-06 17:54:38.992
+!MESSAGE Type Specification file not found:  "Init_RVA_HCS12\Init_RVA_HCS12" (ADC)
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-06-06 17:54:39.017
+!MESSAGE Type specification was not found "typeFHCS12RVAEnableRVA" symbol: RVAEnableRVA
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-06-06 17:54:40.283
+!MESSAGE Type Specification file not found:  "Init_RVA_HCS12\Init_RVA_HCS12" (ADC)
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-06-06 17:54:40.318
+!MESSAGE Type specification was not found "typeFHCS12RVAEnableRVA" symbol: RVAEnableRVA
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-06-06 17:54:40.431
+!MESSAGE org.eclipse.core.internal.resources.ResourceException: Marker id 194 not found.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Marker id 194 not found.
+	at org.eclipse.core.internal.resources.Marker.checkInfo(Marker.java:57)
+	at org.eclipse.core.internal.resources.Marker.setAttribute(Marker.java:237)
+	at org.eclipse.core.internal.resources.Marker.setAttribute(Marker.java:223)
+	at com.processorexpert.core.errors.ExpertErrorManager.reportProblemAdvanced(ExpertErrorManager.java:215)
+	at com.processorexpert.core.errors.ExpertErrorManager.reportProblem(ExpertErrorManager.java:184)
+	at com.processorexpert.core.errors.ErrorEventsListener.checkProject(ExpertErrorManager.java:88)
+	at com.processorexpert.core.errors.ExpertErrorManager.projectAdded(ExpertErrorManager.java:258)
+	at com.processorexpert.core.ProjectManager$2.run(ProjectManager.java:392)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask$Sync.innerRun(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 1 org.eclipse.core.resources 4 376 2013-06-06 17:54:40.446
+!MESSAGE Marker id 194 not found.
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-06-06 17:54:42.126
+!MESSAGE org.eclipse.core.internal.resources.ResourceException: Resource '/4TimerSampleTest' is not open.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/4TimerSampleTest' is not open.
+	at org.eclipse.core.internal.resources.Project.checkAccessible(Project.java:169)
+	at org.eclipse.core.internal.resources.Resource.createMarker(Resource.java:723)
+	at com.processorexpert.core.errors.ExpertErrorManager.reportProblemAdvanced(ExpertErrorManager.java:209)
+	at com.processorexpert.core.errors.ExpertErrorManager.reportProblem(ExpertErrorManager.java:184)
+	at com.processorexpert.core.errors.ErrorEventsListener.checkProject(ExpertErrorManager.java:88)
+	at com.processorexpert.core.errors.ExpertErrorManager.projectAdded(ExpertErrorManager.java:258)
+	at com.processorexpert.core.ProjectManager$2.run(ProjectManager.java:392)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask$Sync.innerRun(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 1 org.eclipse.core.resources 4 372 2013-06-06 17:54:42.126
+!MESSAGE Resource '/4TimerSampleTest' is not open.
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-06-06 17:54:50.440
+!MESSAGE Type Specification file not found:  "Init_RVA_HCS12\Init_RVA_HCS12" (ADC)
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-06-06 17:54:50.477
+!MESSAGE Type specification was not found "typeFHCS12RVAEnableRVA" symbol: RVAEnableRVA
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-06-06 17:54:50.507
+!MESSAGE Type Specification file not found:  "Init_RVA_HCS12\Init_RVA_HCS12" (ADC)
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-06-06 17:54:50.529
+!MESSAGE Type specification was not found "typeFHCS12RVAEnableRVA" symbol: RVAEnableRVA
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-06-06 17:54:54.108
+!MESSAGE org.eclipse.core.internal.resources.ResourceException: Resource '/test' is not open.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/test' is not open.
+	at org.eclipse.core.internal.resources.Project.checkAccessible(Project.java:169)
+	at org.eclipse.core.internal.resources.Resource.createMarker(Resource.java:723)
+	at com.processorexpert.core.errors.ExpertErrorManager.reportProblemAdvanced(ExpertErrorManager.java:209)
+	at com.processorexpert.core.errors.ExpertErrorManager.reportProblem(ExpertErrorManager.java:184)
+	at com.processorexpert.core.errors.ErrorEventsListener.checkProject(ExpertErrorManager.java:88)
+	at com.processorexpert.core.errors.ExpertErrorManager.projectAdded(ExpertErrorManager.java:258)
+	at com.processorexpert.core.ProjectManager$2.run(ProjectManager.java:392)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask$Sync.innerRun(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 1 org.eclipse.core.resources 4 372 2013-06-06 17:54:54.109
+!MESSAGE Resource '/test' is not open.
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-06-06 17:54:54.113
+!MESSAGE org.eclipse.core.internal.resources.ResourceException: Resource '/test' is not open.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/test' is not open.
+	at org.eclipse.core.internal.resources.Project.checkAccessible(Project.java:169)
+	at org.eclipse.core.internal.resources.Resource.createMarker(Resource.java:723)
+	at com.processorexpert.core.errors.ExpertErrorManager.reportProblemAdvanced(ExpertErrorManager.java:209)
+	at com.processorexpert.core.errors.ExpertErrorManager.reportProblem(ExpertErrorManager.java:184)
+	at com.processorexpert.core.errors.ErrorEventsListener.checkProject(ExpertErrorManager.java:88)
+	at com.processorexpert.core.errors.ExpertErrorManager.projectAdded(ExpertErrorManager.java:258)
+	at com.processorexpert.core.ProjectManager$2.run(ProjectManager.java:392)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask$Sync.innerRun(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 1 org.eclipse.core.resources 4 372 2013-06-06 17:54:54.114
+!MESSAGE Resource '/test' is not open.
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-06 17:54:54.114
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-06 17:54:54.114
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-06 17:54:54.116
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-06 17:54:54.116
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-06 17:54:54.117
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.debug.core.DebugException: Launch configuration test_FLASH_PnE U-MultiLink at file:/E:/Dropbox/!Uni/EG4012%20-%20Thesis/ThrillVibrationMonitor/test/Project_Settings/Debugger/test_FLASH_PnE%20U-MultiLink.launch does not exist.
+	at org.eclipse.debug.internal.core.LaunchManager.createDebugException(LaunchManager.java:1073)
+	at org.eclipse.debug.internal.core.LaunchManager.getInfo(LaunchManager.java:1522)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getInfo(LaunchConfiguration.java:453)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getType(LaunchConfiguration.java:614)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:136)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.debug.core 4 5012 2013-06-06 17:54:54.117
+!MESSAGE Launch configuration test_FLASH_PnE U-MultiLink at file:/E:/Dropbox/!Uni/EG4012%20-%20Thesis/ThrillVibrationMonitor/test/Project_Settings/Debugger/test_FLASH_PnE%20U-MultiLink.launch does not exist.
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-06 17:54:54.117
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.debug.core.DebugException: Launch configuration test_FLASH_PnE Cyclone PRO USB at file:/E:/Dropbox/!Uni/EG4012%20-%20Thesis/ThrillVibrationMonitor/test/Project_Settings/Debugger/test_FLASH_PnE%20Cyclone%20PRO%20USB.launch does not exist.
+	at org.eclipse.debug.internal.core.LaunchManager.createDebugException(LaunchManager.java:1073)
+	at org.eclipse.debug.internal.core.LaunchManager.getInfo(LaunchManager.java:1522)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getInfo(LaunchConfiguration.java:453)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getType(LaunchConfiguration.java:614)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:136)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.debug.core 4 5012 2013-06-06 17:54:54.117
+!MESSAGE Launch configuration test_FLASH_PnE Cyclone PRO USB at file:/E:/Dropbox/!Uni/EG4012%20-%20Thesis/ThrillVibrationMonitor/test/Project_Settings/Debugger/test_FLASH_PnE%20Cyclone%20PRO%20USB.launch does not exist.
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-06 17:54:54.118
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-06 17:54:54.118
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-06 17:54:54.118
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-06 17:54:54.118
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-06 17:54:54.119
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-06 17:54:54.119
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-06 17:54:54.119
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-06 17:54:54.119
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-06 17:54:54.120
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-06 17:54:54.120
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-06 17:54:54.121
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-06 17:54:54.121
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink

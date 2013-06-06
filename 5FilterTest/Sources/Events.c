@@ -50,9 +50,6 @@ void togglePowerLED() {
  **     Returns     : Nothing
  ** ===================================================================
  */
-void Accelerometer1_OnEnd(void) {
-	(void) Accelerometer1_GetValue16(&tempSample);
-}
 
 /*
 ** ===================================================================
@@ -71,16 +68,6 @@ void Accelerometer1_OnEnd(void) {
 void sampleTimer_OnInterrupt(void)
 {
 	togglePowerLED();
-
-		// Light up the status LED if the ADC returns a high value
-		if (tempSample > 10000) {
-			statusLED_ClrVal();
-		} else {
-			statusLED_SetVal();
-		}
-
-		Accelerometer1_Measure(FALSE);
-
 }
 
 /* END Events */
