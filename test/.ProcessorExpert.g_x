@@ -1,0 +1,51 @@
+<CodeGenerationInfo>
+  <ToolchainSettings>
+    <option>
+      <name>PE_G_4PEx_ToolChain_Compiler_SearchUserPaths</name>
+      <values lines_count="2">
+        <Line>"${ProjDirPath}/Sources"</Line>
+        <Line>"${ProjDirPath}/Generated_Code"</Line>
+      </values>
+    </option>
+  </ToolchainSettings>
+  <GeneratedFilesList>
+    <GeneratedByPE>
+      <File Name="Generated_Code\Cpu.c" FileDate="2013-05-27, 12:03:32" FileAge="1369620212083" FileType="4411" CompNumb="17" />
+      <File Name="Generated_Code\statusLED.c" FileDate="2013-05-27, 12:03:32" FileAge="1369620212017" FileType="4411" CompNumb="25" />
+      <File Name="Generated_Code\transmitLED.c" FileDate="2013-05-27, 12:03:32" FileAge="1369620212029" FileType="4411" CompNumb="26" />
+      <File Name="Documentation\ProcessorExpert_Settings.xml" FileDate="2013-05-27, 12:03:32" FileAge="1369620212329" FileType="3072" />
+      <File Name="Documentation\ProcessorExpert_SIGNALS.txt" FileDate="2013-05-27, 12:03:32" FileAge="1369620212140" FileType="3072" />
+      <File Name="Generated_Code\powerLED.h" FileDate="2013-05-27, 12:03:32" FileAge="1369620212000" FileType="4411" CompNumb="24" />
+      <File Name="Generated_Code\wirelessSerial.h" FileDate="2013-05-27, 12:03:31" FileAge="1369620211952" FileType="4411" CompNumb="23" />
+      <File Name="Generated_Code\powerLED.c" FileDate="2013-05-27, 12:03:32" FileAge="1369620212006" FileType="4411" CompNumb="24" />
+      <File Name="Generated_Code\wirelessSerial.c" FileDate="2013-05-27, 12:03:31" FileAge="1369620211993" FileType="4411" CompNumb="23" />
+      <File Name="Generated_Code\samplingTimer.h" FileDate="2013-05-27, 12:03:31" FileAge="1369620211832" FileType="4411" CompNumb="33" />
+      <File Name="Generated_Code\accelerometer.h" FileDate="2013-05-27, 12:03:32" FileAge="1369620212045" FileType="4411" CompNumb="28" />
+      <File Name="Generated_Code\samplingTimer.c" FileDate="2013-05-27, 12:03:31" FileAge="1369620211820" FileType="4411" CompNumb="33" />
+      <File Name="Generated_Code\accelerometer.c" FileDate="2013-05-27, 12:03:32" FileAge="1369620212051" FileType="4411" CompNumb="28" />
+      <File Name="Generated_Code\IO_Map.h" FileDate="2013-05-23, 16:24:31" FileAge="1369290271959" FileType="4411" />
+      <File Name="Generated_Code\IO_Map.c" FileDate="2013-05-23, 16:24:32" FileAge="1369290272000" FileType="4411" />
+      <File Name="Project_Settings\Linker_Files\ProcessorExpert.prm" FileDate="2013-05-23, 16:24:33" FileAge="1369290273043" FileType="4" CompNumb="0" />
+      <File Name="Documentation\ProcessorExpert.txt" FileDate="2013-05-27, 12:03:32" FileAge="1369620212384" FileType="3072" />
+      <File Name="Generated_Code\massStorageSerial.h" FileDate="2013-05-27, 12:03:31" FileAge="1369620211973" FileType="4411" CompNumb="21" />
+      <File Name="Generated_Code\massStorageSerial.c" FileDate="2013-05-27, 12:03:31" FileAge="1369620211986" FileType="4411" CompNumb="21" />
+      <File Name="Generated_Code\Vectors.c" FileDate="2013-05-27, 12:03:32" FileAge="1369620212104" FileType="4411" CompNumb="0" />
+      <File Name="Sources\ProcessorExpert.c" FileDate="2013-05-27, 12:03:32" FileAge="1369620212069" FileType="128" />
+      <File Name="Generated_Code\PE_Cnvrt.h" FileDate="2013-05-23, 16:46:32" FileAge="1369291592008" FileType="4411" />
+      <File Name="Generated_Code\PE_Cnvrt.c" FileDate="2013-05-27, 12:03:32" FileAge="1369620212062" FileType="4411" />
+      <File Name="Generated_Code\batteryMonitor.h" FileDate="2013-05-27, 12:03:31" FileAge="1369620211857" FileType="4411" CompNumb="32" />
+      <File Name="Sources\Events.h" FileDate="2013-05-27, 12:03:32" FileAge="1369620212111" FileType="16896" />
+      <File Name="Generated_Code\PE_Const.h" FileDate="2013-05-23, 16:24:31" FileAge="1369290271192" FileType="4411" />
+      <File Name="Generated_Code\batteryMonitor.c" FileDate="2013-05-27, 12:03:31" FileAge="1369620211848" FileType="4411" CompNumb="32" />
+      <File Name="Generated_Code\PE_Types.h" FileDate="2013-05-23, 16:24:31" FileAge="1369290271283" FileType="4411" />
+      <File Name="Generated_Code\receiveLED.h" FileDate="2013-05-27, 12:03:32" FileAge="1369620212035" FileType="4411" CompNumb="27" />
+      <File Name="Sources\Events.c" FileDate="2013-05-27, 12:03:32" FileAge="1369620212118" FileType="16896" />
+      <File Name="Generated_Code\PE_Error.h" FileDate="2013-05-23, 16:24:31" FileAge="1369290271232" FileType="4411" />
+      <File Name="Generated_Code\receiveLED.c" FileDate="2013-05-27, 12:03:32" FileAge="1369620212040" FileType="4411" CompNumb="27" />
+      <File Name="Generated_Code\Cpu.h" FileDate="2013-05-27, 12:03:32" FileAge="1369620212075" FileType="4411" CompNumb="17" />
+      <File Name="Generated_Code\statusLED.h" FileDate="2013-05-27, 12:03:32" FileAge="1369620212012" FileType="4411" CompNumb="25" />
+      <File Name="Generated_Code\transmitLED.h" FileDate="2013-05-27, 12:03:32" FileAge="1369620212023" FileType="4411" CompNumb="26" />
+    </GeneratedByPE>
+  </GeneratedFilesList>
+  <CodeGenReference>8</CodeGenReference>
+</CodeGenerationInfo>

@@ -1,0 +1,44 @@
+!SESSION 2013-06-06 11:01:04.362 -----------------------------------------------
+eclipse.buildId=I20070613-1755
+java.version=1.6.0_15
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data E:\Dropbox\!Uni\EG4012 - Thesis\ThrillVibrationMonitor
+
+!ENTRY org.eclipse.ui 2 0 2013-06-06 11:01:05.320
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-06-06 11:01:05.320
+!MESSAGE Commands should really have a category: plug-in='com.freescale.core.debugger.ui.cdt', id='com.freescale.cdt.debug.cw.core.ui.rse.export.template', categoryId='com.freescale.categories.rse.freescale'
+
+!ENTRY com.freescale.core.ide.wizard.ui 2 0 2013-06-06 11:01:07.997
+!MESSAGE External elements location 'C:\Freescale\CW MCU v10.4\eclipse\../MCU/lib/wizard_data/mqx/4.0/arm' does not exist
+
+!ENTRY com.freescale.core.ide.wizard.ui 2 0 2013-06-06 11:01:07.998
+!MESSAGE External elements location 'C:\Freescale\CW MCU v10.4\eclipse\../MCU/lib/wizard_data/mqx/4.0/ppc' does not exist
+
+!ENTRY com.freescale.core.ide.wizard.ui 2 0 2013-06-06 11:01:07.998
+!MESSAGE External elements location 'C:\Freescale\CW MCU v10.4\eclipse\../MCU/lib/wizard_data/mqx/4.0/patches' does not exist
+
+!ENTRY com.freescale.processorexpert.core 1 0 2013-06-06 11:01:08.680
+!MESSAGE Plugin com.freescale.processorexpert.core.service ProcessorExpertServiceProvider
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-06-06 11:01:46.137
+!MESSAGE Indexed 'ProgrammerTest' (3 sources, 14 headers) in 0.63 sec: 3,071 declarations; 2,222 references; 5 unresolved inclusions; 16 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-06-06 11:01:46.541
+!MESSAGE Indexed '5FilterTest' (10 sources, 22 headers) in 0.39 sec: 3,132 declarations; 2,574 references; 5 unresolved inclusions; 1 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-06-06 11:01:46.963
+!MESSAGE Indexed 'test' (16 sources, 28 headers) in 0.41 sec: 3,211 declarations; 3,021 references; 5 unresolved inclusions; 1 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-06-06 11:01:47.372
+!MESSAGE Indexed '2TimerTest' (9 sources, 21 headers) in 0.36 sec: 3,076 declarations; 2,411 references; 5 unresolved inclusions; 1 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-06-06 11:01:47.727
+!MESSAGE Indexed '3SampleTest' (9 sources, 21 headers) in 0.35 sec: 3,110 declarations; 2,512 references; 5 unresolved inclusions; 1 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-06-06 11:01:48.072
+!MESSAGE Indexed '1ProgrammingIOTest' (8 sources, 20 headers) in 0.34 sec: 3,062 declarations; 2,357 references; 5 unresolved inclusions; 1 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2013-06-06 11:01:48.437
+!MESSAGE Indexed '4TimerSampleTest' (10 sources, 22 headers) in 0.36 sec: 3,155 declarations; 2,609 references; 5 unresolved inclusions; 1 syntax errors; 0 unresolved names (0.00%)
