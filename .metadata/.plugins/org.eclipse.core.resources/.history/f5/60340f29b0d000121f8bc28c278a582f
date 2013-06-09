@@ -184,24 +184,24 @@ typedef union {
 	UINT32 lword;
 } T32_8;
 
-/* Stardard Definitions */
+/* Stardar Definitions */
 #ifdef  SD_BLOCK_512
 #define SD_BLOCK_SIZE   (0x00000200)
 #define SD_BLOCK_SHIFT  (9)
 #define BLOCK_SIZE      512
 #endif
 
-void initialiseSDSerial(void);
-void writeByteSDSerial(UINT8 u8Data);
-UINT8 readByteSDSerial(void);
-void setHighRateSDSerial(void);
+void initialiseSdSerial(void);
+void sendByteSdSerial(UINT8 u8Data);
+UINT8 SPI_Receive_byte(void);
+void SPI_High_rate(void);
 
-UINT8 initialiseSD(void);
-UINT8 sendCommandSdSerial(UINT8, UINT8);
+UINT8 SD_Init(void);
+UINT8 SD_SendCommand(UINT8, UINT8);
 UINT8 SD_SendCommandR7(UINT8, UINT8);
 UINT8 SD_SendCommandR3(UINT8, UINT8, UINT8);
 void SD_CLKDelay(UINT8);
-UINT8 writeBlockSDSerial(UINT32, UINT8*);
+UINT8 SD_Write_Block(UINT32, UINT8*);
 UINT8 SD_Erase_Blocks(UINT32, UINT32);
 UINT8 SD_Read_Block(UINT32, UINT8*);
 void SPI_SS_Disable_Delay(void);

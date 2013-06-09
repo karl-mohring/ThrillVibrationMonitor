@@ -1211,3 +1211,1090 @@ org.eclipse.jface.text.BadLocationException: First position: 'SPI_Receive_byte' 
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:623)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:578)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1411)
+
+!ENTRY org.eclipse.ui 4 0 2013-06-09 12:57:05.094
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRenameProcessor.getSaveMode(CRenameProcessor.java:308)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRefactory.openDialog(CRefactory.java:136)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:119)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:90)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameLinkedMode.startFullDialog(RenameLinkedMode.java:458)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameInformationPopup$7$3.run(RenameInformationPopup.java:757)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4180)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3765)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2698)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2662)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2496)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:675)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:82)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:623)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:578)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1411)
+
+!ENTRY org.eclipse.core.resources 4 2 2013-06-09 17:19:09.641
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.resources.Workspace.delete(Workspace.java:1489)
+	at org.eclipse.core.internal.resources.Workspace.delete(Workspace.java:1448)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.cleanProgrammatically(CommonBuilder.java:2098)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.clean(CommonBuilder.java:1916)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.cleanWithReporting(CommonBuilder.java:1840)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.clean(CommonBuilder.java:1848)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:823)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:385)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:388)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:444)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:467)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:397)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Contains: Could not delete '/6SDEraseTest/FLASH'.
+Contains: Could not delete '/6SDEraseTest/FLASH'.
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:352)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:353)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:823)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1948)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:792)
+	at org.eclipse.core.internal.resources.Workspace.delete(Workspace.java:1477)
+	at org.eclipse.core.internal.resources.Workspace.delete(Workspace.java:1448)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.cleanProgrammatically(CommonBuilder.java:2098)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.clean(CommonBuilder.java:1916)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.cleanWithReporting(CommonBuilder.java:1840)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.clean(CommonBuilder.java:1848)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:823)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:385)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:388)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:444)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:467)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:397)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Contains: Problems encountered while deleting files.
+Contains: Could not delete: E:\Dropbox\!Uni\EG4012 - Thesis\ThrillVibrationMonitor\6SDEraseTest\FLASH.
+!SUBENTRY 1 org.eclipse.core.resources 4 566 2013-06-09 17:19:09.642
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 2 org.eclipse.core.resources 4 273 2013-06-09 17:19:09.642
+!MESSAGE Could not delete '/6SDEraseTest/FLASH'.
+!SUBENTRY 2 org.eclipse.core.resources 4 273 2013-06-09 17:19:09.642
+!MESSAGE Could not delete '/6SDEraseTest/FLASH'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:352)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:353)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:823)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1948)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:792)
+	at org.eclipse.core.internal.resources.Workspace.delete(Workspace.java:1477)
+	at org.eclipse.core.internal.resources.Workspace.delete(Workspace.java:1448)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.cleanProgrammatically(CommonBuilder.java:2098)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.clean(CommonBuilder.java:1916)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.cleanWithReporting(CommonBuilder.java:1840)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.clean(CommonBuilder.java:1848)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:823)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:385)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:388)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:444)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:467)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:397)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Contains: Problems encountered while deleting files.
+Contains: Could not delete: E:\Dropbox\!Uni\EG4012 - Thesis\ThrillVibrationMonitor\6SDEraseTest\FLASH.
+!SUBENTRY 3 org.eclipse.core.resources 4 273 2013-06-09 17:19:09.642
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 4 org.eclipse.core.filesystem 4 273 2013-06-09 17:19:09.642
+!MESSAGE Problems encountered while deleting files.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-06-09 17:19:09.642
+!MESSAGE Could not delete: E:\Dropbox\!Uni\EG4012 - Thesis\ThrillVibrationMonitor\6SDEraseTest\FLASH.
+!SUBENTRY 1 org.eclipse.core.resources 4 273 2013-06-09 17:19:09.642
+!MESSAGE Could not delete '/6SDEraseTest/FLASH'.
+!SUBENTRY 1 org.eclipse.core.resources 4 273 2013-06-09 17:19:09.642
+!MESSAGE Could not delete '/6SDEraseTest/FLASH'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:352)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:353)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:823)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1948)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:792)
+	at org.eclipse.core.internal.resources.Workspace.delete(Workspace.java:1477)
+	at org.eclipse.core.internal.resources.Workspace.delete(Workspace.java:1448)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.cleanProgrammatically(CommonBuilder.java:2098)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.clean(CommonBuilder.java:1916)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.cleanWithReporting(CommonBuilder.java:1840)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.clean(CommonBuilder.java:1848)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:823)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:385)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:388)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:444)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:467)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:397)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Contains: Problems encountered while deleting files.
+Contains: Could not delete: E:\Dropbox\!Uni\EG4012 - Thesis\ThrillVibrationMonitor\6SDEraseTest\FLASH.
+!SUBENTRY 2 org.eclipse.core.resources 4 273 2013-06-09 17:19:09.642
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 3 org.eclipse.core.filesystem 4 273 2013-06-09 17:19:09.642
+!MESSAGE Problems encountered while deleting files.
+!SUBENTRY 4 org.eclipse.core.filesystem 4 273 2013-06-09 17:19:09.642
+!MESSAGE Could not delete: E:\Dropbox\!Uni\EG4012 - Thesis\ThrillVibrationMonitor\6SDEraseTest\FLASH.
+
+!ENTRY org.eclipse.core.resources 4 75 2013-06-09 17:19:09.649
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 75 2013-06-09 17:19:09.649
+!MESSAGE Errors running builder 'CDT Builder' on project '6SDEraseTest'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.resources.Workspace.delete(Workspace.java:1489)
+	at org.eclipse.core.internal.resources.Workspace.delete(Workspace.java:1448)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.cleanProgrammatically(CommonBuilder.java:2098)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.clean(CommonBuilder.java:1916)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.cleanWithReporting(CommonBuilder.java:1840)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.clean(CommonBuilder.java:1848)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:823)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:385)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:388)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:444)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:467)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:397)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Contains: Could not delete '/6SDEraseTest/FLASH'.
+Contains: Could not delete '/6SDEraseTest/FLASH'.
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:352)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:353)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:823)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1948)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:792)
+	at org.eclipse.core.internal.resources.Workspace.delete(Workspace.java:1477)
+	at org.eclipse.core.internal.resources.Workspace.delete(Workspace.java:1448)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.cleanProgrammatically(CommonBuilder.java:2098)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.clean(CommonBuilder.java:1916)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.cleanWithReporting(CommonBuilder.java:1840)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.clean(CommonBuilder.java:1848)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:823)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:385)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:388)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:444)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:467)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:397)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Contains: Problems encountered while deleting files.
+Contains: Could not delete: E:\Dropbox\!Uni\EG4012 - Thesis\ThrillVibrationMonitor\6SDEraseTest\FLASH.
+!SUBENTRY 2 org.eclipse.core.resources 4 566 2013-06-09 17:19:09.649
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 3 org.eclipse.core.resources 4 273 2013-06-09 17:19:09.649
+!MESSAGE Could not delete '/6SDEraseTest/FLASH'.
+!SUBENTRY 3 org.eclipse.core.resources 4 273 2013-06-09 17:19:09.649
+!MESSAGE Could not delete '/6SDEraseTest/FLASH'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:352)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:353)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:823)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1948)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:792)
+	at org.eclipse.core.internal.resources.Workspace.delete(Workspace.java:1477)
+	at org.eclipse.core.internal.resources.Workspace.delete(Workspace.java:1448)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.cleanProgrammatically(CommonBuilder.java:2098)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.clean(CommonBuilder.java:1916)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.cleanWithReporting(CommonBuilder.java:1840)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.clean(CommonBuilder.java:1848)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:823)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:385)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:388)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:444)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:467)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:397)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Contains: Problems encountered while deleting files.
+Contains: Could not delete: E:\Dropbox\!Uni\EG4012 - Thesis\ThrillVibrationMonitor\6SDEraseTest\FLASH.
+!SUBENTRY 4 org.eclipse.core.resources 4 273 2013-06-09 17:19:09.649
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-06-09 17:19:09.649
+!MESSAGE Problems encountered while deleting files.
+!SUBENTRY 6 org.eclipse.core.filesystem 4 273 2013-06-09 17:19:09.649
+!MESSAGE Could not delete: E:\Dropbox\!Uni\EG4012 - Thesis\ThrillVibrationMonitor\6SDEraseTest\FLASH.
+!SUBENTRY 1 org.eclipse.core.resources 4 566 2013-06-09 17:19:09.649
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 2 org.eclipse.core.resources 4 273 2013-06-09 17:19:09.649
+!MESSAGE Could not delete '/6SDEraseTest/FLASH'.
+!SUBENTRY 2 org.eclipse.core.resources 4 273 2013-06-09 17:19:09.649
+!MESSAGE Could not delete '/6SDEraseTest/FLASH'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:352)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:353)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:823)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1948)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:792)
+	at org.eclipse.core.internal.resources.Workspace.delete(Workspace.java:1477)
+	at org.eclipse.core.internal.resources.Workspace.delete(Workspace.java:1448)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.cleanProgrammatically(CommonBuilder.java:2098)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.clean(CommonBuilder.java:1916)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.cleanWithReporting(CommonBuilder.java:1840)
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.clean(CommonBuilder.java:1848)
+	at org.eclipse.core.internal.events.BuildManager$3.run(BuildManager.java:823)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:385)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:388)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:444)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:467)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:540)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:459)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:397)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Contains: Problems encountered while deleting files.
+Contains: Could not delete: E:\Dropbox\!Uni\EG4012 - Thesis\ThrillVibrationMonitor\6SDEraseTest\FLASH.
+!SUBENTRY 3 org.eclipse.core.resources 4 273 2013-06-09 17:19:09.649
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 4 org.eclipse.core.filesystem 4 273 2013-06-09 17:19:09.649
+!MESSAGE Problems encountered while deleting files.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2013-06-09 17:19:09.649
+!MESSAGE Could not delete: E:\Dropbox\!Uni\EG4012 - Thesis\ThrillVibrationMonitor\6SDEraseTest\FLASH.
+
+!ENTRY org.eclipse.ui 4 4 2013-06-10 01:10:31.032
+!MESSAGE "Rename - Refactoring " did not complete normally.  Please see the log for more information.
+
+!ENTRY org.eclipse.ui 4 0 2013-06-10 01:10:31.032
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRenameProcessor.getSaveMode(CRenameProcessor.java:308)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRefactory.openDialog(CRefactory.java:136)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:119)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:90)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameLinkedMode.startFullDialog(RenameLinkedMode.java:458)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameLinkedMode.start(RenameLinkedMode.java:180)
+	at org.eclipse.cdt.ui.refactoring.actions.CRenameAction.run(CRenameAction.java:56)
+	at org.eclipse.cdt.ui.refactoring.actions.RefactoringAction.run(RefactoringAction.java:82)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.commands.ActionHandler.execute(ActionHandler.java:119)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:510)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.executeCommand(WorkbenchKeyboard.java:468)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.press(WorkbenchKeyboard.java:786)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.processKeyEvent(WorkbenchKeyboard.java:885)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.filterKeySequenceBindings(WorkbenchKeyboard.java:567)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.access$3(WorkbenchKeyboard.java:508)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard$KeyDownFilter.handleEvent(WorkbenchKeyboard.java:123)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1269)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1052)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1062)
+	at org.eclipse.swt.widgets.Control.traverse(Control.java:4050)
+	at org.eclipse.swt.widgets.Control.translateMnemonic(Control.java:3892)
+	at org.eclipse.swt.widgets.Composite.translateMnemonic(Composite.java:1178)
+	at org.eclipse.swt.widgets.Control.translateMnemonic(Control.java:3910)
+	at org.eclipse.swt.widgets.Display.translateMnemonic(Display.java:4787)
+	at org.eclipse.swt.widgets.Display.filterMessage(Display.java:1283)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3761)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2698)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2662)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2496)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:675)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:82)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:623)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:578)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1411)
+
+!ENTRY org.eclipse.ui 4 4 2013-06-10 01:10:36.389
+!MESSAGE "Rename - Refactoring " did not complete normally.  Please see the log for more information.
+
+!ENTRY org.eclipse.ui 4 0 2013-06-10 01:10:36.390
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRenameProcessor.getSaveMode(CRenameProcessor.java:308)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRefactory.openDialog(CRefactory.java:136)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:119)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:90)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameLinkedMode.startFullDialog(RenameLinkedMode.java:458)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameLinkedMode.start(RenameLinkedMode.java:180)
+	at org.eclipse.cdt.ui.refactoring.actions.CRenameAction.run(CRenameAction.java:56)
+	at org.eclipse.cdt.ui.refactoring.actions.RefactoringAction.run(RefactoringAction.java:82)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.commands.ActionHandler.execute(ActionHandler.java:119)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:510)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.executeCommand(WorkbenchKeyboard.java:468)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.press(WorkbenchKeyboard.java:786)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.processKeyEvent(WorkbenchKeyboard.java:885)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.filterKeySequenceBindings(WorkbenchKeyboard.java:567)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.access$3(WorkbenchKeyboard.java:508)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard$KeyDownFilter.handleEvent(WorkbenchKeyboard.java:123)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1269)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1052)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1062)
+	at org.eclipse.swt.widgets.Control.traverse(Control.java:4050)
+	at org.eclipse.swt.widgets.Control.translateMnemonic(Control.java:3892)
+	at org.eclipse.swt.widgets.Composite.translateMnemonic(Composite.java:1178)
+	at org.eclipse.swt.widgets.Control.translateMnemonic(Control.java:3910)
+	at org.eclipse.swt.widgets.Display.translateMnemonic(Display.java:4787)
+	at org.eclipse.swt.widgets.Display.filterMessage(Display.java:1283)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3761)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2698)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2662)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2496)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:675)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:82)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:623)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:578)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1411)
+
+!ENTRY org.eclipse.ui 4 4 2013-06-10 01:10:51.732
+!MESSAGE "Rename - Refactoring " did not complete normally.  Please see the log for more information.
+
+!ENTRY org.eclipse.ui 4 0 2013-06-10 01:10:51.733
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRenameProcessor.getSaveMode(CRenameProcessor.java:308)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRefactory.openDialog(CRefactory.java:136)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:119)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:90)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameLinkedMode.startFullDialog(RenameLinkedMode.java:458)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameLinkedMode.start(RenameLinkedMode.java:180)
+	at org.eclipse.cdt.ui.refactoring.actions.CRenameAction.run(CRenameAction.java:56)
+	at org.eclipse.cdt.ui.refactoring.actions.RefactoringAction.run(RefactoringAction.java:82)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.commands.ActionHandler.execute(ActionHandler.java:119)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:510)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.executeCommand(WorkbenchKeyboard.java:468)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.press(WorkbenchKeyboard.java:786)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.processKeyEvent(WorkbenchKeyboard.java:885)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.filterKeySequenceBindings(WorkbenchKeyboard.java:567)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.access$3(WorkbenchKeyboard.java:508)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard$KeyDownFilter.handleEvent(WorkbenchKeyboard.java:123)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1269)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1052)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1062)
+	at org.eclipse.swt.widgets.Control.traverse(Control.java:4050)
+	at org.eclipse.swt.widgets.Control.translateMnemonic(Control.java:3892)
+	at org.eclipse.swt.widgets.Composite.translateMnemonic(Composite.java:1178)
+	at org.eclipse.swt.widgets.Control.translateMnemonic(Control.java:3910)
+	at org.eclipse.swt.widgets.Display.translateMnemonic(Display.java:4787)
+	at org.eclipse.swt.widgets.Display.filterMessage(Display.java:1283)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3761)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2698)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2662)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2496)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:675)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:82)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:623)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:578)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1411)
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:20:33.778
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Variable references non-existent resource : ${workspace_loc:/6SDEraseTest/FLASH/ProgrammingTest.abs}
+	at org.eclipse.debug.internal.core.variables.WorkspaceResolver.resolveValue(WorkspaceResolver.java:56)
+	at org.eclipse.core.internal.variables.DynamicVariable.getValue(DynamicVariable.java:54)
+	at org.eclipse.core.internal.variables.StringSubstitutionEngine.resolve(StringSubstitutionEngine.java:267)
+	at org.eclipse.core.internal.variables.StringSubstitutionEngine.substitute(StringSubstitutionEngine.java:192)
+	at org.eclipse.core.internal.variables.StringSubstitutionEngine.performStringSubstitution(StringSubstitutionEngine.java:86)
+	at org.eclipse.core.internal.variables.StringVariableManager.performStringSubstitution(StringVariableManager.java:611)
+	at org.eclipse.core.internal.variables.StringVariableManager.performStringSubstitution(StringVariableManager.java:389)
+	at com.freescale.flashprogrammer.editor.SimpleFlashDialog.validateFileToFlash(SimpleFlashDialog.java:1380)
+	at com.freescale.flashprogrammer.editor.SimpleFlashDialog.restoreSettings(SimpleFlashDialog.java:812)
+	at com.freescale.flashprogrammer.editor.SimpleFlashDialog.populateInterface(SimpleFlashDialog.java:771)
+	at com.freescale.flashprogrammer.editor.SimpleFlashDialog.create(SimpleFlashDialog.java:256)
+	at org.eclipse.jface.window.Window.open(Window.java:790)
+	at com.freescale.flashprogrammer.actions.FlashProgrammerLoadFileTaskAction.run(FlashProgrammerLoadFileTaskAction.java:29)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4180)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3765)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2698)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2662)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2496)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:675)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:82)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:623)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:578)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1411)
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2013-06-10 01:20:33.778
+!MESSAGE Variable references non-existent resource : ${workspace_loc:/6SDEraseTest/FLASH/ProgrammingTest.abs}
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:20:33.854
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Variable references non-existent resource : ${workspace_loc:/6SDEraseTest/FLASH/ProgrammingTest.abs}
+	at org.eclipse.debug.internal.core.variables.WorkspaceResolver.resolveValue(WorkspaceResolver.java:56)
+	at org.eclipse.core.internal.variables.DynamicVariable.getValue(DynamicVariable.java:54)
+	at org.eclipse.core.internal.variables.StringSubstitutionEngine.resolve(StringSubstitutionEngine.java:267)
+	at org.eclipse.core.internal.variables.StringSubstitutionEngine.substitute(StringSubstitutionEngine.java:192)
+	at org.eclipse.core.internal.variables.StringSubstitutionEngine.performStringSubstitution(StringSubstitutionEngine.java:86)
+	at org.eclipse.core.internal.variables.StringVariableManager.performStringSubstitution(StringVariableManager.java:611)
+	at org.eclipse.core.internal.variables.StringVariableManager.performStringSubstitution(StringVariableManager.java:389)
+	at com.freescale.flashprogrammer.editor.SimpleFlashDialog.validateFileToFlash(SimpleFlashDialog.java:1380)
+	at com.freescale.flashprogrammer.editor.SimpleFlashDialog.validate(SimpleFlashDialog.java:1344)
+	at com.freescale.flashprogrammer.editor.SimpleFlashDialog.create(SimpleFlashDialog.java:258)
+	at org.eclipse.jface.window.Window.open(Window.java:790)
+	at com.freescale.flashprogrammer.actions.FlashProgrammerLoadFileTaskAction.run(FlashProgrammerLoadFileTaskAction.java:29)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4180)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3765)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2698)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2662)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2496)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:675)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:82)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:623)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:578)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1411)
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2013-06-10 01:20:33.854
+!MESSAGE Variable references non-existent resource : ${workspace_loc:/6SDEraseTest/FLASH/ProgrammingTest.abs}
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:20:35.779
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Variable references non-existent resource : ${workspace_loc:/6SDEraseTest/FLASH/ProgrammingTest.abs}
+	at org.eclipse.debug.internal.core.variables.WorkspaceResolver.resolveValue(WorkspaceResolver.java:56)
+	at org.eclipse.core.internal.variables.DynamicVariable.getValue(DynamicVariable.java:54)
+	at org.eclipse.core.internal.variables.StringSubstitutionEngine.resolve(StringSubstitutionEngine.java:267)
+	at org.eclipse.core.internal.variables.StringSubstitutionEngine.substitute(StringSubstitutionEngine.java:192)
+	at org.eclipse.core.internal.variables.StringSubstitutionEngine.performStringSubstitution(StringSubstitutionEngine.java:86)
+	at org.eclipse.core.internal.variables.StringVariableManager.performStringSubstitution(StringVariableManager.java:611)
+	at org.eclipse.core.internal.variables.StringVariableManager.performStringSubstitution(StringVariableManager.java:389)
+	at com.freescale.flashprogrammer.editor.SimpleFlashDialog.validateFileToFlash(SimpleFlashDialog.java:1380)
+	at com.freescale.flashprogrammer.editor.SimpleFlashDialog.validate(SimpleFlashDialog.java:1344)
+	at com.freescale.flashprogrammer.editor.listeners.SimpleFlashDialogListeners.modifyText(SimpleFlashDialogListeners.java:176)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:179)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+	at org.eclipse.swt.widgets.Text.wmCommandChild(Text.java:2610)
+	at org.eclipse.swt.widgets.Control.WM_COMMAND(Control.java:4669)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4531)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5000)
+	at org.eclipse.swt.internal.win32.OS.CallWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.CallWindowProc(OS.java:2425)
+	at org.eclipse.swt.widgets.Text.callWindowProc(Text.java:255)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4623)
+	at org.eclipse.swt.widgets.Text.windowProc(Text.java:2254)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4987)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2531)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3763)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at com.freescale.flashprogrammer.actions.FlashProgrammerLoadFileTaskAction.run(FlashProgrammerLoadFileTaskAction.java:29)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4180)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3765)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2698)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2662)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2496)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:675)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:82)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:623)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:578)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1411)
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2013-06-10 01:20:35.780
+!MESSAGE Variable references non-existent resource : ${workspace_loc:/6SDEraseTest/FLASH/ProgrammingTest.abs}
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:22:21.958
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-10 01:22:21.958
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:22:21.959
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-10 01:22:21.959
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:22:21.959
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-10 01:22:21.959
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:22:21.959
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-10 01:22:21.959
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:22:21.960
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-10 01:22:21.960
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:22:21.960
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-10 01:22:21.960
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:22:21.960
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-10 01:22:21.960
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:22:21.961
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-10 01:22:21.961
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:22:21.961
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-10 01:22:21.961
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:22:21.961
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-10 01:22:21.961
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:22:21.961
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-10 01:22:21.961
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:22:21.962
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-10 01:22:21.962
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:22:21.962
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-10 01:22:21.962
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:22:21.962
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-10 01:22:21.962
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:22:21.962
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-10 01:22:21.962
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:22:21.963
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-10 01:22:21.963
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:22:21.963
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-10 01:22:21.963
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:22:21.963
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-10 01:22:21.963
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:22:21.964
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-10 01:22:21.964
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-06-10 01:22:21.964
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-06-10 01:22:21.964
+!MESSAGE Missing connection type in RSE host: ProgrammerTest_FLASH_PnE U-MultiLink
+
+!ENTRY org.eclipse.debug.core 4 2 2013-06-10 01:27:00.582
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.core".
+!STACK 0
+java.util.ConcurrentModificationException
+	at java.util.AbstractList$Itr.checkForComodification(Unknown Source)
+	at java.util.AbstractList$Itr.next(Unknown Source)
+	at org.eclipse.cdt.dsf.debug.internal.ui.disassembly.model.DisassemblyDocument.getSourcePosition(DisassemblyDocument.java:601)
+	at org.eclipse.cdt.dsf.debug.internal.ui.disassembly.model.DisassemblyDocument.getSourcePosition(DisassemblyDocument.java:576)
+	at org.eclipse.cdt.dsf.debug.internal.ui.disassembly.model.BreakpointsAnnotationModel.createPositionFromSourceLine(BreakpointsAnnotationModel.java:225)
+	at org.eclipse.cdt.dsf.debug.internal.ui.disassembly.model.BreakpointsAnnotationModel.createPositionFromBreakpoint(BreakpointsAnnotationModel.java:208)
+	at org.eclipse.cdt.dsf.debug.internal.ui.disassembly.model.BreakpointsAnnotationModel.addBreakpointAnnotation(BreakpointsAnnotationModel.java:144)
+	at org.eclipse.cdt.dsf.debug.internal.ui.disassembly.model.BreakpointsAnnotationModel.breakpointChanged(BreakpointsAnnotationModel.java:110)
+	at org.eclipse.debug.internal.core.BreakpointManager$BreakpointNotifier.run(BreakpointManager.java:960)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.BreakpointManager$BreakpointNotifier.notify(BreakpointManager.java:980)
+	at org.eclipse.debug.internal.core.BreakpointManager.fireUpdate(BreakpointManager.java:894)
+	at org.eclipse.debug.internal.core.BreakpointManager.access$4(BreakpointManager.java:884)
+	at org.eclipse.debug.internal.core.BreakpointManager$BreakpointManagerVisitor.update(BreakpointManager.java:747)
+	at org.eclipse.debug.internal.core.BreakpointManager.resourceChanged(BreakpointManager.java:657)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:387)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:146)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.debug.core 4 120 2013-06-10 01:27:00.582
+!MESSAGE An exception occurred during breakpoint change notification.
+!STACK 0
+java.util.ConcurrentModificationException
+	at java.util.AbstractList$Itr.checkForComodification(Unknown Source)
+	at java.util.AbstractList$Itr.next(Unknown Source)
+	at org.eclipse.cdt.dsf.debug.internal.ui.disassembly.model.DisassemblyDocument.getSourcePosition(DisassemblyDocument.java:601)
+	at org.eclipse.cdt.dsf.debug.internal.ui.disassembly.model.DisassemblyDocument.getSourcePosition(DisassemblyDocument.java:576)
+	at org.eclipse.cdt.dsf.debug.internal.ui.disassembly.model.BreakpointsAnnotationModel.createPositionFromSourceLine(BreakpointsAnnotationModel.java:225)
+	at org.eclipse.cdt.dsf.debug.internal.ui.disassembly.model.BreakpointsAnnotationModel.createPositionFromBreakpoint(BreakpointsAnnotationModel.java:208)
+	at org.eclipse.cdt.dsf.debug.internal.ui.disassembly.model.BreakpointsAnnotationModel.addBreakpointAnnotation(BreakpointsAnnotationModel.java:144)
+	at org.eclipse.cdt.dsf.debug.internal.ui.disassembly.model.BreakpointsAnnotationModel.breakpointChanged(BreakpointsAnnotationModel.java:110)
+	at org.eclipse.debug.internal.core.BreakpointManager$BreakpointNotifier.run(BreakpointManager.java:960)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.BreakpointManager$BreakpointNotifier.notify(BreakpointManager.java:980)
+	at org.eclipse.debug.internal.core.BreakpointManager.fireUpdate(BreakpointManager.java:894)
+	at org.eclipse.debug.internal.core.BreakpointManager.access$4(BreakpointManager.java:884)
+	at org.eclipse.debug.internal.core.BreakpointManager$BreakpointManagerVisitor.update(BreakpointManager.java:747)
+	at org.eclipse.debug.internal.core.BreakpointManager.resourceChanged(BreakpointManager.java:657)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:387)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:146)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
