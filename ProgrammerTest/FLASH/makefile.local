@@ -6,6 +6,6 @@
 
 export HC08ToolsEnv=$(CWInstallLocationEnv)/MCU/prog
 export GNU_Make_Install_DirEnv=$(CWInstallLocationEnv)/gnu/bin
-export ProjDirPath=E:/Dropbox/!Uni/EG4011 - Thesis Part 1/Software/ProgrammerTest
+export ProjDirPath=E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/ProgrammerTest
 export CWInstallLocationEnv=C:/Freescale/CW MCU v10.4
 export MCUToolsBaseDirEnv=$(CWInstallLocationEnv)/MCU

@@ -407,7 +407,7 @@ autoselected pull
       <Direction v="Input/Output" />
       <group name="Initialization">
         <Init__direction v="Output" />
-        <Init__value v="1" />
+        <Init__value v="0" />
       </group>
       <Safe_mode v="yes" />
       <Optimization_for v="speed" />

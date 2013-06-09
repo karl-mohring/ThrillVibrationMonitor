@@ -911,8 +911,6 @@ OBJECT LIST SORTED BY ADDRESS
 UNUSED-OBJECTS SECTION
 ---------------------------------------------------------------------------------------------
 NOT USED PROCEDURES
-Events_c.obj:
-  Accelerometer1_OnEnd 
 PWM1_c.obj:
   PWM1_SetRatio16 PWM1_SetDutyUS PWM1_SetDutyMS 
 sampleTimer_c.obj:

@@ -1,0 +1,2 @@
+ERROR L1822: Symbol WriteSPIByte in file E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/FLASH/Sources\SPI_c.obj is undefined
+ERROR L1822: Symbol SPI_Receive_byte in file E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/FLASH/Sources\SPI_c.obj is undefined

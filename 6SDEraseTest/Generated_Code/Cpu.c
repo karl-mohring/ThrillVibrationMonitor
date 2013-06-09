@@ -7,7 +7,7 @@
 **     Version     : Component 01.004, Driver 01.40, CPU db: 3.00.050
 **     Datasheet   : MC9S08JM60 Rev. 1 11/2007
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2013-06-08, 12:17, # CodeGen: 40
+**     Date/Time   : 2013-06-10, 00:47, # CodeGen: 41
 **     Abstract    :
 **         This component "MC9S08JM60_64" contains initialization 
 **         of the CPU and provides basic methods and events for 
@@ -169,8 +169,8 @@ void _EntryPoint(void)
 void PE_low_level_init(void)
 {
   /* Common initialization of the CPU registers */
-  /* PTGD: PTGD1=0,PTGD0=1 */
-  clrSetReg8Bits(PTGD, 0x02U, 0x01U);   
+  /* PTGD: PTGD1=0,PTGD0=0 */
+  clrReg8Bits(PTGD, 0x03U);             
   /* PTGPE: PTGPE1=0,PTGPE0=0 */
   clrReg8Bits(PTGPE, 0x03U);            
   /* PTGDD: PTGDD1=1,PTGDD0=1 */
@@ -207,7 +207,7 @@ void PE_low_level_init(void)
   /* ### BitIO "powerLED" init code ... */
   Shadow_PTG &= 0xFDU;                 /* Initialize pin shadow variable bit */
   /* ### BitIO "statusLED" init code ... */
-  Shadow_PTG |= (byte)0x01U;           /* Initialize pin shadow variable bit */
+  Shadow_PTG &= 0xFEU;                 /* Initialize pin shadow variable bit */
   __EI();                              /* Enable interrupts */
 }
 

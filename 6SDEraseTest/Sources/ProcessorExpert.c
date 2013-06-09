@@ -28,10 +28,12 @@
 
 /* User includes (#include below this line is not maintained by Processor Expert) */
 
-#include <SPI.h>
+#include "SPI.h"
+#include "Fat.h"
 
 // Number of for-count cycles in a millisecond
-int TIME_FACTOR = 2;
+const int TIME_FACTOR = 2;
+int sdStatus;
 
 /**
  * Pause the program for a specified amount of time.
@@ -39,12 +41,13 @@ int TIME_FACTOR = 2;
  */
 void delay(unsigned long milliseconds) {
 	int i;
-
 	for (i = 0; i < (milliseconds * TIME_FACTOR); i++) {
+		//Do a bit of nothing
 	}
 }
 
 void main(void) {
+	int i = 0;
 	/* Write your local variable definition here */
 
 	/*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
@@ -52,11 +55,18 @@ void main(void) {
 	/*** End of Processor Expert internal initialization.                    ***/
 
 	/* Write your code here */
-
+	sdStatus = initialiseSD();
+	formatSDCard();
+	togglePowerLED();
+	statusLED_ClrVal();
+	FAT_Read_Master_Block();
+	FAT_FileOpen("FILE.TXT", CREATE);
+	FAT_FileClose();
 	/*** Don't write any code pass this line, or it will be deleted during code generation. ***/
-  /*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
-  for(;;){}
-  /*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
+	/*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
+	for (;;) {
+	}
+	/*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
 } /*** End of main routine. DO NOT MODIFY THIS TEXT!!! ***/
 
 /* END ProcessorExpert */

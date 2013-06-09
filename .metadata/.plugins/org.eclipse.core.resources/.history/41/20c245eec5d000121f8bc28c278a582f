@@ -1,0 +1,50 @@
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:216:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:216:error:C1815 Bits not declared (or typename)
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:216:error:C1421 Undefined class/struct/union
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:216:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:216:error:C1815 PTCDD3 not declared (or typename)
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:224:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:224:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:228:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:234:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:245:error:C2801 ')' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:245:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:234:error:C1814 Arithmetic or pointer-expression expected
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:249:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:255:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:265:error:C2801 ')' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:265:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:255:error:C1814 Arithmetic or pointer-expression expected
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:268:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:274:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:283:error:C2801 ')' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:283:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:274:error:C1814 Arithmetic or pointer-expression expected
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:287:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:293:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:297:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:293:error:C1822 Type mismatch (expected 'unsigned char ', given 'error ')
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:293:error:C1806 Illegal cast-operation
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:312:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:312:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:316:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:316:error:C1822 Type mismatch (expected 'unsigned char ', given 'error ')
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:316:error:C1806 Illegal cast-operation
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:327:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:327:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:332:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:339:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:350:error:C2801 ')' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:350:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:332:error:C1814 Arithmetic or pointer-expression expected
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:354:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:359:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:363:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:367:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:372:error:C2801 ')' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:372:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:359:error:C1814 Arithmetic or pointer-expression expected
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:375:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:380:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:387:error:C2801 ';' missing
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/6SDEraseTest/Project_Headers\../Sources\SPI.c:392:error:C2801 ';' missing

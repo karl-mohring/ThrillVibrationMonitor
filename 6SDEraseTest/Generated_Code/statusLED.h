@@ -6,7 +6,7 @@
 **     Component   : BitIO
 **     Version     : Component 02.086, Driver 03.27, CPU db: 3.00.050
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2013-06-08, 12:17, # CodeGen: 40
+**     Date/Time   : 2013-06-10, 00:47, # CodeGen: 41
 **     Abstract    :
 **         This component "BitIO" implements an one-bit input/output.
 **         It uses one bit/pin of a port.
@@ -27,7 +27,7 @@
 **
 **         Initial direction           : Output (direction can be changed)
 **         Safe mode                   : yes
-**         Initial output value        : 1
+**         Initial output value        : 0
 **         Initial pull option         : off
 **
 **         Port data register          : PTGD      [$000C]

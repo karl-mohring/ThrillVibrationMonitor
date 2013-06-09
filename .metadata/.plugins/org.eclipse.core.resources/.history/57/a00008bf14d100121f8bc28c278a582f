@@ -1,0 +1,35 @@
+<CodeGenerationInfo>
+  <ToolchainSettings>
+    <option>
+      <name>PE_G_4PEx_ToolChain_Compiler_SearchUserPaths</name>
+      <values lines_count="2">
+        <Line>"${ProjDirPath}/Sources"</Line>
+        <Line>"${ProjDirPath}/Generated_Code"</Line>
+      </values>
+    </option>
+  </ToolchainSettings>
+  <GeneratedFilesList>
+    <GeneratedByPE>
+      <File Name="Generated_Code/powerLED.c" FileDate="2013-05-27, 22:31:20" FileAge="1369657880498" FileType="45637" CompNumb="6" />
+      <File Name="Sources/Events.h" FileDate="2013-05-27, 22:21:43" FileAge="1369657303159" FileType="131328" />
+      <File Name="Documentation/ProcessorExpert_SIGNALS.txt" FileDate="2013-05-27, 22:48:59" FileAge="1369658939142" FileType="3072" />
+      <File Name="Sources/ProcessorExpert.c" FileDate="2013-05-27, 22:21:43" FileAge="1369657303151" FileType="128" />
+      <File Name="Sources/Events.c" FileDate="2013-05-27, 11:04:32" FileAge="1369616672000" FileType="131328" />
+      <File Name="Generated_Code/statusLED.h" FileDate="2013-05-27, 22:31:20" FileAge="1369657880496" FileType="45637" CompNumb="7" />
+      <File Name="Documentation/ProcessorExpert_Settings.xml" FileDate="2013-05-27, 22:31:20" FileAge="1369657880515" FileType="3072" />
+      <File Name="Generated_Code/Cpu.h" FileDate="2013-05-27, 22:21:43" FileAge="1369657303152" FileType="45637" CompNumb="2" />
+      <File Name="Generated_Code/PE_Const.h" FileDate="2013-05-27, 22:21:43" FileAge="1369657303144" FileType="45637" />
+      <File Name="Generated_Code/statusLED.c" FileDate="2013-05-27, 22:31:20" FileAge="1369657880494" FileType="45637" CompNumb="7" />
+      <File Name="Generated_Code/PE_Error.h" FileDate="2013-05-27, 22:21:43" FileAge="1369657303143" FileType="45637" />
+      <File Name="Generated_Code/Cpu.c" FileDate="2013-05-27, 22:31:20" FileAge="1369657880502" FileType="45637" CompNumb="2" />
+      <File Name="Generated_Code/Vectors.c" FileDate="2013-05-27, 22:21:43" FileAge="1369657303158" FileType="45637" CompNumb="2" />
+      <File Name="Generated_Code/IO_Map.h" FileDate="2013-05-27, 22:21:43" FileAge="1369657303147" FileType="45637" />
+      <File Name="Documentation/ProcessorExpert.txt" FileDate="2013-05-27, 22:21:43" FileAge="1369657303184" FileType="3072" />
+      <File Name="Generated_Code/PE_Types.h" FileDate="2013-05-27, 22:21:43" FileAge="1369657303141" FileType="45637" />
+      <File Name="Generated_Code/IO_Map.c" FileDate="2013-05-27, 22:21:43" FileAge="1369657303149" FileType="45637" />
+      <File Name="Project_Settings/Linker_Files/ProcessorExpert.prm" FileDate="2013-05-27, 22:21:43" FileAge="1369657303156" FileType="8" CompNumb="2" />
+      <File Name="Generated_Code/powerLED.h" FileDate="2013-05-27, 22:31:20" FileAge="1369657880501" FileType="45637" CompNumb="6" />
+    </GeneratedByPE>
+  </GeneratedFilesList>
+  <CodeGenReference>7</CodeGenReference>
+</CodeGenerationInfo>
