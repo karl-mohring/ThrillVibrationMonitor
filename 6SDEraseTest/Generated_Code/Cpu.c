@@ -7,7 +7,7 @@
 **     Version     : Component 01.004, Driver 01.40, CPU db: 3.00.050
 **     Datasheet   : MC9S08JM60 Rev. 1 11/2007
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2013-06-06, 13:55, # CodeGen: 29
+**     Date/Time   : 2013-06-08, 12:17, # CodeGen: 40
 **     Abstract    :
 **         This component "MC9S08JM60_64" contains initialization 
 **         of the CPU and provides basic methods and events for 
@@ -43,13 +43,10 @@
 
 #include "powerLED.h"
 #include "statusLED.h"
-#include "sampleTimer.h"
-#include "PWM1.h"
 #include "PE_Types.h"
 #include "PE_Error.h"
 #include "PE_Const.h"
 #include "IO_Map.h"
-#include "PE_Timer.h"
 #include "Events.h"
 #include "Cpu.h"
 
@@ -178,10 +175,6 @@ void PE_low_level_init(void)
   clrReg8Bits(PTGPE, 0x03U);            
   /* PTGDD: PTGDD1=1,PTGDD0=1 */
   setReg8Bits(PTGDD, 0x03U);            
-  /* PTFDD: PTFDD4=1 */
-  setReg8Bits(PTFDD, 0x10U);            
-  /* PTFD: PTFD4=1 */
-  setReg8Bits(PTFD, 0x10U);             
   /* PTASE: PTASE5=0,PTASE4=0,PTASE3=0,PTASE2=0,PTASE1=0,PTASE0=0 */
   clrReg8Bits(PTASE, 0x3FU);            
   /* PTBSE: PTBSE7=0,PTBSE6=0,PTBSE5=0,PTBSE4=0,PTBSE3=0,PTBSE2=0,PTBSE1=0,PTBSE0=0 */
@@ -215,10 +208,6 @@ void PE_low_level_init(void)
   Shadow_PTG &= 0xFDU;                 /* Initialize pin shadow variable bit */
   /* ### BitIO "statusLED" init code ... */
   Shadow_PTG |= (byte)0x01U;           /* Initialize pin shadow variable bit */
-  /* ### TimerInt "sampleTimer" init code ... */
-  sampleTimer_Init();
-  /* ### Programable pulse generation "PWM1" init code ... */
-  PWM1_Init();
   __EI();                              /* Enable interrupts */
 }
 

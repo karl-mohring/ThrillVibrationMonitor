@@ -486,8 +486,8 @@ autoselected pull
       <Output_pin_signal v="" />
       <Counter v="TPM2" />
       <boolgroup name="Interrupt service/event" v="Disabled" />
-      <Period v="5 &amp;#181;s" />
-      <Starting_pulse_width v="2.5 &amp;#181;s" />
+      <Period v="16.6666 &amp;#181;s" />
+      <Starting_pulse_width v="8 &amp;#181;s" />
       <Aligned v="Edge" />
       <Initial_polarity v="high" />
       <Same_period_in_modes v="no" />

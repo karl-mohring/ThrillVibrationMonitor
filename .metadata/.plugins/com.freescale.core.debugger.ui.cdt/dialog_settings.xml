@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="SAVE_TASK_DIALOG_SETTINGS_SECTION">
+		<item value="false" key="save_option"/>
+		<item value="" key="save_location"/>
+	</section>
+</section>

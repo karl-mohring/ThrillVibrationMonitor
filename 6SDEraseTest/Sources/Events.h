@@ -23,11 +23,8 @@
 #include "PE_Error.h"
 #include "PE_Const.h"
 #include "IO_Map.h"
-#include "PE_Timer.h"
 #include "powerLED.h"
 #include "statusLED.h"
-#include "sampleTimer.h"
-#include "PWM1.h"
 
 extern word tempSample;
 

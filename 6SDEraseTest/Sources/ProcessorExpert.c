@@ -20,8 +20,6 @@
 #include "Events.h"
 #include "powerLED.h"
 #include "statusLED.h"
-#include "sampleTimer.h"
-#include "PWM1.h"
 /* Include shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -29,6 +27,23 @@
 #include "IO_Map.h"
 
 /* User includes (#include below this line is not maintained by Processor Expert) */
+
+#include <SPI.h>
+
+// Number of for-count cycles in a millisecond
+int TIME_FACTOR = 2;
+
+/**
+ * Pause the program for a specified amount of time.
+ * @param milliseconds Delay period in milliseconds.
+ */
+void delay(unsigned long milliseconds) {
+	int i;
+
+	for (i = 0; i < (milliseconds * TIME_FACTOR); i++) {
+	}
+}
+
 void main(void) {
 	/* Write your local variable definition here */
 
@@ -37,9 +52,7 @@ void main(void) {
 	/*** End of Processor Expert internal initialization.                    ***/
 
 	/* Write your code here */
-	
 
-	
 	/*** Don't write any code pass this line, or it will be deleted during code generation. ***/
   /*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
   for(;;){}
