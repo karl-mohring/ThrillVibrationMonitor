@@ -1,0 +1,10 @@
+
+Sources/SD_c.obj: \
+	E:/Dropbox/!Uni/EG4012\ -\ Thesis/ThrillVibrationMonitor/6SDEraseTestAlt/Project_Headers/../Sources/SD.c \
+	E:/Dropbox/!Uni/EG4012\ -\ Thesis/ThrillVibrationMonitor/6SDEraseTestAlt/Sources/SD.h \
+	E:/Dropbox/!Uni/EG4012\ -\ Thesis/ThrillVibrationMonitor/6SDEraseTestAlt/Sources/FslTypes.h \
+	E:/Dropbox/!Uni/EG4012\ -\ Thesis/ThrillVibrationMonitor/6SDEraseTestAlt/Sources/SPI.h \
+	E:/Dropbox/!Uni/EG4012\ -\ Thesis/ThrillVibrationMonitor/6SDEraseTestAlt/Generated_Code/IO_Map.h \
+	E:/Dropbox/!Uni/EG4012\ -\ Thesis/ThrillVibrationMonitor/6SDEraseTestAlt/Generated_Code/PE_Types.h \
+	E:/Dropbox/!Uni/EG4012\ -\ Thesis/ThrillVibrationMonitor/6SDEraseTestAlt/Sources/Vib_Cont_01.h 
+

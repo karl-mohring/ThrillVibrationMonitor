@@ -1,0 +1,31 @@
+<CodeGenerationInfo>
+  <ToolchainSettings>
+    <option>
+      <name>PE_G_4PEx_ToolChain_Compiler_SearchUserPaths</name>
+      <values lines_count="2">
+        <Line>"${ProjDirPath}/Sources"</Line>
+        <Line>"${ProjDirPath}/Generated_Code"</Line>
+      </values>
+    </option>
+  </ToolchainSettings>
+  <GeneratedFilesList>
+    <GeneratedByPE>
+      <File Name="Sources/Events.h" FileDate="2013-07-05, 16:34:37" FileAge="1373006077113" FileType="131328" />
+      <File Name="Generated_Code/PE_Const.h" FileDate="2013-07-05, 16:34:37" FileAge="1373006077125" FileType="45637" />
+      <File Name="Sources/Events.c" FileDate="2013-07-05, 16:34:37" FileAge="1373006077111" FileType="131328" />
+      <File Name="Sources/ProcessorExpert.c" FileDate="2013-07-05, 16:34:37" FileAge="1373006077120" FileType="128" />
+      <File Name="Documentation/ProcessorExpert.txt" FileDate="2013-07-05, 16:34:37" FileAge="1373006077142" FileType="3072" />
+      <File Name="Generated_Code/PE_Error.h" FileDate="2013-07-05, 16:34:37" FileAge="1373006077127" FileType="45637" />
+      <File Name="Documentation/ProcessorExpert_SIGNALS.txt" FileDate="2013-07-05, 16:34:37" FileAge="1373006077130" FileType="3072" />
+      <File Name="Generated_Code/Cpu.h" FileDate="2013-07-05, 16:34:37" FileAge="1373006077118" FileType="45637" CompNumb="2" />
+      <File Name="Generated_Code/IO_Map.h" FileDate="2013-07-05, 16:34:37" FileAge="1373006077123" FileType="45637" />
+      <File Name="Documentation/ProcessorExpert_Settings.xml" FileDate="2013-07-05, 16:34:37" FileAge="1373006077137" FileType="3072" />
+      <File Name="Generated_Code/PE_Types.h" FileDate="2013-07-05, 16:34:37" FileAge="1373006077128" FileType="45637" />
+      <File Name="Generated_Code/Cpu.c" FileDate="2013-07-05, 16:34:37" FileAge="1373006077117" FileType="45637" CompNumb="2" />
+      <File Name="Generated_Code/IO_Map.c" FileDate="2013-07-05, 16:34:37" FileAge="1373006077121" FileType="45637" />
+      <File Name="Project_Settings/Linker_Files/ProcessorExpert.prm" FileDate="2013-07-05, 16:34:37" FileAge="1373006077116" FileType="8" CompNumb="2" />
+      <File Name="Generated_Code/Vectors.c" FileDate="2013-07-05, 16:34:37" FileAge="1373006077115" FileType="45637" CompNumb="2" />
+    </GeneratedByPE>
+  </GeneratedFilesList>
+  <CodeGenReference>1</CodeGenReference>
+</CodeGenerationInfo>
