@@ -30,6 +30,8 @@
 #include "Cpu.h"
 #include "Events.h"
 #include "AD1.h"
+#include "sampleTimer.h"
+#include "filterTimer.h"
 /* Include shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -47,19 +49,18 @@ void main(void) {
 	/*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
 	PE_low_level_init();
 	/*** End of Processor Expert internal initialization.                    ***/
-
-	/* Write your code here */
+	
 	/* Initialise the Vibration Controller Board */
-	VibContInit();
+	initialiseSensorBoard();
 
 	/* Main function for controlling the vibration controller board */
 	//VibrationControl();
 
 	while(1){
-		ErrorPulse1(1);
-		ErrorPulse2(1);
-		ErrorPulse3(1);
-		ErrorPulse4(1);
+		pulsePowerLED(1);
+		pulseStatusLED(1);
+		pulseReceiveLED(1);
+		pulseTransmitLED(1);
 		
 	}
 

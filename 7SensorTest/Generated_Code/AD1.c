@@ -6,7 +6,7 @@
 **     Component   : ADC
 **     Version     : Component 01.685, Driver 01.30, CPU db: 3.00.050
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2013-07-08, 01:17, # CodeGen: 1
+**     Date/Time   : 2013-07-09, 17:19, # CodeGen: 6
 **     Abstract    :
 **         This device "ADC" implements an A/D converter,
 **         its control methods and interrupt/event handling procedure.
@@ -45,8 +45,9 @@
 **          Get value directly                             : yes
 **          Wait for result                                : yes
 **     Contents    :
-**         Measure    - byte AD1_Measure(bool WaitForResult);
-**         GetValue16 - byte AD1_GetValue16(word *Values);
+**         Measure     - byte AD1_Measure(bool WaitForResult);
+**         MeasureChan - byte AD1_MeasureChan(bool WaitForResult, byte Channel);
+**         GetValue16  - byte AD1_GetValue16(word *Values);
 **
 **     Copyright : 1997 - 2013 Freescale Semiconductor, Inc. All Rights Reserved.
 **     SOURCE DISTRIBUTION PERMISSIBLE as directed in End User License Agreement.
@@ -90,10 +91,11 @@ static void ClrSumV(void);
 #define CONTINUOUS      0x02U          /* CONTINUOS state      */
 #define SINGLE          0x03U          /* SINGLE state         */
 
+static const  byte Table[3] = {0x01U,0x02U,0x04U};  /* Table of mask constants */
 
 static const  byte Channels[3] = {0x45U,0x48U,0x49U};  /* Contents for the device control register */
 
-static volatile bool OutFlg;           /* Measurement finish flag */
+static volatile byte OutFlg;           /* Measurement finish flag */
 static volatile byte SumChan;          /* Number of measured channels */
 static volatile byte ModeFlg;          /* Current state of device */
 
@@ -115,19 +117,32 @@ volatile word AD1_OutV[3];             /* Sum of measured values */
 */
 ISR(AD1_Interrupt)
 {
-  /*lint -save  -e926 -e927 -e928 -e929 Disable MISRA rule (11.4) checking. */
-  ((TWREG volatile*)(&AD1_OutV[SumChan]))->b.high = ADCRH; /* Save measured value */
-  ((TWREG volatile*)(&AD1_OutV[SumChan]))->b.low = ADCRL; /* Save measured value */
-  /*lint -restore Enable MISRA rule (11.4) checking. */
-  SumChan++;                           /* Number of measurement */
-  if (SumChan == 3U) {                 /* Is number of measurement equal to the number of conversions? */
-    SumChan = 0U;                      /* If yes then set the number of measurement to 0 */
-    OutFlg = TRUE;                     /* Measured values are available */
+  if (ModeFlg != SINGLE) {
+    /*lint -save  -e926 -e927 -e928 -e929 Disable MISRA rule (11.4) checking. */
+    ((TWREG volatile*)(&AD1_OutV[SumChan]))->b.high = ADCRH; /* Save measured value */
+    ((TWREG volatile*)(&AD1_OutV[SumChan]))->b.low = ADCRL; /* Save measured value */
+    /*lint -restore Enable MISRA rule (11.4) checking. */
+    SumChan++;                         /* Number of measurement */
+    if (SumChan == 3U) {               /* Is number of measurement equal to the number of conversions? */
+      SumChan = 0U;                    /* If yes then set the number of measurement to 0 */
+      OutFlg = 0x07U;                  /* Measured values are available */
+      AD1_OnEnd();                     /* Invoke user event */
+      ModeFlg = STOP;                  /* Set the device to the stop mode */
+      return;                          /* Return from interrupt */
+    }
+    ADCSC1 = Channels[SumChan];        /* Start measurement of next channel */
+  }
+  else {
+    /*lint -save  -e926 -e927 -e928 -e929 Disable MISRA rule (11.4) checking. */
+    ((TWREG volatile*)(&AD1_OutV[SumChan]))->b.high = ADCRH; /* Save measured value */
+    ((TWREG volatile*)(&AD1_OutV[SumChan]))->b.low = ADCRL; /* Save measured value */
+    /*lint -restore Enable MISRA rule (11.4) checking. */
+    /*lint -save  -e740 -e931 Disable MISRA rule (1.2) checking. */
+    OutFlg |= Table[SumChan];          /* Value of measured channel is available */
+    /*lint -restore Enable MISRA rule (1.2) checking. */
     AD1_OnEnd();                       /* Invoke user event */
     ModeFlg = STOP;                    /* Set the device to the stop mode */
-    return;                            /* Return from interrupt */
   }
-  ADCSC1 = Channels[SumChan];          /* Start measurement of next channel */
 }
 
 /*
@@ -161,9 +176,17 @@ static void ClrSumV(void)
 void AD1_HWEnDi(void)
 {
   if (ModeFlg) {                       /* Start or stop measurement? */
-    OutFlg = FALSE;                    /* Output values aren't available */
-    SumChan = 0U;                      /* Set the number of measured channels to 0 */
-    ClrSumV();                         /* Clear measured values */
+    if (ModeFlg != SINGLE) {
+      OutFlg = 0U;                     /* Output values aren't available */
+      SumChan = 0U;                    /* Set the number of measured channels to 0 */
+      ClrSumV();                       /* Clear measured values */
+    }
+    else {
+      /*lint -save  -e740 -e931 Disable MISRA rule (1.2) checking. */
+      OutFlg &= (byte)(~(byte)Table[SumChan]); /* Output value isn't available */
+      /*lint -restore Enable MISRA rule (1.2) checking. */
+      AD1_OutV[SumChan] = 0U;          /* Set variable for storing measured values to 0 */
+    }
     ADCSC1 = Channels[SumChan];        /* If yes then start the conversion */
   }
 }
@@ -216,6 +239,52 @@ byte AD1_Measure(bool WaitForResult)
 
 /*
 ** ===================================================================
+**     Method      :  AD1_MeasureChan (component ADC)
+**     Description :
+**         This method performs measurement on one channel. (Note: If
+**         the <number of conversions> is more than one the conversion
+**         of the A/D channel is performed specified number of times.)
+**     Parameters  :
+**         NAME            - DESCRIPTION
+**         WaitForResult   - Wait for a result of
+**                           conversion. If the <interrupt service> is
+**                           disabled and at the same time a <number of
+**                           conversions> is greater than 1, the
+**                           WaitForResult parameter is ignored and the
+**                           method waits for each result every time.
+**         Channel         - Channel number. If only one
+**                           channel in the component is set this
+**                           parameter is ignored, because the parameter
+**                           is set inside this method.
+**     Returns     :
+**         ---             - Error code, possible codes:
+**                           ERR_OK - OK
+**                           ERR_SPEED - This device does not work in
+**                           the active speed mode
+**                           ERR_DISABLED - Device is disabled
+**                           ERR_BUSY - A conversion is already running
+**                           ERR_RANGE - Parameter "Channel" out of range
+** ===================================================================
+*/
+byte AD1_MeasureChan(bool WaitForResult,byte Channel)
+{
+  if (Channel >= 3U) {                 /* Is channel number greater than or equal to 3 */
+    return ERR_RANGE;                  /* If yes then error */
+  }
+  if (ModeFlg != STOP) {               /* Is the device in different mode than "stop"? */
+    return ERR_BUSY;                   /* If yes then error */
+  }
+  ModeFlg = SINGLE;                    /* Set state of device to the measure mode */
+  SumChan = Channel;                   /* Set required channel */
+  AD1_HWEnDi();                        /* Enable the device */
+  if (WaitForResult) {                 /* Is WaitForResult TRUE? */
+    while (ModeFlg == SINGLE) {}       /* If yes then wait for end of measurement */
+  }
+  return ERR_OK;                       /* OK */
+}
+
+/*
+** ===================================================================
 **     Method      :  AD1_GetValue16 (component ADC)
 **     Description :
 **         This method returns the last measured values of all channels
@@ -244,7 +313,7 @@ byte AD1_Measure(bool WaitForResult)
 */
 byte AD1_GetValue16(word *Values)
 {
-  if (OutFlg == 0U) {                  /* Is output flag set? */
+  if (OutFlg != 0x07U) {               /* Is output flag set? */
     return ERR_NOTAVAIL;               /* If no then error */
   }
   Values[0] = (word)((AD1_OutV[0]) << 4); /* Save measured values to the output buffer */
@@ -270,7 +339,7 @@ void AD1_Init(void)
   setReg8(ADCSC1, 0x1FU);              /* Disable the module */ 
   /* ADCSC2: ADACT=0,ADTRG=0,ACFE=0,ACFGT=0,??=0,??=0,??=0,??=0 */
   setReg8(ADCSC2, 0x00U);              /* Disable HW trigger and autocompare */ 
-  OutFlg = FALSE;                      /* No measured value */
+  OutFlg = 0U;                         /* No measured value */
   ModeFlg = STOP;                      /* Device isn't running */
   /* ADCCFG: ADLPC=0,ADIV1=0,ADIV0=1,ADLSMP=0,MODE1=0,MODE0=1,ADICLK1=0,ADICLK0=0 */
   setReg8(ADCCFG, 0x24U);              /* Set prescaler bits */ 

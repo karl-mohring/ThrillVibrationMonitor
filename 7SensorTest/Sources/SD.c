@@ -113,10 +113,6 @@ UINT8 SD_Init(void){
     /*** Start SD card Init ***/
     
     /* Minimum of 74 dummy clock cycles with MOSI high & SS enabled (low) */
-//    SPI_SS = ENABLE;           // Enable SS
-//    SD_CLKDelay(10);            // Send 80 clocks
-//    SPI_SS_Disable_Delay(); 
-//    SPI_SS = DISABLE;
   
     SD_CLKDelay(10);             // Send 80 clocks with SS disabled
     SPI_SS_Disable_Delay();

@@ -3,33 +3,25 @@
  *
  *  File Name:   Vib_Cont_01.c
  *
- *  Project:     Helicopter Vibration measurement
- *               Basket Vibration Controller Board
+ *  Project:     Thrill vibration sensor
  *               
  *                                                                          
  *  Description: Main Operating Functions.
- *                    - SD Card Writer
  *
  *  Processor:   MC9S08JM60CLD 
- *                                                                                     
- *  Assembler:   Codewarrior for HC(S)08 V6.3
  *                                            
  *  Version:     1.0                                                         
  *                                                                                                                                                         
- *  Author:      Peter Grabau
- *                                                                                       
- *  Location:    Townsville                                              
- *                                                                                                                  
+ *  Author:      Karl Mohring                                                                                                                                   
  *                                                  
  * UPDATED HISTORY:
  *
  * REV   YYYY.MM.DD  AUTHOR        DESCRIPTION OF CHANGE
  * ---   ----------  ------        --------------------- 
- * 1.0   2011.01.15  Peter Grabau  Initial version
+ * 0.0   2011.01.15  Peter Grabau  Initial version
+ * 1.0	 2013.07.09	 Karl Mohring  Adapted code
  *
  ******************************************************************************/
-
-/*-----------------------------------------------------*/
 
 #include "Fat.h"
 #include "Vib_Cont_01.h"
@@ -38,8 +30,45 @@
 #include "SD.h"
 
 /******************** CONSTANTS ******************************/
-#define SampleSize 31     // # bytes in a sample line
 #define CBufferSize 2048  // # bytes in the circular buffer 
+
+/*** Set up the FAT to a file of 11,000 clusters which is approx
+			 11,000 clusters * 32768 bytes/cluster = 360,448kB, or
+			 360,448kB / 31 bytes/sample = 11,627,354 samples, or
+			 11,627,354 samples / 2,000 samples/sec = 5,814 seconds of sampling, or
+			 approx 1.61 hours of samples. ***/
+// Number of clusters for project file.
+const int NUM_CLUSTERS = 11000;
+
+//Number of bytes per cluster for the project file
+const int CLUSTER_SIZE = 32768;
+
+// Number of accelerometer channels being sampled.
+const byte NUM_CHANNELS = 3;
+
+// Size of record counter in bytes
+const byte RECORD_COUNTER_SIZE = 2;
+
+// Size of divisor (comma) in bytes
+const byte DIVISOR_SIZE = 1;
+
+// Size of line delimiter characters (CR,LF) in bytes
+const byte LINE_DELIMETER_SIZE = 2;
+
+// Size of an accelerometer sample from a single channel in bytes
+const byte SAMPLE_SIZE = 2;
+
+// Size of each record in CSV format in bytes
+const int RECORD_SIZE = RECORD_COUNTER_SIZE + DIVISOR_SIZE + NUM_CHANNELS*(SAMPLE_SIZE + DIVISOR_SIZE) + LINE_DELIMETER_SIZE;
+
+const byte RUNTIME_HOURS = 0;
+const byte RUNTIME_MINUTES = 10;
+const byte RUNTIME_SECONDS = 0;
+
+// Runtime of the sampling session in seconds
+const long TOTAL_RUNTIME = 3600*RUNTIME_HOURS + 60*RUNTIME_MINUTES + RUNTIME_SECONDS;
+
+const TIME_FACTOR = 2;
 /******************** USED VARIABLES *************************/
 
 UINT8 u8sd_status; /* Variable to indicate SD status */
@@ -50,38 +79,25 @@ UINT16 u16buffer_index; /* Variable to indicate position of buffer */
 UINT16 u16file_counter; /* Variable to indicate remaining bytes of a file */
 
 /* Variables for storing Accelerometer readings */
-UINT16 Accel[10]; /* Stores the record number and the 9 accelerometer readings */
+UINT16 Accel[4]; /* Stores the record number and the 3 accelerometer readings */
 UINT16 RecordNumber; /* Record Number: the first column of a sample record */
-UINT16 InterruptNumber; /* S/H pulse counter */
-UINT8 Counter;
 
 /* Variables for controlling the sampling operation */
 //UINT8  Sampling;          /* True when sampling is in progress */
-UINT8 TakeSample; /* True if a sample is due */
+UINT8 samplingStatus;
 UINT8 System_Status; /* System is currently sampling */
-//UINT8  u8bufferEven[512]; /* SD Card sample buffer */
-UINT8 u8bufferEven[1]; /* SD Card sample buffer */
-//UINT8  u8bufferOdd[512];  /* SD Card sample buffer */
-UINT8 u8bufferOdd[1]; /* SD Card sample buffer */
-UINT8 EvenBufferActive; /* Active buffer flag */
-UINT16 u16Evenbuffer_index;/* Variable to indicate position of buffer */
-UINT16 u16Oddbuffer_index; /* Variable to indicate position of buffer */
-UINT8 EvenBufferEmpty; /* Buffer is empty & can be written to */
-UINT8 OddBufferEmpty; /* Buffer is empty & can be written to */
-UINT8 SamplingBlocked; /* Sampling is blocked due to buffers full */
-UINT8 EBToDisk; /* Even buffer is being written to disk */
-UINT8 OBToDisk; /* Odd buffer is being written to disk */
-UINT8 EBToDiskPending; /* Even buffer is ready to write to disk */
-UINT8 OBToDiskPending; /* Odd buffer is ready to write to disk */
 UINT8 u8CircularBuffer[CBufferSize]; // Sample buffer
 UINT16 u16CBufferPutter; // points to next vacant byte location in the buffer
 UINT16 u16CBufferGetter; // points to the next available byte in the buffer
 UINT16 u16CBufferBytes; // # bytes in the buffer
 UINT16 u16TempCBufferBytes;
 UINT8 ReadDataStop; // Blocks reading sensor daya while writing to the SD card
-//UINT16 LostReads;         // # lost reads
+//UINT16 LostReads;
 UINT8 BufferEmpty;
-//UINT8  u8Sensor1Rx[6];
+UINT8 u8AccelSamples[6]; // 3 x 16 bit results, MSB first
+UINT8 u8Channel; // The channel that is being sampled
+
+long sessionRuntime;
 
 extern UINT16 u16FAT_Data_BASE;
 extern WriteRHandler WHandler;
@@ -89,163 +105,120 @@ extern UINT32 u32DataSector;
 extern UINT16 u16FAT_Data_BASE;
 extern UINT16 u16FAT_Cluster_Size;
 
-/************************************************************************************/
-/************************************************************************************/
+/**
+ * Pause the program for a specified amount of time.
+ * @param milliseconds Delay period in milliseconds.
+ */
+void delay(unsigned long milliseconds) {
+	unsigned long i;
+	for (i = 0; i < (milliseconds * TIME_FACTOR); i++) {
+	}
+}
 
-/************************************************************************************
- **
- ***   FUNCTIONS FOR OPERATING AN SD CARD   ***
- **
- *************************************************************************************/
 
-/*----------------------------------------------------------------------------------*/
 
-const int NUM_CLUSTERS = 11000;
-UINT8 u8Channel;
+/**
+ * Initialise the thrill sensor board and associated components.
+ * The SD card and interface are also configured and a project file is created.
+ */
+void initialiseSensorBoard(void) {
 
-/***********************************************************************
- *
- *    VibContInit
- *
- *  Description: Initialises the Vibration Controller Board
- *               Enables reading of the"Sampling Switch" .
- *               Sets the Vibration Controller Board System Status.   
- *               Configures the SPI module & FAT.   
- *               Checks that an SD card is present and contains the file "FILE>TXT".   
- *
- *               Called from main() in SD_Card_Writer.c
- *
- *************************************************************************/
-void VibContInit(void) {
-
-	/* Enable reading of the Sample Switch on PTC4 */
-	_SAMPLE = _IN; // Set pin as an input
-
-	/* Set Sensor 1 LED pin as an output */_LED1 = _OUT; // DDR to output
-	LED1 = OFF; // pin low, LED off
-
-	/* Set Sensor 2 LED pin as an output */_LED2 = _OUT; // DDR to output
-	LED2 = OFF; // pin low, LED off
-
-	/* Set Sensor 3 LED pin as an output */_LED3 = _OUT; // DDR to output
-	LED3 = OFF; // pin low, LED off
-
-	/* Set Sensor 4 LED pin as an output */_LED4 = _OUT; // DDR to output
-	LED4 = OFF; // pin low, LED off
-
-	/* Set Sensor board Slave Selects as outputs & initialise high */_SS1 = _OUT; // DDR to output
-	SS1 = OFF; // Slave Select. NB: Signal inverted on Sensor board
-	_SS2 = _OUT; // DDR to output
-	SS2 = OFF; // Slave Select. NB: Signal inverted on Sensor board 
-	_SS3 = _OUT; // DDR to output
-	SS3 = OFF; // Slave Select. NB: Signal inverted on Sensor board
-
-	ErrorPulse1(5);
-	ErrorPulse3(2);
-
+	// Disable timer until after sampling starts
+	sampleTimer_Disable();
+	
+	initialiseLEDs();
+	pulsePowerLED(5);
+	
 	/* Initialise sampling buffers */
-	EvenBufferActive = TRUE;
-	u16Evenbuffer_index = 0;
-	u16Oddbuffer_index = 0;
-	EvenBufferEmpty = TRUE;
-	OddBufferEmpty = TRUE;
-	EBToDisk = FALSE;
-	OBToDisk = FALSE;
-	EBToDiskPending = FALSE;
-	OBToDiskPending = FALSE;
-	u16CBufferPutter = 0x0000; // putter to start of buffer buffer
-	u16CBufferGetter = 0x0000; // getter to start of buffer buffer
-	u16CBufferBytes = 0x0000; // buffer is empty
+	u16CBufferPutter = 0;
+	u16CBufferGetter = 0;
+	u16CBufferBytes = 0;
 	ReadDataStop = FALSE;
+	
+	sessionRuntime = 0;
 
 	/* Vibration Controller Board System Status */
 	System_Status = NOT_SAMPLING; // Sample switch is not set
-	TakeSample = FALSE; // A sample is not due   
+
 
 	/* Configure SPI module to handle a SD card. Return OK if successful. */
 	u8sd_status = SD_Init();
+	
+	// Continuously loop error code if SD initialisation is unsuccessful
 	if (u8sd_status != OK) {
 		u8sd_status -= 0x10;
-		while (1) {
-			ErrorPulse2(u8sd_status);
-			ErrorPulse3(1);
+		for(;;){
+			pulseReceiveLED(u8sd_status);
+			pulseTransmitLED(1);
 		}
 	}
-
-	ErrorPulse2(1); // SD_Init OK
-	/* Check that the SD Card is present and it contains the file "FILE.TXT"
-	 and initialise the File System (FAT)  */
-	vfnSDwelcome();
+	pulseStatusLED(2); //SD init OK
 	
-	ErrorPulse3(2);
+	// Check that the SD Card is present and it contains the file "FILE.TXT" and initialise the File System (FAT)
+	vfnSDwelcome();
+	pulseReceiveLED(2);
 
 	/* Initialise the sample number */
 	RecordNumber = 0x0001;
 	InterruptNumber = 0x0001;
-	Counter = 0;
-
-	ErrorPulse1(3); // SD_Init OK
-
-	/* Initialise SPI1 as Master device to communicate with the Sensor board */
-	SPI1_Init();
-
 }
 
-/***********************************************************************
- *
- *********** ErrorPulse1 ***********
- *
- *  Description: Pulse LED1 to indicate an error.
- *               
- *                  
- *  Input:       The number of pulses required.                
- *                  
- *
- *               
- *
- *************************************************************************/
-void ErrorPulse1(UINT8 pulses) {
+/**
+ * Set up the boards LED indicators
+ */
+void initialiseLEDs(){
+	/* Set Sensor 1 LED pin as an output */
+		_powerLED = _OUT; // DDR to output
+		powerLED = OFF; // pin low, LED off
+
+		/* Set Sensor 2 LED pin as an output */
+		_statusLED = _OUT; // DDR to output
+		statusLED = OFF; // pin low, LED off
+
+		/* Set Sensor 3 LED pin as an output */
+		_receiveLED = _OUT; // DDR to output
+		receiveLED = OFF; // pin low, LED off
+
+		/* Set Sensor 4 LED pin as an output */
+		_transmitLED = _OUT; // DDR to output
+		transmitLED = OFF; // pin low, LED off
+}
+
+/**
+ * Pulse the power LED a specified number of times
+ * @pulses number of times to pulse LED
+ */
+void pulsePowerLED(UINT8 pulses) {
 	UINT16 Count, j;
 
 	while (pulses) {
 
-		/* j = 200 gives 10mSec delay */
+		/* j = 20 gives 1mSec delay */
 
 		/* LED1 off for 1 Sec */
-		LED1 = OFF;
+		powerLED = OFF;
 		for (j = 0; j < 1000; j++) {
-			for (Count = 0; Count < 250; Count++) {
-				//        i += 1;
-			}
+			for (Count = 0; Count < 250; Count++) {}
 		}
-
-		/* LED1 ON for 0.1 sec */LED1 = ON;
+		
+		/* LED1 ON for 0.1 sec */
+		powerLED = ON;
 		for (j = 0; j < 200; j++) {
-			for (Count = 0; Count < 500; Count++) {
-				//        i += 1;
-			}
+			for (Count = 0; Count < 500; Count++) {}
 		}
-		LED1 = OFF;
+		
+		powerLED = OFF;
 
 		pulses--;
 	}
 
 }
 
-/***********************************************************************
- *
- *********** ErrorPulse2 ***********
- *
- *  Description: Pulse LED2 to indicate an error.
- *               
- *                  
- *  Input:       The number of pulses required.                
- *                  
- *
- *               
- *
- *************************************************************************/
-void ErrorPulse2(UINT8 pulses) {
+/**
+ * Pulse the status LED a specified number of times
+ * @pulses number of times to pulse LED
+ */
+void pulseStatusLED(UINT8 pulses) {
 	UINT16 Count, j;
 
 	while (pulses) {
@@ -253,40 +226,31 @@ void ErrorPulse2(UINT8 pulses) {
 		/* j = 200 gives 10mSec delay */
 
 		/* LED2 off for 1 Sec */
-		LED2 = OFF;
+		statusLED = OFF;
 		for (j = 0; j < 1000; j++) {
 			for (Count = 0; Count < 250; Count++) {
 				//        i += 1;
 			}
 		}
 
-		/* LED2 ON for 0.1 sec */LED2 = ON;
+		/* LED2 ON for 0.1 sec */statusLED = ON;
 		for (j = 0; j < 200; j++) {
 			for (Count = 0; Count < 500; Count++) {
 				//        i += 1;
 			}
 		}
-		LED2 = OFF;
+		statusLED = OFF;
 
 		pulses--;
 	}
 
 }
 
-/***********************************************************************
- *
- *********** ErrorPulse3 ***********
- *
- *  Description: Pulse LED3 to indicate an error.
- *               
- *                  
- *  Input:       The number of pulses required.                
- *                  
- *
- *               
- *
- *************************************************************************/
-void ErrorPulse3(UINT8 pulses) {
+/**
+ * Pulse the receive LED a specified number of times
+ * @pulses number of times to pulse LED
+ */
+void pulseReceiveLED(UINT8 pulses) {
 	UINT16 Count, j;
 
 	while (pulses) {
@@ -294,40 +258,31 @@ void ErrorPulse3(UINT8 pulses) {
 		/* j = 200 gives 10mSec delay */
 
 		/* LED3 off for 1 Sec */
-		LED3 = OFF;
+		receiveLED = OFF;
 		for (j = 0; j < 1000; j++) {
 			for (Count = 0; Count < 250; Count++) {
 				//        i += 1;
 			}
 		}
 
-		/* LED3 ON for 0.1 sec */LED3 = ON;
+		/* LED3 ON for 0.1 sec */receiveLED = ON;
 		for (j = 0; j < 200; j++) {
 			for (Count = 0; Count < 500; Count++) {
 				//        i += 1;
 			}
 		}
-		LED3 = OFF;
+		receiveLED = OFF;
 
 		pulses--;
 	}
 
 }
 
-/***********************************************************************
- *
- *********** ErrorPulse4 ***********
- *
- *  Description: Pulse LED4 to indicate an error.
- *               
- *                  
- *  Input:       The number of pulses required.                
- *                  
- *
- *               
- *
- *************************************************************************/
-void ErrorPulse4(UINT8 pulses) {
+/**
+ * Pulse the transmit LED a specified number of times
+ * @pulses number of times to pulse LED
+ */
+void pulseTransmitLED(UINT8 pulses) {
 	UINT16 Count, j;
 
 	while (pulses) {
@@ -335,20 +290,20 @@ void ErrorPulse4(UINT8 pulses) {
 		/* j = 200 gives 10mSec delay */
 
 		/* LED4 off for 1 Sec */
-		LED4 = OFF;
+		transmitLED = OFF;
 		for (j = 0; j < 1000; j++) {
 			for (Count = 0; Count < 250; Count++) {
 				//        i += 1;
 			}
 		}
 
-		/* LED4 ON for 0.1 sec */LED4 = ON;
+		/* LED4 ON for 0.1 sec */transmitLED = ON;
 		for (j = 0; j < 200; j++) {
 			for (Count = 0; Count < 500; Count++) {
 				//        i += 1;
 			}
 		}
-		LED4 = OFF;
+		transmitLED = OFF;
 
 		pulses--;
 	}
@@ -368,55 +323,14 @@ void ErrorPulse4(UINT8 pulses) {
  *               Called from main() in SD_Card_Writer.c
  *
  *************************************************************************/
-void VibrationControl(void) {
+void startSampling(void) {
 	UINT8 count = 0;
+	samplingStatus = SAMPLING;
+	
+	sampleTimer_Enable();
+	
+	while (samplingStatus == SAMPLING){
 
-	for (;;) {
-		/* If the Sample Switch is active the system should be sampling */
-		if (SAMPLE) {
-
-			/* Sampling switch is active */
-			/* If this is the start of sampling a new file must be created & opened */
-			if (System_Status == NOT_SAMPLING) {
-
-				/* Initiate Sampling */
-				for (InterruptNumber = 0; InterruptNumber < 2550;
-						InterruptNumber++) {
-					count++;
-					if (count == 200) {
-						count = 0;
-					}
-				}
-				/* Don't open the file any more as we do direct write to sector */
-//          u8sd_status = FAT_FileOpen("FILE.TXT",MODIFY);  // Open file for writing
-//          TakeSample = FALSE;   // clear the flag
-				/* Initialise the sample number */
-//          RecordNumber = 0x0001; 
-				InterruptNumber = 0x03E8; // 1000
-//          LostReads = 0;
-				BufferEmpty = 0;
-				System_Status = SAMPLING; // Start sampling
-				LED1 = 1;
-
-			}
-
-		} else { // if(SAMPLE)
-			/* Check if sampling has finished */
-			if (System_Status == SAMPLING) {
-				System_Status = NOT_SAMPLING; // Shut down the sampling          
-				/* Close off the file: Not done anymore */
-//          FAT_FileClose();
-
-//          count = count +1;
-				LED1 = 0;
-			}
-
-		} // if(SAMPLE)
-
-		/* If there is a full sector (BLOCK_SIZE = 512 bytes) in the 
-		 circular buffer send it to the SD Card */
-
-//         if(u16CBufferBytes >= BLOCK_SIZE)
 		__DI();
 		u16TempCBufferBytes = u16CBufferBytes;
 		__EI();
@@ -425,10 +339,9 @@ void VibrationControl(void) {
 			SD_CBufferDataSectorWrite(); // write block to SD card
 			ReadDataStop = FALSE;
 
-		} //if(u16CBufferBytes >= BLOCK_SIZE)
+		}
 
 	}
-
 }
 
 /***********************************************************************
@@ -453,43 +366,35 @@ void vfnSDwelcome(void) {
 			{
 		/* SD Card not present */
 		Cpu_DisableInt(); // Disable interrupts
-		ErrorPulse3(4);
-		for (;;)
-			; // Debug trap
+		for (;;){
+			pulseReceiveLED(1);
+		}
+
 	} else {
-		ErrorPulse1(1);
+		pulsePowerLED(1);
 		/* SD Card present, read the Master Block (Boot Sector) of the memory */
 		FAT_Read_Master_Block(); // in Fat.c
 
-		ErrorPulse2(1);
+		pulseStatusLED(1);
 		/* Make sure file "FILE.TXT" exists */
-		u8sd_status = FAT_FileOpen("FILE.TXT", MODIFY); // Attempt to open file
+		u8sd_status = FAT_FileOpen("RESULTS.TXT", MODIFY); // Attempt to open file
 
-		ErrorPulse3(1);
-		
+		pulseReceiveLED(1);
+
 		/* Does file exist? */
 		if (u8sd_status == FILE_NOT_FOUND) {
 			/* If the file does not exist, it is created */
-			u8sd_status = FAT_FileOpen("FILE.TXT", CREATE);
-			// Valid u8sd_status == FILE_CREATE_OK
-
-			/*** Set up the FAT to a file of 11,000 clusters which is approx
-			 11,000 clusters * 32768 bytes/cluster = 360,448kB, or
-			 360,448kB / 31 bytes/sample = 11,627,354 samples, or
-			 11,627,354 samples / 2,000 samples/sec = 5,814 seconds of sampling, or
-			 approx 1.61 hours of samples. ***/
-
+			u8sd_status = FAT_FileOpen("RESULTS.TXT", CREATE);
+			
 			/* Set "u32DataSector" to the first data sector to be written.
 			 u32DataSector is used in function FAT_DataSectorWrite() in Fat.c
 			 for writing a block of data to the SD card. */
 
-			/* Create the file FAT */
+			// Create the FAT for the project data file
 			for (i = 0; i < NUM_CLUSTERS; i++) {
-
-				(void) FAT_Entry(WHandler.CurrentFatEntry,
-						WHandler.CurrentFatEntry + 1, WRITE_ENTRY);
+				(void) FAT_Entry(WHandler.CurrentFatEntry, WHandler.CurrentFatEntry + 1, WRITE_ENTRY);
 				WHandler.CurrentFatEntry++;
-				WHandler.File_Size += 32768; // update the file size, 32768 bytes per cluster
+				WHandler.File_Size += CLUSTER_SIZE; // update the file size, 32768 bytes per cluster
 			}
 
 		}
@@ -504,7 +409,7 @@ void vfnSDwelcome(void) {
 		result = SD_Erase_Blocks(u16FAT_Data_BASE, u16FAT_Data_BASE + 4000000); // 2GB
 		if (result != OK) {
 			FAT_FileClose();
-			ErrorPulse3(5);
+			pulseReceiveLED(5);
 			for (;;)
 				;
 		}
@@ -528,8 +433,6 @@ void vfnSDwelcome(void) {
  *************************************************************************/
 void vfnWriteFile(void) {
 	UINT8 i = 0;
-
-	//u16buffer_index = 0;
 
 	u8sd_status = FAT_FileOpen("FILE.TXT", MODIFY);
 	if (u8sd_status == FILE_FOUND) {
@@ -651,19 +554,13 @@ void ToBuffer(UINT8 Digit) {
 void ReadData(void) {
 
 	/* Check there is space in the buffer for a sample ("SampleSize" bytes) */
-//  if((u16CBufferBytes < (CBufferSize - SampleSize)) && (ReadDataStop == FALSE))
-	if (u16CBufferBytes < (CBufferSize - SampleSize))
-
-	{
-
-		/* Place a sample line in the circular buffer */
-		DataTest();
-	}
-//  else
-//  {
-//    LostReads++;
-//  }
-
+	if ((u16CBufferBytes < (CBufferSize - RECORD_SIZE)) && (ReadDataStop == FALSE))
+		if (u16CBufferBytes < (CBufferSize - RECORD_SIZE)){
+			/* Place a sample line in the circular buffer */
+			writeRecordToBuffer();
+		} else {
+			//LostReads++;
+		}
 }
 
 /***********************************************************************
@@ -680,125 +577,12 @@ void ReadData(void) {
  *
  *************************************************************************/
 void DataTest(void) {
-	UINT8 i, j, LSB, MSB;
-	UINT16 ADCResult;
+	UINT8 i;
+	UINT8 j;
 
 	/* Load demo accelerometer result data */
 	Accel[0] = InterruptNumber; // 16 bit S/H pulse sequential counter
 
-//  for(i=1;i<6;i++)
-//  {
-//    u8Sensor1Rx[i]=0;
-//  }
-
-	/* Read Sensor board 1 results */
-	/* Receive bytes until you get a 0xAA */LED2 = ON; // LED2 ON while reading Sensor board 1.
-	do {
-		SS1 = ON;
-		(void) SPI1DL; // Clear the receive data register
-		SPI1DL = 0xFF; // Transmit dummy byte (0xFF)
-		while (!SPI1S_SPRF) {
-		}; // Wait for byte to be received.
-		LSB = SPI1DL; // Read received byte
-		SS1 = OFF;
-
-	} while (LSB != 0xAA);
-
-	for (i = 1; i < 4; i++) {
-		SS1 = ON;
-		(void) SPI1DL; // Clear the receive data register
-		SPI1DL = 0xFF; // Transmit dummy byte (0xFF)
-		while (!SPI1S_SPRF) {
-		}; // Wait for byte to be received.
-		Accel[i] = SPI1DL << 8; // MSB
-		SS1 = OFF;
-		SS1 = ON;
-		(void) SPI1DL; // Clear the receive data register
-		SPI1DL = 0xFF; // Transmit dummy byte (0xFF)
-		while (!SPI1S_SPRF) {
-		}; // Wait for byte to be received.
-		Accel[i] = Accel[i] | (UINT16) SPI1DL; // MSB
-		SS1 = OFF;
-
-	}
-	LED2 = OFF;
-
-	/* Read Sensor board 2 results */
-	/* Receive bytes until you get a 0xAA */LED3 = ON; // LED3 ON while reading Sensor board 2.
-	do {
-		SS2 = ON;
-		(void) SPI1DL; // Clear the receive data register
-		SPI1DL = 0xFF; // Transmit dummy byte (0xFF)
-		while (!SPI1S_SPRF) {
-		}; // Wait for byte to be received.
-		LSB = SPI1DL; // Read received byte
-		SS2 = OFF;
-
-	} while (LSB != 0xAA);
-
-	for (i = 4; i < 7; i++) {
-		SS2 = ON;
-		(void) SPI1DL; // Clear the receive data register
-		SPI1DL = 0xFF; // Transmit dummy byte (0xFF)
-		while (!SPI1S_SPRF) {
-		}; // Wait for byte to be received.
-		Accel[i] = SPI1DL << 8; // MSB
-		SS2 = OFF;
-		SS2 = ON;
-		(void) SPI1DL; // Clear the receive data register
-		SPI1DL = 0xFF; // Transmit dummy byte (0xFF)
-		while (!SPI1S_SPRF) {
-		}; // Wait for byte to be received.
-		Accel[i] = Accel[i] | (UINT16) SPI1DL; // MSB
-		SS2 = OFF;
-
-	}
-	LED3 = OFF;
-
-	/* Read Sensor board 3 results */
-	/* Receive bytes until you get a 0xAA */LED4 = ON; // LED4 ON while reading Sensor board 3.
-	do {
-		SS3 = ON;
-		(void) SPI1DL; // Clear the receive data register
-		SPI1DL = 0xFF; // Transmit dummy byte (0xFF)
-		while (!SPI1S_SPRF) {
-		}; // Wait for byte to be received.
-		LSB = SPI1DL; // Read received byte
-		SS3 = OFF;
-
-	} while (LSB != 0xAA);
-
-	for (i = 7; i < 10; i++) {
-		SS3 = ON;
-		(void) SPI1DL; // Clear the receive data register
-		SPI1DL = 0xFF; // Transmit dummy byte (0xFF)
-		while (!SPI1S_SPRF) {
-		}; // Wait for byte to be received.
-		Accel[i] = SPI1DL << 8; // MSB
-		SS3 = OFF;
-		SS3 = ON;
-		(void) SPI1DL; // Clear the receive data register
-		SPI1DL = 0xFF; // Transmit dummy byte (0xFF)
-		while (!SPI1S_SPRF) {
-		}; // Wait for byte to be received.
-		Accel[i] = Accel[i] | (UINT16) SPI1DL; // MSB
-		SS3 = OFF;
-
-	}
-	LED4 = OFF;
-
-////  Accel[1] = 0x0024;     // Board 1 Accel 1 - 00036
-////  Accel[2] = 0x1338;     // Board 1 Accel 2 - 04920
-////  Accel[3] = 0x1771;     // Board 1 Accel 3 - 06001
-
-////
-////  Accel[4] = 0x84D0;     // Board 2 Accel 1 - 34000
-////  Accel[5] = 0x0002;     // Board 2 Accel 2 - 00002
-////  Accel[6] = 0x027F;     // Board 2 Accel 3 - 00639
-////  Accel[7] = 0x14B3;     // Board 3 Accel 1 - 05299
-////  Accel[8] = 0x037C;     // Board 3 Accel 2 - 00892
-////  Accel[9] = 0x000A;     // Board 3 Accel 3 - 00010
-////  
 	/* Write accelerometer data to circular buffer in csv format */
 	for (i = 0; i <= 8; i++) { // write first 8 data words + "," to buffer
 		ToCBuffer((UINT8) (Accel[i] >> 8)); // MSB
@@ -810,11 +594,38 @@ void DataTest(void) {
 	ToCBuffer((UINT8) (Accel[9] & 0xFF)); // LSB
 
 	ToCBuffer(CR); // add Carriage Return terminator 0x0D
-
 	ToCBuffer(LF); // add Line Feed terminator 0x0A
 
 	RecordNumber++; // Increment the record number count
 
+}
+
+/**
+ * Write the latest record to the circular buffer in CSV format.
+ * The format is as follows: [Record number],[Z1],[Z2],[Z3][CR][LF]
+ */
+void writeRecordToBuffer() {
+	UINT8 i;
+	UINT8 recordUpper;
+	UINT8 recordLower;
+
+	// Write record number to buffer, MSB first
+	recordUpper = RecordNumber >> 8;
+	recordLower = RecordNumber && 8;
+	ToCBuffer(recordUpper);
+	ToCBuffer(recordLower);
+	
+	// Write accelerometer data to buffer in csv format. (again, MSB first)
+	for(i = 0; i < 2*NUM_CHANNELS; i+=2){
+		ToCBuffer(',');
+		ToCBuffer(u8AccelSamples[i]);
+		ToCBuffer(u8AccelSamples[i + 1]);
+	}
+
+	// New line
+	ToCBuffer(CR); // add Carriage Return terminator 0x0D
+	ToCBuffer(LF); // add Line Feed terminator 0x0A
+	RecordNumber++;
 }
 
 /********************************************************************
@@ -856,108 +667,98 @@ UINT8 FromCBuffer(void) {
 
 	__DI();
 
-	if (u16CBufferGetter >= CBufferSize) // check for buffer wrap around
+	if (u16CBufferGetter >= CBufferSize){ // check for buffer wrap around
 		u16CBufferGetter = 0x0000;
-
-	u16CBufferBytes--; // dec # bytes in the buffer
-
-//  if(u16CBufferBytes == 0x0000)
-//     BufferEmpty++;
-
+	}
+	
+	u16CBufferBytes--;
+	
 	returnbyte = u8CircularBuffer[u16CBufferGetter++];
-
 	__EI();
-
 	return (returnbyte);
 }
 
-/*
- ** ===================================================================
- **     Method      :  SampleDelay_Init (component TimerInt)
- **
- **     Description :
- **         Initializes Timer 1 Channel 0. 
- **         Provides a 100uSec sampling delay. 
- **         Output Compare mode with interrupt on match. No external pins.
- **         Timer stopped.
- **         
- ** ===================================================================
- */
-void SampleDelay_Init(void) {
-	/* Stop HW; disable overflow interrupt and set prescaler to 1 */
-	/* TPM1SC: TOF=0,TOIE=0,CPWMS=0,CLKSB=0,CLKSA=0,PS2=0,PS1=0,PS0=0 */
-	setReg8(TPM1SC, 0x00);
-	/* Set output compare mode and enable compare interrupt */
-	/* TPM1C0SC: CH0F=0,CH0IE=1,MS0B=0,MS0A=1,ELS0B=0,ELS0A=0,??=0,??=0 */
-	setReg8(TPM1C0SC, 0x50);
-//  EnUser = TRUE;                       /* Enable device */
-//  SampleDelay_EnEvent = TRUE;          /* Enable event */
-	/* Initialize the compare/modulo/reload register foe a 100uSec period*/TPM1C0V =
-			(word) (0x095FU); // Set compare value
-	TPM1MOD = (word) (0x095FU); // Set modulo value
-//  clrSetReg8Bits(TPM1SC, 0x07, 0x00);    /* Set prescaler */
-	/* TPM1CNTH: BIT15=0,BIT14=0,BIT13=0,BIT12=0,BIT11=0,BIT10=0,BIT9=0,BIT8=0 */
-	setReg8(TPM1CNTH, 0x00);
-	/* Reset HW Counter */
-//  HWEnDi();
-}
-
 /***********************************************************************
-*
-*    *** Sample_Accel ***
-*
-*  Description: Sample the three accelerometer channels
-*               This function will be called every 500uSec..
-*               Pulses the LED every 2 sec.   
-*                  
-*                  
-*
-*               Called from EInt1_OnInterrupt() in Events.c
-*
-*************************************************************************/
-void Sample_Accel(void){
+ *
+ *    *** Sample_Accel ***
+ *
+ *  Description: Sample the three accelerometer channels
+ *               This function will be called every 500uSec..
+ *               Pulses the LED every 2 sec.   
+ *                  
+ *                  
+ *
+ *               Called from EInt1_OnInterrupt() in Events.c
+ *
+ *************************************************************************/
+void Sample_Accel(void) {
 
-   UINT8 adc_result;
-   UINT8 i = 0;
+	UINT8 adc_result;
+	UINT8 i;
+	
+	// Sequentially perform ADC conversions on each channel
+	for (u8Channel = 0; u8Channel < NUM_CHANNELS; u8Channel++) {
+		adc_result = AD1_MeasureChan(FALSE, u8Channel); // Don't wait for sample complete
 
-   /* X-axis */
-   u8Channel = 0x00;      // sample channel 0   
- 
-   /* Single conversion of AD0. Interrupt on completion.*/
-   adc_result = AD1_MeasureChan(FALSE, u8Channel);  // Don't wait for sample complete
-//   ADCSC1 = 0x40;         // Single conversion of AD0. Interrupt on completion.
-   asm
-   {
-    wait                // CPU in WAIT state during conversion to reduce noise.
-                        // CPU exits WAIT state with COCO interrupt
-   }
-   
-   /* Y-axis */
-   u8Channel++;
-   /* Use processor Expert to take the sample */
-   /* Single conversion of AD1. Interrupt on completion.*/
-   adc_result = AD1_MeasureChan(FALSE, u8Channel);  // Don't wait for sample complete   
-//   ADCSC1 = 0x41;         // Single conversion of AD1. Interrupt on completion.
-   asm
-   {
-    wait
-   }
-   
-   /* Z-axis */
-   u8Channel++;
-   /* Use processor Expert to take the sample */
-   /* Single conversion of AD2. Interrupt on completion.*/
-   adc_result = AD1_MeasureChan(FALSE, u8Channel);  // Don't wait for sample complete
-//   ADCSC1 = 0x42;         // Single conversion of AD2. Interrupt on completion.
-   asm
-   {
-    wait
-   }
+		// Halt CPU while conversion is taking place to reduce noise. Wait is removed upon conversion interrupt.
+		asm {
+			wait
+		}
+
+	}
+	
+	RecordNumber++;
+
 }
 
-void ADC_ISR(void){
-  /* u8Channel tells which channel is being sampled.
-     Place the results in u8AccelSamples[] */
-  u8AccelSamples[u8Channel << 1] = ADCRH;         // MSB
-  u8AccelSamples[(u8Channel << 1) +1] = ADCRL;    // LSB
+/**
+ * Interrupt service routine for ADC conversion complete
+ * Data is copied to a temporary buffer
+ */
+void ADC_ISR(void) {
+	u8AccelSamples[u8Channel << 1] = ADCRH; // MSB
+	u8AccelSamples[(u8Channel << 1) + 1] = ADCRL; // LSB
+}
+
+/**
+ * Toggle the power LED (LED1)
+ */
+void togglepowerLED(void) {
+	if (powerLED == ON) {
+		powerLED = OFF;
+	} else {
+		powerLED = ON;
+	}
+}
+
+/**
+ * Toggle the status LED (LED2)
+ */
+void toggleStatusLED(void) {
+	if (statusLED == ON) {
+		statusLED = OFF;
+	} else {
+		statusLED = ON;
+	}
+}
+
+/**
+ * Increment the time on the session clock by one second.
+ * If the session limits are reached, sampling is stopped
+ */
+void incrementRunningClock(void){
+	sessionRuntime++;
+	
+	if (sessionRuntime > TOTAL_RUNTIME){
+		stopSampling();
+	}
+	
+}
+
+/**
+ * Stop recording samples by stopping periodic interrupts.
+ */
+void stopSampling(void){
+	samplingStatus = NOT_SAMPLING;
+	statusLED = OFF;
 }

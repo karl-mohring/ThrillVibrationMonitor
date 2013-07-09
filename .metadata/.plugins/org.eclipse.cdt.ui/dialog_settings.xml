@@ -22,12 +22,18 @@
 		<item value="56" key="y"/>
 		<item value="678" key="x"/>
 	</section>
+	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
+		<item value="384" key="size.width"/>
+		<item value="180" key="size.height"/>
+	</section>
+	<section name="RenameInformationPopup">
+	</section>
 	<section name="SIMPLE_FLASH_DIALOG_SETTINGS_SECTION">
 		<item value="true" key="SIMPLE_FLASH_DIALOG_SETTINGS_SAVE_TARGET_TASK_OPTION"/>
 		<item value="0" key="SIMPLE_FLASH_DIALOG_SETTINGS_FILE_OFFSET"/>
 		<item value="false" key="SIMPLE_FLASH_DIALOG_SETTINGS_UNPROTECT_OPTION"/>
-		<item value="MC9S08JM60" key="SIMPLE_FLASH_DIALOG_SETTINGS_PROCESSOR"/>
 		<item value="${workspace_loc:/6SDEraseTest/FLASH/ProgrammingTest.abs}" key="SIMPLE_FLASH_DIALOG_SETTINGS_FILENAME"/>
+		<item value="MC9S08JM60" key="SIMPLE_FLASH_DIALOG_SETTINGS_PROCESSOR"/>
 		<item value="ProgrammingTest_FLASH_OSBDM" key="SIMPLE_FLASH_DIALOG_SETTINGS_SYSTEM"/>
 		<item value="0" key="SIMPLE_FLASH_DIALOG_SETTINGS_FLASH_CONFIGURATION_INDEX"/>
 		<item value="C:\Freescale\CW MCU v10.4\eclipse\..\MCU\bin\plugins\Support\TargetTask\Flash_Programmer" key="SIMPLE_FLASH_FLASH_CONFIG_FOLDER"/>
@@ -35,16 +41,14 @@
 			<item value="C:\Freescale\CW MCU v10.4\MCU\bin\plugins\support\TargetTask\Flash_Programmer\HC08\MC9S08JM60.xml"/>
 		</list>
 	</section>
-	<section name="RenameInformationPopup">
-	</section>
 	<section name="CRenameRefactoringInputPage">
 		<item value="false" key="preprocessor"/>
-		<item value="false" key="exhausiveFileSearch"/>
-		<item value="3" key="scope"/>
+		<item value="true" key="exhausiveFileSearch"/>
 		<item value="false" key="macroDefinition"/>
+		<item value="4" key="scope"/>
 		<item value="false" key="comment"/>
-		<item value="" key="workingset"/>
 		<item value="false" key="references_inv"/>
+		<item value="" key="workingset"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
 	</section>

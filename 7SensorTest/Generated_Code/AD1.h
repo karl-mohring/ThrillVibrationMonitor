@@ -6,7 +6,7 @@
 **     Component   : ADC
 **     Version     : Component 01.685, Driver 01.30, CPU db: 3.00.050
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2013-07-08, 01:17, # CodeGen: 1
+**     Date/Time   : 2013-07-09, 17:19, # CodeGen: 6
 **     Abstract    :
 **         This device "ADC" implements an A/D converter,
 **         its control methods and interrupt/event handling procedure.
@@ -45,8 +45,9 @@
 **          Get value directly                             : yes
 **          Wait for result                                : yes
 **     Contents    :
-**         Measure    - byte AD1_Measure(bool WaitForResult);
-**         GetValue16 - byte AD1_GetValue16(word *Values);
+**         Measure     - byte AD1_Measure(bool WaitForResult);
+**         MeasureChan - byte AD1_MeasureChan(bool WaitForResult, byte Channel);
+**         GetValue16  - byte AD1_GetValue16(word *Values);
 **
 **     Copyright : 1997 - 2013 Freescale Semiconductor, Inc. All Rights Reserved.
 **     SOURCE DISTRIBUTION PERMISSIBLE as directed in End User License Agreement.
@@ -139,6 +140,37 @@ byte AD1_Measure(bool WaitForResult);
 **                           the active speed mode
 **                           ERR_DISABLED - Device is disabled
 **                           ERR_BUSY - A conversion is already running
+** ===================================================================
+*/
+
+byte AD1_MeasureChan(bool WaitForResult,byte Channel);
+/*
+** ===================================================================
+**     Method      :  AD1_MeasureChan (component ADC)
+**     Description :
+**         This method performs measurement on one channel. (Note: If
+**         the <number of conversions> is more than one the conversion
+**         of the A/D channel is performed specified number of times.)
+**     Parameters  :
+**         NAME            - DESCRIPTION
+**         WaitForResult   - Wait for a result of
+**                           conversion. If the <interrupt service> is
+**                           disabled and at the same time a <number of
+**                           conversions> is greater than 1, the
+**                           WaitForResult parameter is ignored and the
+**                           method waits for each result every time.
+**         Channel         - Channel number. If only one
+**                           channel in the component is set this
+**                           parameter is ignored, because the parameter
+**                           is set inside this method.
+**     Returns     :
+**         ---             - Error code, possible codes:
+**                           ERR_OK - OK
+**                           ERR_SPEED - This device does not work in
+**                           the active speed mode
+**                           ERR_DISABLED - Device is disabled
+**                           ERR_BUSY - A conversion is already running
+**                           ERR_RANGE - Parameter "Channel" out of range
 ** ===================================================================
 */
 

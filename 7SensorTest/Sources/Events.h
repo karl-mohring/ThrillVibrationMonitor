@@ -35,6 +35,8 @@
 #include "PE_Const.h"
 #include "IO_Map.h"
 #include "AD1.h"
+#include "sampleTimer.h"
+#include "filterTimer.h"
 
 
 void AD1_OnEnd(void);
@@ -48,6 +50,38 @@ void AD1_OnEnd(void);
 **         of <1 or more conversions>) is/are finished.
 **         The event is available only when the <Interrupt
 **         service/event> property is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+void TI1_OnInterrupt(void);
+/*
+** ===================================================================
+**     Event       :  TI1_OnInterrupt (module Events)
+**
+**     Component   :  sampleTimer [TimerInt]
+**     Description :
+**         When a timer interrupt occurs this event is called (only
+**         when the component is enabled - <Enable> and the events are
+**         enabled - <EnableEvent>). This event is enabled only if a
+**         <interrupt service/event> is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+void sampleTimer_OnInterrupt(void);
+/*
+** ===================================================================
+**     Event       :  sampleTimer_OnInterrupt (module Events)
+**
+**     Component   :  sampleTimer [TimerInt]
+**     Description :
+**         When a timer interrupt occurs this event is called (only
+**         when the component is enabled - <Enable> and the events are
+**         enabled - <EnableEvent>). This event is enabled only if a
+**         <interrupt service/event> is enabled.
 **     Parameters  : None
 **     Returns     : Nothing
 ** ===================================================================

@@ -1,0 +1,8 @@
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Project_Headers\../Sources\Events.c:58:warning:C1801 Implicit parameter-declaration for 'ADC_ISR'
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Project_Headers\../Sources\Events.c:58:warning:C1420 Result of function-call is ignored
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Project_Headers\../Sources\Events.c:82:warning:C1801 Implicit parameter-declaration for 'toggleStatusLED'
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Project_Headers\../Sources\Events.c:82:warning:C1420 Result of function-call is ignored
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Project_Headers\../Sources\Events.c:83:warning:C1801 Implicit parameter-declaration for 'incrementRunningClock'
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Project_Headers\../Sources\Events.c:83:warning:C1420 Result of function-call is ignored
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Project_Headers\../Sources\Events.c:87:warning:C1801 Implicit parameter-declaration for 'Sample_Accel'
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Project_Headers\../Sources\Events.c:87:warning:C1420 Result of function-call is ignored

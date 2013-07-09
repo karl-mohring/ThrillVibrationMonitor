@@ -5,7 +5,7 @@
 **     Processor   : MC9S08JM60CLHE
 **     Version     : Component 01.004, Driver 01.40, CPU db: 3.00.050
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2013-07-08, 01:17, # CodeGen: 1
+**     Date/Time   : 2013-07-09, 12:48, # CodeGen: 4
 **     Abstract    :
 **         This component "MC9S08JM60_64" contains initialization 
 **         of the CPU and provides basic methods and events for 
@@ -35,11 +35,13 @@
 
 #include "Cpu.h"
 #include "AD1.h"
+#include "sampleTimer.h"
+#include "filterTimer.h"
 
 /*lint -save  -e950 Disable MISRA rule (1.1) checking. */
 static void (* near const _vect[])(void) @0xFFC4 = { /* Interrupt vector table */
 /*lint -restore Enable MISRA rule (1.1) checking. */
-         Cpu_Interrupt,                /* Int.no. 29 Vrtc (at FFC4)                  Unassigned */
+         sampleTimer_Interrupt,        /* Int.no. 29 Vrtc (at FFC4)                  Used */
          Cpu_Interrupt,                /* Int.no. 28 Viic (at FFC6)                  Unassigned */
          Cpu_Interrupt,                /* Int.no. 27 Vacmp (at FFC8)                 Unassigned */
          AD1_Interrupt,                /* Int.no. 26 Vadc (at FFCA)                  Used */

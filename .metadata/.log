@@ -4372,3 +4372,859 @@ org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: Pro
 
 !ENTRY com.freescale.processorexpert.core 4 0 2013-07-08 01:16:16.127
 !MESSAGE Type specification was not found "typeFHCS12RVAEnableRVA" symbol: RVAEnableRVA
+!SESSION 2013-07-08 14:33:34.385 -----------------------------------------------
+eclipse.buildId=I20070613-1755
+java.version=1.6.0_15
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.core.resources 2 10035 2013-07-08 14:33:37.287
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 2 0 2013-07-08 14:33:38.189
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2013-07-08 14:33:38.189
+!MESSAGE Commands should really have a category: plug-in='com.freescale.core.debugger.ui.cdt', id='com.freescale.cdt.debug.cw.core.ui.rse.export.template', categoryId='com.freescale.categories.rse.freescale'
+
+!ENTRY com.freescale.processorexpert.core 1 0 2013-07-08 14:33:50.441
+!MESSAGE Plugin com.freescale.processorexpert.core.service ProcessorExpertServiceProvider
+
+!ENTRY com.freescale.core.ide.wizard.ui 2 0 2013-07-08 14:34:02.046
+!MESSAGE External elements location 'C:\Freescale\CW MCU v10.4\eclipse\../MCU/lib/wizard_data/mqx/4.0/arm' does not exist
+
+!ENTRY com.freescale.core.ide.wizard.ui 2 0 2013-07-08 14:34:02.046
+!MESSAGE External elements location 'C:\Freescale\CW MCU v10.4\eclipse\../MCU/lib/wizard_data/mqx/4.0/ppc' does not exist
+
+!ENTRY com.freescale.core.ide.wizard.ui 2 0 2013-07-08 14:34:02.047
+!MESSAGE External elements location 'C:\Freescale\CW MCU v10.4\eclipse\../MCU/lib/wizard_data/mqx/4.0/patches' does not exist
+
+!ENTRY org.eclipse.osgi 2 1 2013-07-08 15:30:15.849
+!MESSAGE NLS unused message: trace_trigger_dv_error_title in: com.freescale.sa.mcu.analysispoints.nls.ui
+
+!ENTRY org.eclipse.osgi 2 1 2013-07-08 15:30:15.850
+!MESSAGE NLS unused message: trace_trigger_dv_error_message in: com.freescale.sa.mcu.analysispoints.nls.ui
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-07-08 15:55:49.901
+!MESSAGE Type Specification file not found:  "Init_RVA_HCS12\Init_RVA_HCS12" (ADC)
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-07-08 15:55:50.076
+!MESSAGE Type specification was not found "typeFHCS12RVAEnableRVA" symbol: RVAEnableRVA
+
+!ENTRY org.eclipse.ui 4 4 2013-07-09 13:53:13.303
+!MESSAGE "Rename - Refactoring " did not complete normally.  Please see the log for more information.
+
+!ENTRY org.eclipse.ui 4 0 2013-07-09 13:53:13.303
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRenameProcessor.getSaveMode(CRenameProcessor.java:308)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRefactory.openDialog(CRefactory.java:136)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:119)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:90)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameLinkedMode.startFullDialog(RenameLinkedMode.java:458)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameLinkedMode.start(RenameLinkedMode.java:180)
+	at org.eclipse.cdt.ui.refactoring.actions.CRenameAction.run(CRenameAction.java:56)
+	at org.eclipse.cdt.ui.refactoring.actions.RefactoringAction.run(RefactoringAction.java:82)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.commands.ActionHandler.execute(ActionHandler.java:119)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:510)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.executeCommand(WorkbenchKeyboard.java:468)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.press(WorkbenchKeyboard.java:786)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.processKeyEvent(WorkbenchKeyboard.java:885)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.filterKeySequenceBindings(WorkbenchKeyboard.java:567)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.access$3(WorkbenchKeyboard.java:508)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard$KeyDownFilter.handleEvent(WorkbenchKeyboard.java:123)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1269)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1052)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1062)
+	at org.eclipse.swt.widgets.Control.traverse(Control.java:4050)
+	at org.eclipse.swt.widgets.Control.translateMnemonic(Control.java:3892)
+	at org.eclipse.swt.widgets.Composite.translateMnemonic(Composite.java:1178)
+	at org.eclipse.swt.widgets.Control.translateMnemonic(Control.java:3910)
+	at org.eclipse.swt.widgets.Display.translateMnemonic(Display.java:4787)
+	at org.eclipse.swt.widgets.Display.filterMessage(Display.java:1283)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3761)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2698)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2662)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2496)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:675)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:82)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:623)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:578)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1411)
+
+!ENTRY org.eclipse.ui 4 4 2013-07-09 13:53:18.404
+!MESSAGE "Rename - Refactoring " did not complete normally.  Please see the log for more information.
+
+!ENTRY org.eclipse.ui 4 0 2013-07-09 13:53:18.404
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRenameProcessor.getSaveMode(CRenameProcessor.java:308)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRefactory.openDialog(CRefactory.java:136)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:119)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:90)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameLinkedMode.startFullDialog(RenameLinkedMode.java:458)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameLinkedMode.start(RenameLinkedMode.java:180)
+	at org.eclipse.cdt.ui.refactoring.actions.CRenameAction.run(CRenameAction.java:56)
+	at org.eclipse.cdt.ui.refactoring.actions.RefactoringAction.run(RefactoringAction.java:82)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.commands.ActionHandler.execute(ActionHandler.java:119)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:510)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.executeCommand(WorkbenchKeyboard.java:468)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.press(WorkbenchKeyboard.java:786)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.processKeyEvent(WorkbenchKeyboard.java:885)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.filterKeySequenceBindings(WorkbenchKeyboard.java:567)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.access$3(WorkbenchKeyboard.java:508)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard$KeyDownFilter.handleEvent(WorkbenchKeyboard.java:123)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1269)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1052)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1062)
+	at org.eclipse.swt.widgets.Control.traverse(Control.java:4050)
+	at org.eclipse.swt.widgets.Control.translateMnemonic(Control.java:3892)
+	at org.eclipse.swt.widgets.Composite.translateMnemonic(Composite.java:1178)
+	at org.eclipse.swt.widgets.Control.translateMnemonic(Control.java:3910)
+	at org.eclipse.swt.widgets.Display.translateMnemonic(Display.java:4787)
+	at org.eclipse.swt.widgets.Display.filterMessage(Display.java:1283)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3761)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2698)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2662)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2496)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:675)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:82)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:623)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:578)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1411)
+
+!ENTRY org.eclipse.ui 4 4 2013-07-09 13:53:30.580
+!MESSAGE "Rename - Refactoring " did not complete normally.  Please see the log for more information.
+
+!ENTRY org.eclipse.ui 4 0 2013-07-09 13:53:30.580
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRenameProcessor.getSaveMode(CRenameProcessor.java:308)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRefactory.openDialog(CRefactory.java:136)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:119)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:90)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameLinkedMode.startFullDialog(RenameLinkedMode.java:458)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameLinkedMode.start(RenameLinkedMode.java:180)
+	at org.eclipse.cdt.ui.refactoring.actions.CRenameAction.run(CRenameAction.java:56)
+	at org.eclipse.cdt.ui.refactoring.actions.RefactoringAction.run(RefactoringAction.java:82)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.commands.ActionHandler.execute(ActionHandler.java:119)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:510)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.executeCommand(WorkbenchKeyboard.java:468)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.press(WorkbenchKeyboard.java:786)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.processKeyEvent(WorkbenchKeyboard.java:885)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.filterKeySequenceBindings(WorkbenchKeyboard.java:567)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.access$3(WorkbenchKeyboard.java:508)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard$KeyDownFilter.handleEvent(WorkbenchKeyboard.java:123)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1269)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1052)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1062)
+	at org.eclipse.swt.widgets.Control.traverse(Control.java:4050)
+	at org.eclipse.swt.widgets.Control.translateMnemonic(Control.java:3892)
+	at org.eclipse.swt.widgets.Composite.translateMnemonic(Composite.java:1178)
+	at org.eclipse.swt.widgets.Control.translateMnemonic(Control.java:3910)
+	at org.eclipse.swt.widgets.Display.translateMnemonic(Display.java:4787)
+	at org.eclipse.swt.widgets.Display.filterMessage(Display.java:1283)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3761)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2698)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2662)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2496)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:675)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:82)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:623)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:578)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1411)
+
+!ENTRY org.eclipse.ui 4 4 2013-07-09 19:34:37.556
+!MESSAGE "Rename - Refactoring " did not complete normally.  Please see the log for more information.
+
+!ENTRY org.eclipse.ui 4 0 2013-07-09 19:34:37.556
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRenameProcessor.getSaveMode(CRenameProcessor.java:308)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRefactory.openDialog(CRefactory.java:136)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:119)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:90)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameLinkedMode.startFullDialog(RenameLinkedMode.java:458)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameLinkedMode.start(RenameLinkedMode.java:180)
+	at org.eclipse.cdt.ui.refactoring.actions.CRenameAction.run(CRenameAction.java:56)
+	at org.eclipse.cdt.ui.refactoring.actions.RefactoringAction.run(RefactoringAction.java:82)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.commands.ActionHandler.execute(ActionHandler.java:119)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:510)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.executeCommand(WorkbenchKeyboard.java:468)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.press(WorkbenchKeyboard.java:786)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.processKeyEvent(WorkbenchKeyboard.java:885)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.filterKeySequenceBindings(WorkbenchKeyboard.java:567)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.access$3(WorkbenchKeyboard.java:508)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard$KeyDownFilter.handleEvent(WorkbenchKeyboard.java:123)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1269)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1052)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1062)
+	at org.eclipse.swt.widgets.Control.traverse(Control.java:4050)
+	at org.eclipse.swt.widgets.Control.translateMnemonic(Control.java:3892)
+	at org.eclipse.swt.widgets.Composite.translateMnemonic(Composite.java:1178)
+	at org.eclipse.swt.widgets.Control.translateMnemonic(Control.java:3910)
+	at org.eclipse.swt.widgets.Display.translateMnemonic(Display.java:4787)
+	at org.eclipse.swt.widgets.Display.filterMessage(Display.java:1283)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3761)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2698)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2662)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2496)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:675)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:82)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:623)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:578)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1411)
+
+!ENTRY org.eclipse.ui 4 4 2013-07-09 19:34:51.493
+!MESSAGE "Rename - Refactoring " did not complete normally.  Please see the log for more information.
+
+!ENTRY org.eclipse.ui 4 0 2013-07-09 19:34:51.493
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRenameProcessor.getSaveMode(CRenameProcessor.java:308)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRefactory.openDialog(CRefactory.java:136)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:119)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:90)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameLinkedMode.startFullDialog(RenameLinkedMode.java:458)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameLinkedMode.start(RenameLinkedMode.java:180)
+	at org.eclipse.cdt.ui.refactoring.actions.CRenameAction.run(CRenameAction.java:56)
+	at org.eclipse.cdt.ui.refactoring.actions.RefactoringAction.run(RefactoringAction.java:82)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.commands.ActionHandler.execute(ActionHandler.java:119)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:510)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.executeCommand(WorkbenchKeyboard.java:468)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.press(WorkbenchKeyboard.java:786)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.processKeyEvent(WorkbenchKeyboard.java:885)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.filterKeySequenceBindings(WorkbenchKeyboard.java:567)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.access$3(WorkbenchKeyboard.java:508)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard$KeyDownFilter.handleEvent(WorkbenchKeyboard.java:123)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1269)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1052)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1062)
+	at org.eclipse.swt.widgets.Control.traverse(Control.java:4050)
+	at org.eclipse.swt.widgets.Control.translateMnemonic(Control.java:3892)
+	at org.eclipse.swt.widgets.Composite.translateMnemonic(Composite.java:1178)
+	at org.eclipse.swt.widgets.Control.translateMnemonic(Control.java:3910)
+	at org.eclipse.swt.widgets.Display.translateMnemonic(Display.java:4787)
+	at org.eclipse.swt.widgets.Display.filterMessage(Display.java:1283)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3761)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2698)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2662)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2496)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:675)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:82)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:623)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:578)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1411)
+
+!ENTRY org.eclipse.ui 4 4 2013-07-09 19:35:24.548
+!MESSAGE "Rename - Refactoring " did not complete normally.  Please see the log for more information.
+
+!ENTRY org.eclipse.ui 4 0 2013-07-09 19:35:24.548
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRenameProcessor.getSaveMode(CRenameProcessor.java:308)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRefactory.openDialog(CRefactory.java:136)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:119)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:90)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameLinkedMode.startFullDialog(RenameLinkedMode.java:458)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameLinkedMode.start(RenameLinkedMode.java:180)
+	at org.eclipse.cdt.ui.refactoring.actions.CRenameAction.run(CRenameAction.java:56)
+	at org.eclipse.cdt.ui.refactoring.actions.RefactoringAction.run(RefactoringAction.java:82)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.commands.ActionHandler.execute(ActionHandler.java:119)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:510)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.executeCommand(WorkbenchKeyboard.java:468)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.press(WorkbenchKeyboard.java:786)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.processKeyEvent(WorkbenchKeyboard.java:885)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.filterKeySequenceBindings(WorkbenchKeyboard.java:567)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.access$3(WorkbenchKeyboard.java:508)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard$KeyDownFilter.handleEvent(WorkbenchKeyboard.java:123)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1269)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1052)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1062)
+	at org.eclipse.swt.widgets.Control.traverse(Control.java:4050)
+	at org.eclipse.swt.widgets.Control.translateMnemonic(Control.java:3892)
+	at org.eclipse.swt.widgets.Composite.translateMnemonic(Composite.java:1178)
+	at org.eclipse.swt.widgets.Control.translateMnemonic(Control.java:3910)
+	at org.eclipse.swt.widgets.Display.translateMnemonic(Display.java:4787)
+	at org.eclipse.swt.widgets.Display.filterMessage(Display.java:1283)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3761)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2698)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2662)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2496)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:675)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:82)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:623)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:578)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1411)
+
+!ENTRY org.eclipse.ui 4 4 2013-07-09 19:37:42.322
+!MESSAGE "Rename - Refactoring " did not complete normally.  Please see the log for more information.
+
+!ENTRY org.eclipse.ui 4 0 2013-07-09 19:37:42.322
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRenameProcessor.getSaveMode(CRenameProcessor.java:308)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.CRefactory.openDialog(CRefactory.java:136)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:119)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameSupport.openDialog(RenameSupport.java:90)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameLinkedMode.startFullDialog(RenameLinkedMode.java:458)
+	at org.eclipse.cdt.internal.ui.refactoring.rename.RenameLinkedMode.start(RenameLinkedMode.java:180)
+	at org.eclipse.cdt.ui.refactoring.actions.CRenameAction.run(CRenameAction.java:56)
+	at org.eclipse.cdt.ui.refactoring.actions.RefactoringAction.run(RefactoringAction.java:82)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.commands.ActionHandler.execute(ActionHandler.java:119)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:510)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508)
+	at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.executeCommand(WorkbenchKeyboard.java:468)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.press(WorkbenchKeyboard.java:786)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.processKeyEvent(WorkbenchKeyboard.java:885)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.filterKeySequenceBindings(WorkbenchKeyboard.java:567)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard.access$3(WorkbenchKeyboard.java:508)
+	at org.eclipse.ui.internal.keys.WorkbenchKeyboard$KeyDownFilter.handleEvent(WorkbenchKeyboard.java:123)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1269)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1052)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1062)
+	at org.eclipse.swt.widgets.Control.traverse(Control.java:4050)
+	at org.eclipse.swt.widgets.Control.translateMnemonic(Control.java:3892)
+	at org.eclipse.swt.widgets.Composite.translateMnemonic(Composite.java:1178)
+	at org.eclipse.swt.widgets.Control.translateMnemonic(Control.java:3910)
+	at org.eclipse.swt.widgets.Display.translateMnemonic(Display.java:4787)
+	at org.eclipse.swt.widgets.Display.filterMessage(Display.java:1283)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3761)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2698)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2662)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2496)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:675)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:82)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:623)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:578)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1411)
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-07-09 23:39:24.246
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-07-09 23:39:24.246
+!MESSAGE Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-07-09 23:39:24.247
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-07-09 23:39:24.247
+!MESSAGE Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-07-09 23:39:24.247
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-07-09 23:39:24.247
+!MESSAGE Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-07-09 23:39:24.247
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-07-09 23:39:24.247
+!MESSAGE Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-07-09 23:39:24.247
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-07-09 23:39:24.247
+!MESSAGE Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-07-09 23:39:24.248
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-07-09 23:39:24.248
+!MESSAGE Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-07-09 23:39:24.248
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-07-09 23:39:24.248
+!MESSAGE Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-07-09 23:39:55.790
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-07-09 23:39:55.790
+!MESSAGE Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-07-09 23:39:55.791
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-07-09 23:39:55.791
+!MESSAGE Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-07-09 23:39:55.791
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-07-09 23:39:55.791
+!MESSAGE Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-07-09 23:39:55.791
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-07-09 23:39:55.791
+!MESSAGE Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-07-09 23:39:55.791
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-07-09 23:39:55.791
+!MESSAGE Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-07-09 23:39:55.792
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-07-09 23:39:55.792
+!MESSAGE Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-07-09 23:39:55.792
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-07-09 23:39:55.792
+!MESSAGE Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-07-09 23:40:17.336
+!MESSAGE Type Specification file not found:  "Init_RVA_HCS12\Init_RVA_HCS12" (ADC)
+
+!ENTRY com.freescale.processorexpert.core 4 0 2013-07-09 23:40:17.357
+!MESSAGE Type specification was not found "typeFHCS12RVAEnableRVA" symbol: RVAEnableRVA
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-07-09 23:40:56.160
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-07-09 23:40:56.160
+!MESSAGE Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-07-09 23:40:56.161
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-07-09 23:40:56.161
+!MESSAGE Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-07-09 23:40:56.161
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-07-09 23:40:56.161
+!MESSAGE Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-07-09 23:40:56.161
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-07-09 23:40:56.161
+!MESSAGE Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-07-09 23:40:56.162
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-07-09 23:40:56.162
+!MESSAGE Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-07-09 23:40:56.162
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-07-09 23:40:56.162
+!MESSAGE Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+
+!ENTRY com.freescale.core.debugger.cdt 4 120 2013-07-09 23:40:56.162
+!MESSAGE Error logged from CodeWarrior debugger core:
+!STACK 1
+org.eclipse.core.runtime.CoreException: Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.getConnectionType(CWHost.java:95)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performApply(CWHost.java:87)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost$1.run(CWHost.java:153)
+	at com.freescale.core.ide.util.LaunchUtils$ModificationRunnable.run(LaunchUtils.java:110)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2391)
+	at com.freescale.core.ide.util.LaunchUtils.modifyLaunchConfiguration(LaunchUtils.java:203)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.performMarshalling(CWHost.java:148)
+	at com.freescale.cdt.debug.cw.core.system.model.CWHost.handleSystemModelResourceChanged(CWHost.java:121)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler$1.run(SystemModelChangeHandler.java:246)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at com.freescale.cdt.debug.cw.core.system.model.SystemModelChangeHandler.run(SystemModelChangeHandler.java:250)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 com.freescale.core.debugger.cdt 4 0 2013-07-09 23:40:56.162
+!MESSAGE Missing connection type in RSE host: ProgrammingTest_FLASH_PnE U-MultiLink

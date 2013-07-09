@@ -32,6 +32,12 @@
 #include "Events.h"
 
 /* User includes (#include below this line is not maintained by Processor Expert) */
+#include "Vib_Cont_01.h"
+
+// Number of interrupts before toggling the status light (2000 == 1 second)
+const int FLASH_PERIOD = 2000;
+int ledCounter = 0;
+
 
 /*
 ** ===================================================================
@@ -50,9 +56,39 @@
 void AD1_OnEnd(void)
 {
 	ADC_ISR();
-  /* Write your code here ... */
 }
 
+
+/*
+** ===================================================================
+**     Event       :  sampleTimer_OnInterrupt (module Events)
+**
+**     Component   :  sampleTimer [TimerInt]
+**     Description :
+**         When a timer interrupt occurs this event is called (only
+**         when the component is enabled - <Enable> and the events are
+**         enabled - <EnableEvent>). This event is enabled only if a
+**         <interrupt service/event> is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void sampleTimer_OnInterrupt(void){
+
+	// Toggle the status LED every second
+	if (ledCounter < FLASH_PERIOD){
+		ledCounter++;
+	}else{
+		toggleStatusLED();
+		incrementRunningClock();
+		ledCounter = 0;
+	}
+	
+Sample_Accel();
+ReadData();
+
+
+}
 
 /* END Events */
 

@@ -7,7 +7,7 @@
 **     Version     : Component 01.004, Driver 01.40, CPU db: 3.00.050
 **     Datasheet   : MC9S08JM60 Rev. 1 11/2007
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2013-07-08, 01:17, # CodeGen: 1
+**     Date/Time   : 2013-07-09, 23:54, # CodeGen: 8
 **     Abstract    :
 **         This component "MC9S08JM60_64" contains initialization 
 **         of the CPU and provides basic methods and events for 
@@ -42,6 +42,8 @@
 #pragma MESSAGE DISABLE C4002 /* WARNING C4002: Result not used is ignored */
 
 #include "AD1.h"
+#include "sampleTimer.h"
+#include "filterTimer.h"
 #include "PE_Types.h"
 #include "PE_Error.h"
 #include "PE_Const.h"
@@ -135,8 +137,8 @@ void _EntryPoint(void)
     MCGSC = *(uint8_t*)0xFFAEU;        /* Initialize MCGSC register from a non volatile memory */
   }
   /*lint -restore Enable MISRA rule (11.3) checking. */
-  /* MCGC2: BDIV=1,RANGE=0,HGO=0,LP=0,EREFS=0,ERCLKEN=0,EREFSTEN=0 */
-  setReg8(MCGC2, 0x40U);               /* Set MCGC2 register */ 
+  /* MCGC2: BDIV=1,RANGE=1,HGO=0,LP=0,EREFS=0,ERCLKEN=1,EREFSTEN=0 */
+  setReg8(MCGC2, 0x62U);               /* Set MCGC2 register */ 
   /* MCGC1: CLKS=0,RDIV=0,IREFS=1,IRCLKEN=1,IREFSTEN=0 */
   setReg8(MCGC1, 0x06U);               /* Set MCGC1 register */ 
   /* MCGC3: LOLIE=0,PLLS=0,CME=0,??=0,VDIV=1 */
@@ -169,6 +171,10 @@ void PE_low_level_init(void)
   setReg8Bits(APCTL1, 0x20U);           
   /* APCTL2: ADPC9=1,ADPC8=1 */
   setReg8Bits(APCTL2, 0x03U);           
+  /* PTFD: PTFD4=0 */
+  clrReg8Bits(PTFD, 0x10U);             
+  /* PTFDD: PTFDD4=1 */
+  setReg8Bits(PTFDD, 0x10U);            
   /* PTASE: PTASE5=0,PTASE4=0,PTASE3=0,PTASE2=0,PTASE1=0,PTASE0=0 */
   clrReg8Bits(PTASE, 0x3FU);            
   /* PTBSE: PTBSE7=0,PTBSE6=0,PTBSE5=0,PTBSE4=0,PTBSE3=0,PTBSE2=0,PTBSE1=0,PTBSE0=0 */
@@ -200,6 +206,10 @@ void PE_low_level_init(void)
   /* ### Shared modules init code ... */
   /* ###  "AD1" init code ... */
   AD1_Init();
+  /* ### TimerInt "sampleTimer" init code ... */
+  sampleTimer_Init();
+  /* ### TimerOut "filterTimer" init code ... */
+  filterTimer_InitTO();
   __EI();                              /* Enable interrupts */
 }
 
