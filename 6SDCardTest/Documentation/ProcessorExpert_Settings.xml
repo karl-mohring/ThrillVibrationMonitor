@@ -14,13 +14,28 @@
         <group name="Clock settings">
           <group name="Internal clock">
             <Internal_oscillator_frequency__kHz_ v="31.250000000000" />
-            <Internal_ref__clock_for_peripherals v="Enabled" />
+            <Internal_ref__clock_for_peripherals v="Disabled" />
             <boolgroup name="Initialize trim value" v="yes">
               <Trim_value_address v="65455" />
               <Fine_trim_value_address v="65454" />
             </boolgroup>
           </group>
-          <boolgroup name="External clock" v="Disabled" />
+          <boolgroup name="External clock" v="Enabled">
+            <enumgroup name="Clock source" v="External crystal">
+              <Clock_frequency__MHz_ v="12" />
+              <group name="Clock input pin">
+                <Pin_name v="PTG5_EXTAL" />
+                <Pin_signal v="" />
+              </group>
+              <group name="Clock output pin">
+                <Pin_name v="PTG4_XTAL" />
+                <Pin_signal v="" />
+              </group>
+              <Clock_range v="High frequency" />
+              <Oscillator_operating_mode v="High gain" />
+              <External_ref__clock_for_peripherals v="Enabled" />
+            </enumgroup>
+          </boolgroup>
           <group name="Low-power modes settings">
             <boolgroup name="STOP instruction enabled" v="no" />
           </group>
@@ -215,18 +230,19 @@
       <list name="Shared MCG speed mode settings" v="1">
         <group name="Enabled speed modes">
           <boolgroup name="High speed mode" v="Enabled">
-            <High_speed_clock v="Internal Clock" />
+            <High_speed_clock v="External Clock" />
             <Bus_freq__divider v="Auto select" />
-            <Internal_bus_clock v="8" />
-            <Fixed_frequency_clock__MHz_ v="0.015625" />
+            <Internal_bus_clock v="24" />
+            <Fixed_frequency_clock__MHz_ v="0.75" />
             <Clock_monitor v="Disabled" />
-            <enumgroup name="FLL/PLL mode" v="FLL Engaged">
+            <enumgroup name="FLL/PLL mode" v="PLL Engaged">
               <Loss_of_lock_interrupt v="Disabled" />
-              <Ref_clock_source v="Internal Clock" />
-              <Ref_clock_freq___MHz_ v="0.031250000000" />
+              <Ref_clock_source v="External Clock" />
+              <Ref_clock_freq___MHz_ v="12" />
               <Ref__clock_divider v="Auto select" />
-              <Divided_ref_clock_freq___MHz_ v="0.031250000000" />
-              <FLL_output_clock_freq___MHz_ v="32" />
+              <Divided_ref_clock_freq___MHz_ v="1.500000000000" />
+              <PLL_mult__factor v="Auto select" />
+              <PLL_output_clock_freq___MHz_ v="48" />
             </enumgroup>
           </boolgroup>
           <boolgroup name="Low speed mode" v="Disabled" />

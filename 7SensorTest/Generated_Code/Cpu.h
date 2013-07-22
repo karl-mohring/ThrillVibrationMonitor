@@ -7,7 +7,7 @@
 **     Version     : Component 01.004, Driver 01.40, CPU db: 3.00.050
 **     Datasheet   : MC9S08JM60 Rev. 1 11/2007
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2013-07-09, 23:54, # CodeGen: 8
+**     Date/Time   : 2013-07-11, 13:24, # CodeGen: 43
 **     Abstract    :
 **         This component "MC9S08JM60_64" contains initialization 
 **         of the CPU and provides basic methods and events for 
@@ -61,9 +61,9 @@
   } tPowerDownModes;
 #endif
 
-#define CPU_BUS_CLK_HZ              0x007A1200UL /* Initial value of the bus clock frequency in Hz */
+#define CPU_BUS_CLK_HZ              0x016E3600UL /* Initial value of the bus clock frequency in Hz */
 
-#define CPU_INSTR_CLK_HZ            0x007A1200UL /* Initial value of the instruction clock frequency in Hz */
+#define CPU_INSTR_CLK_HZ            0x016E3600UL /* Initial value of the instruction clock frequency in Hz */
 
 #define CPU_EXT_CLK_HZ              0x00B71B00UL /* Value of the main clock frequency (crystal or external clock) in Hz */
 #define CPU_INT_CLK_HZ              0x7A12UL /* Value of the internal oscillator clock frequency in Hz */

@@ -1,5 +1,4 @@
 
-
 Sources/SD_c.obj: \
 	E:/Dropbox/!Uni/EG4012\ -\ Thesis/ThrillVibrationMonitor/7SensorTest/Project_Headers/../Sources/SD.c \
 	E:/Dropbox/!Uni/EG4012\ -\ Thesis/ThrillVibrationMonitor/7SensorTest/Sources/SD.h \

@@ -7,7 +7,7 @@
 **     Version     : Component 01.004, Driver 01.40, CPU db: 3.00.050
 **     Datasheet   : MC9S08JM60 Rev. 1 11/2007
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2013-07-09, 23:54, # CodeGen: 8
+**     Date/Time   : 2013-07-22, 11:42, # CodeGen: 65
 **     Abstract    :
 **         This component "MC9S08JM60_64" contains initialization 
 **         of the CPU and provides basic methods and events for 
@@ -44,6 +44,7 @@
 #include "AD1.h"
 #include "sampleTimer.h"
 #include "filterTimer.h"
+#include "SM1.h"
 #include "PE_Types.h"
 #include "PE_Error.h"
 #include "PE_Const.h"
@@ -124,8 +125,10 @@ void _EntryPoint(void)
   /* ### MC9S08JM60_64 "Cpu" init code ... */
   /*  PE initialization code after reset */
   /* Common initialization of the write once registers */
-  /* SOPT1: COPT=0,STOPE=0,??=1,??=0,??=0,??=1,??=1 */
-  setReg8(SOPT1, 0x13U);                
+  /* SOPT1: COPT=0,STOPE=1,??=1,??=0,??=0,??=1,??=1 */
+  setReg8(SOPT1, 0x33U);                
+  /* SOPT2: COPCLKS=0,COPW=0,??=0,??=0,??=0,SPI1FE=1,SPI2FE=1,ACIC=0 */
+  setReg8(SOPT2, 0x06U);                
   /* SPMSC1: LVWF=0,LVWACK=0,LVWIE=0,LVDRE=1,LVDSE=1,LVDE=1,??=0,BGBE=0 */
   setReg8(SPMSC1, 0x1CU);               
   /* SPMSC2: ??=0,??=0,LVDV=0,LVWV=0,PPDF=0,PPDACK=0,??=0,PPDC=0 */
@@ -137,13 +140,31 @@ void _EntryPoint(void)
     MCGSC = *(uint8_t*)0xFFAEU;        /* Initialize MCGSC register from a non volatile memory */
   }
   /*lint -restore Enable MISRA rule (11.3) checking. */
-  /* MCGC2: BDIV=1,RANGE=1,HGO=0,LP=0,EREFS=0,ERCLKEN=1,EREFSTEN=0 */
-  setReg8(MCGC2, 0x62U);               /* Set MCGC2 register */ 
-  /* MCGC1: CLKS=0,RDIV=0,IREFS=1,IRCLKEN=1,IREFSTEN=0 */
-  setReg8(MCGC1, 0x06U);               /* Set MCGC1 register */ 
-  /* MCGC3: LOLIE=0,PLLS=0,CME=0,??=0,VDIV=1 */
-  setReg8(MCGC3, 0x01U);               /* Set MCGC3 register */ 
-  while(MCGSC_LOCK == 0U) {            /* Wait until FLL is locked */
+  /* MCGC2: BDIV=0,RANGE=1,HGO=1,LP=0,EREFS=1,ERCLKEN=1,EREFSTEN=0 */
+  setReg8(MCGC2, 0x36U);               /* Set MCGC2 register */ 
+  /* MCGC1: CLKS=2,RDIV=7,IREFS=0,IRCLKEN=0,IREFSTEN=0 */
+  setReg8(MCGC1, 0xB8U);               /* Set MCGC1 register */ 
+  while(MCGSC_OSCINIT == 0U) {         /* Wait until external reference is stable */
+  }
+  while(MCGSC_IREFST != 0U) {          /* Wait until external reference is selected */
+  }
+  while((MCGSC & 0x0CU) != 0x08U) {    /* Wait until external clock is selected as a bus clock reference */
+  }
+  /* MCGC2: BDIV=0,RANGE=1,HGO=1,LP=1,EREFS=1,ERCLKEN=1,EREFSTEN=0 */
+  setReg8(MCGC2, 0x3EU);               /* Set MCGC2 register */ 
+  /* MCGC1: CLKS=2,RDIV=3,IREFS=0,IRCLKEN=0,IREFSTEN=0 */
+  setReg8(MCGC1, 0x98U);               /* Set MCGC1 register */ 
+  /* MCGC3: LOLIE=0,PLLS=1,CME=0,??=0,VDIV=8 */
+  setReg8(MCGC3, 0x48U);               /* Set MCGC3 register */ 
+  /* MCGC2: LP=0 */
+  clrReg8Bits(MCGC2, 0x08U);            
+  while(MCGSC_PLLST == 0U) {           /* Wait until PLL is selected */
+  }
+  while(MCGSC_LOCK == 0U) {            /* Wait until PLL is locked */
+  }
+  /* MCGC1: CLKS=0,RDIV=3,IREFS=0,IRCLKEN=0,IREFSTEN=0 */
+  setReg8(MCGC1, 0x18U);               /* Set MCGC1 register */ 
+  while((MCGSC & 0x0CU) != 0x0CU) {    /* Wait until PLL clock is selected as a bus clock reference */
   }
   
 
@@ -175,6 +196,10 @@ void PE_low_level_init(void)
   clrReg8Bits(PTFD, 0x10U);             
   /* PTFDD: PTFDD4=1 */
   setReg8Bits(PTFDD, 0x10U);            
+  /* PTBDD: PTBDD2=1,PTBDD1=1,PTBDD0=0 */
+  clrSetReg8Bits(PTBDD, 0x01U, 0x06U);  
+  /* PTBD: PTBD2=0 */
+  clrReg8Bits(PTBD, 0x04U);             
   /* PTASE: PTASE5=0,PTASE4=0,PTASE3=0,PTASE2=0,PTASE1=0,PTASE0=0 */
   clrReg8Bits(PTASE, 0x3FU);            
   /* PTBSE: PTBSE7=0,PTBSE6=0,PTBSE5=0,PTBSE4=0,PTBSE3=0,PTBSE2=0,PTBSE1=0,PTBSE0=0 */
@@ -210,6 +235,8 @@ void PE_low_level_init(void)
   sampleTimer_Init();
   /* ### TimerOut "filterTimer" init code ... */
   filterTimer_InitTO();
+  /* ###  Synchro master "SM1" init code ... */
+  SM1_Init();
   __EI();                              /* Enable interrupts */
 }
 

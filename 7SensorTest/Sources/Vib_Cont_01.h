@@ -81,17 +81,22 @@ void DataTestOld(UINT8 *, UINT16 *); /* Write test accelerometer data to file */
 void DataTest(void);        // Place demo accelerometer data in the circular buffer
 void initialiseSensorBoard(void);     /* Initialise the vibration controller board */
 void initialiseLEDs(void);
-void writeRecordToBuffer(void);
+void writeRecordToCBuffer(void);
 void stopSampling(void);
 void startSampling(void);/* Main function for the Vibration Control Board */
 void SampleDelay_Init(void);/* Initialise the sampling delay timer */
 void ReadData(void);        /* Read sensor data */
-void pulsePowerLED(UINT8 pulses); /* Pulse LED1 to incicate an error */
-void pulseStatusLED(UINT8 pulses); /* Pulse LED2 to incicate an error */
-void pulseReceiveLED(UINT8 pulses); /* Pulse LED3 to incicate an error */
-void pulseTransmitLED(UINT8 pulses); /* Pulse LED4 to incicate an error */
+void pulsePowerLED(UINT8 pulses); /* Pulse LED1 to indicate an error */
+void pulseStatusLED(UINT8 pulses); /* Pulse LED2 to indicate an error */
+void pulseReceiveLED(UINT8 pulses); /* Pulse LED3 to indicate an error */
+void pulseTransmitLED(UINT8 pulses); /* Pulse LED4 to indicate an error */
 void ToCBuffer(UINT8);          // Place byte in the circular buffer
 UINT8 FromCBuffer(void);        // Get the next byte from the circular buffer
+void togglePowerLED(void);
+void toggleStatusLED(void);
+void toggleReceiveLED(void);
+void toggleTransmitLED(void);
+void Sample_Accel(void);
 
 /********************** GENERAL VARIABLES USED *****************/
 
@@ -103,10 +108,7 @@ extern UINT16 u16buffer_index;   /* Variable to indicate position of buffer */
 extern UINT16 u16file_counter;   /* Variable to indicate remaining bytes of a file */
 
 /* Variables for storing Accelerometer readings */
-extern UINT16 Accel[4];         /* Stores the record number and the 9 accelerometer readings */
-extern UINT16 RecordNumber;      /* Record Number: the first column of a sample record */
-extern UINT16 InterruptNumber;   /* The number of interrupts during sampling */
-extern UINT8  Counter;
+extern UINT16 recordNumber;      /* Record Number: the first column of a sample record */
 
 /* Variables for controlling the sampling operation */
 extern UINT8  Sampling;          /* True when sampling is in progress */

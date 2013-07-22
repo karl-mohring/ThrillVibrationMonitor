@@ -6,7 +6,7 @@
 **     Component   : TimerOut
 **     Version     : Component 03.030, Driver 01.24, CPU db: 3.00.050
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2013-07-09, 23:54, # CodeGen: 8
+**     Date/Time   : 2013-07-11, 13:24, # CodeGen: 43
 **     Abstract    :
 **         This component implements a periodic signal generator 1:1 (Flip-Flop Output).
 **         The signal alternates the "0" and "1" output values in exactly
@@ -26,12 +26,12 @@
 **
 **         High speed mode
 **             Prescaler               : divide-by-1
-**             Clock                   : 8000000 Hz
+**             Clock                   : 24000000 Hz
 **           Pulse width
 **             Xtal ticks              : 400
 **             microseconds            : 33
-**             seconds (real)          : 0.000033375
-**             Hz                      : 29963
+**             seconds (real)          : 0.000033333333
+**             Hz                      : 30000
 **             kHz                     : 30
 **
 **         Runtime setting             : none

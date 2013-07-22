@@ -1,0 +1,11 @@
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Project_Headers\../Sources\Vib_Cont_01.c:125:warning:C1801 Implicit parameter-declaration for 'sampleTimer_Disable'
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Project_Headers\../Sources\Vib_Cont_01.c:125:warning:C1420 Result of function-call is ignored
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Project_Headers\../Sources\Vib_Cont_01.c:325:warning:C1801 Implicit parameter-declaration for 'sampleTimer_Enable'
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Project_Headers\../Sources\Vib_Cont_01.c:325:warning:C1420 Result of function-call is ignored
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Project_Headers\../Sources\Vib_Cont_01.c:577:warning:C1801 Implicit parameter-declaration for 'AD1_MeasureChan'
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Project_Headers\../Sources\Vib_Cont_01.c:577:warning:C2705 Possible loss of data
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Project_Headers\../Sources\Vib_Cont_01.c:578:warning:C1801 Implicit parameter-declaration for 'AD1_GetChanValue16'
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Project_Headers\../Sources\Vib_Cont_01.c:578:warning:C1420 Result of function-call is ignored
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Project_Headers\../Sources\Vib_Cont_01.c:572:information:C5702 Local variable 'i' declared in function 'Sample_Accel' but not referenced
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Project_Headers\../Sources\Vib_Cont_01.c:594:warning:C1420 Result of function-call is ignored
+E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Project_Headers\../Sources\Vib_Cont_01.c:665:warning:C1420 Result of function-call is ignored

@@ -1,0 +1,17 @@
+﻿Build started 22/07/2013 00:39:32.
+     1>Project "E:\Dropbox\!Uni\EG4012 - Thesis\ThrillVibrationMonitor\BaseStation\BaseStationGUI\BaseStationGUI.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         E:\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.0\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\BaseStationGUI.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib BaseStationGUI.cpp
+         BaseStationGUI.cpp
+       Link:
+         E:\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Dropbox\!Uni\EG4012 - Thesis\ThrillVibrationMonitor\BaseStation\BaseStationGUI\Debug\BaseStationGUI.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\BaseStationGUI.Form1.resources /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\Dropbox\!Uni\EG4012 - Thesis\ThrillVibrationMonitor\BaseStation\BaseStationGUI\Debug\BaseStationGUI.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
+         Debug\AssemblyInfo.obj
+         Debug\BaseStationGUI.obj
+         Debug\stdafx.obj
+         "Debug\.NETFramework,Version=v4.5.AssemblyAttributes.obj"
+         BaseStationGUI.vcxproj -> E:\Dropbox\!Uni\EG4012 - Thesis\ThrillVibrationMonitor\BaseStation\BaseStationGUI\Debug\BaseStationGUI.exe
+     1>Done Building Project "E:\Dropbox\!Uni\EG4012 - Thesis\ThrillVibrationMonitor\BaseStation\BaseStationGUI\BaseStationGUI.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.45

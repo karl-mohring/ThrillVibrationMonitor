@@ -170,6 +170,11 @@ void VibContInit(void) {
 	}
 
 	ErrorPulse2(1); // SD_Init OK
+	
+	for(;;){
+		ErrorPulse1(1);
+		ErrorPulse2(1);
+	}
 	/* Check that the SD Card is present and it contains the file "FILE.TXT"
 	 and initialise the File System (FAT)  */
 	vfnSDwelcome();

@@ -12,7 +12,6 @@ Linker      : SmartLinker V-5.0.50 Build 13087, Mar 29 2013
 *********************************************************************************************
 FILE SECTION
 ---------------------------------------------------------------------------------------------
-Fat_c.obj                               Model: SMALL,         Lang: ANSI-C
 ProcessorExpert_c.obj                   Model: SMALL,         Lang: ANSI-C
 SD_c.obj                                Model: SMALL,         Lang: ANSI-C
 SPI_c.obj                               Model: SMALL,         Lang: ANSI-C
@@ -21,25 +20,23 @@ start08_c.obj                           Model: SMALL,         Lang: ANSI-C
 Cpu_c.obj                               Model: SMALL,         Lang: ANSI-C
 IO_Map_c.obj                            Model: SMALL,         Lang: ANSI-C
 Vectors_c.obj                           Model: SMALL,         Lang: ANSI-C
-rtshc08.o (ansiis.lib)                  Model: SMALL,         Lang: ANSI-C
 
 *********************************************************************************************
 STARTUP SECTION
 ---------------------------------------------------------------------------------------------
 Entry point: 0x1964 (_EntryPoint)
-_startupData is allocated at 0x19D3 and uses 6 Bytes
+_startupData is allocated at 0x19F7 and uses 6 Bytes
 extern struct _tagStartup {
   unsigned nofZeroOut     1
-  _Range   pZeroOut       0xD0     617
-  _Copy    *toCopyDownBeg 0x2D51
+  _Range   pZeroOut       0xD0     46
+  _Copy    *toCopyDownBeg 0x2015
 } _startupData;
 
 *********************************************************************************************
 SECTION-ALLOCATION SECTION
 Section Name                    Size  Type     From       To       Segment
 ---------------------------------------------------------------------------------------------
-.text                           4954     R     0x19E5     0x2D3E   ROM
-.rodata1                          18     R     0x2D3F     0x2D50   ROM
+.text                           1548     R     0x1A09     0x2014   ROM
 .abs_section_ffbd                  1     R     0xFFBD     0xFFBD   .absSeg0
 .abs_section_ffbf                  1     R     0xFFBF     0xFFBF   .absSeg1
 .abs_section_0                     1   N/I        0x0        0x0   .absSeg2
@@ -191,16 +188,16 @@ Section Name                    Size  Type     From       To       Segment
 .abs_section_1812                  2   N/I     0x1812     0x1813   .absSeg148
 .abs_section_1814                  2   N/I     0x1814     0x1815   .absSeg149
 .abs_section_ffc4                 60     R     0xFFC4     0xFFFF   .absSeg150
-.bss                              23   R/W       0xD0       0xE6   RAM
-.startData                        18     R     0x19D3     0x19E4   ROM
-.init                            115     R     0x1960     0x19D2   ROM
-.common                          594   R/W       0xE7      0x338   RAM
-.stack                           128   R/W      0x339      0x3B8   RAM
-.copy                              2     R     0x2D51     0x2D52   ROM
+.bss                              21   R/W       0xD0       0xE4   RAM
+.startData                        18     R     0x19F7     0x1A08   ROM
+.init                            151     R     0x1960     0x19F6   ROM
+.common                           25   R/W       0xE5       0xFD   RAM
+.stack                           128   R/W       0xFE      0x17D   RAM
+.copy                              2     R     0x2015     0x2016   ROM
 
 Summary of section sizes per section type:
-READ_ONLY (R):        1431 (dec:     5169)
-READ_WRITE (R/W):      2E9 (dec:      745)
+READ_ONLY (R):         6F5 (dec:     1781)
+READ_WRITE (R/W):       AE (dec:      174)
 NO_INIT (N/I):          AC (dec:      172)
 
 *********************************************************************************************
@@ -212,100 +209,68 @@ VECTOR-ALLOCATION SECTION
 OBJECT-ALLOCATION SECTION
      Name               Module                 Addr   hSize   dSize     Ref    Section   RLIB
 ---------------------------------------------------------------------------------------------
-MODULE:                 -- Fat_c.obj --
-- PROCEDURES:
-     LWordSwap                                 19E5      7E     126       3   .text       
-     FAT_Read_Master_Block                     1A63     12B     299       2   .text       
-     FAT_FileClose                             1B8E     253     595       2   .text       
-     FAT_SearchAvailableFAT                    1DE1      9B     155       2   .text       
-     FAT_Entry                                 1E7C     101     257       2   .text       
-     FAT_FileNameOrganizer                     1F7D      43      67       1   .text       
-     FAT_FileOpen                              1FC0     31E     798      17   .text       
-- VARIABLES:
-     u16Main_Offset                              D0       2       2       7   .bss        
-     WHandler                                    E7      19      25      37   .common     
-     RHandler                                   100       A      10       5   .common     
-     ag8FATReadBuffer                           10A     200     512      24   .common     
-     u16FAT_Sector_Size                         30A       2       2      13   .common     
-     u16FAT_Cluster_Size                        30C       2       2       2   .common     
-     u16FAT_FAT_BASE                            30E       2       2      12   .common     
-     u16FAT_Root_BASE                           310       2       2      11   .common     
-     u16FAT_Data_BASE                           312       2       2       8   .common     
-     u32DataSector                              314       4       4       2   .common     
 MODULE:                 -- ProcessorExpert_c.obj --
 - PROCEDURES:
-     main                                      22DE      1C      28       1   .text       
+     main                                      1A09      1C      28       1   .text       
 - VARIABLES:
 MODULE:                 -- SD_c.obj --
 - PROCEDURES:
-     SD_Init                                   22FA     13A     314       9   .text       
-     SPI_SS_Disable_Delay                      2434       9       9       2   .text       
-     SD_Write_Block                            243D      8A     138       3   .text       
-     SD_Erase_Blocks                           24C7      7A     122       1   .text       
-     SD_Read_CSD                               2541      43      67       1   .text       
-     SD_Read_Block                             2584      63      99       6   .text       
-     SD_SendCommand                            25E7      70     112      10   .text       
-     SD_SendCommandR7                          2657      9E     158       1   .text       
-     SD_SendCommandR3                          26F5      7E     126       2   .text       
-     SD_CLKDelay                               2773       F      15       8   .text       
+     SD_Init                                   1A25     13A     314       9   .text       
+     SPI_SS_Disable_Delay                      1B5F       9       9       2   .text       
+     SD_Read_CSD                               1B68      43      67       1   .text       
+     SD_SendCommand                            1BAB      70     112       5   .text       
+     SD_SendCommandR7                          1C1B      9E     158       1   .text       
+     SD_SendCommandR3                          1CB9      7E     126       2   .text       
+     SD_CLKDelay                               1D37       F      15       3   .text       
 - VARIABLES:
-     gu8SD_Response                              D2       5       5      18   .bss        
-     gu8SD_CSD                                   D7      10      16       1   .bss        
-     gu8SD_Argument                             318       4       4      27   .common     
+     gu8SD_Response                              D0       5       5      18   .bss        
+     gu8SD_CSD                                   D5      10      16       1   .bss        
+     gu8SD_Argument                              E5       4       4      15   .common     
 MODULE:                 -- SPI_c.obj --
 - PROCEDURES:
-     SPI_Init                                  2782      25      37       1   .text       
-     SPI1_Init                                 27A7      21      33       1   .text       
-     SPI_Send_byte                             27C8       D      13      14   .text       
-     SPI_Receive_byte                          27D5       B      11      17   .text       
-     SPI_High_rate                             27E0       7       7       1   .text       
+     SPI_Init                                  1D46      25      37       1   .text       
+     SPI_Send_byte                             1D6B       D      13      10   .text       
+     SPI_Receive_byte                          1D78       B      11      10   .text       
+     SPI_High_rate                             1D83       7       7       1   .text       
 - VARIABLES:
 MODULE:                 -- Vib_Cont_01_c.obj --
 - PROCEDURES:
-     VibContInit                               27E7      95     149       1   .text       
-     ErrorPulse1                               287C      62      98       4   .text       
-     ErrorPulse2                               28DE      62      98       4   .text       
-     ErrorPulse3                               2940      62      98       7   .text       
-     ErrorPulse4                               29A2      62      98       1   .text       
-     vfnSDwelcome                              2A04      DB     219       1   .text       
+     VibContInit                               1D8A      7F     127       1   .text       
+     ErrorPulse1                               1E09      62      98       3   .text       
+     ErrorPulse2                               1E6B      62      98       3   .text       
+     ErrorPulse3                               1ECD      62      98       3   .text       
+     ErrorPulse4                               1F2F      62      98       1   .text       
 - VARIABLES:
-     STRING.FILE.TXT.1                         2D3F       9       9       1   .rodata1    
-     STRING.FILE.TXT.2                         2D48       9       9       1   .rodata1    
-     u8sd_status                                31C       1       1       7   .common     
-     u8sd_command                               31D       1       1       1   .common     
-     u16buffer_index                            31E       2       2       1   .common     
-     RecordNumber                               320       2       2       1   .common     
-     InterruptNumber                            322       2       2       1   .common     
-     Counter                                    324       1       1       1   .common     
-     TakeSample                                 325       1       1       1   .common     
-     System_Status                              326       1       1       1   .common     
-     EvenBufferActive                           327       1       1       1   .common     
-     u16Evenbuffer_index                        328       2       2       1   .common     
-     u16Oddbuffer_index                         32A       2       2       1   .common     
-     EvenBufferEmpty                            32C       1       1       1   .common     
-     OddBufferEmpty                             32D       1       1       1   .common     
-     EBToDisk                                   32E       1       1       1   .common     
-     OBToDisk                                   32F       1       1       1   .common     
-     EBToDiskPending                            330       1       1       1   .common     
-     OBToDiskPending                            331       1       1       1   .common     
-     u16CBufferPutter                           332       2       2       1   .common     
-     u16CBufferGetter                           334       2       2       1   .common     
-     u16CBufferBytes                            336       2       2       1   .common     
-     ReadDataStop                               338       1       1       1   .common     
+     u8sd_status                                 E9       1       1       3   .common     
+     TakeSample                                  EA       1       1       1   .common     
+     System_Status                               EB       1       1       1   .common     
+     EvenBufferActive                            EC       1       1       1   .common     
+     u16Evenbuffer_index                         ED       2       2       1   .common     
+     u16Oddbuffer_index                          EF       2       2       1   .common     
+     EvenBufferEmpty                             F1       1       1       1   .common     
+     OddBufferEmpty                              F2       1       1       1   .common     
+     EBToDisk                                    F3       1       1       1   .common     
+     OBToDisk                                    F4       1       1       1   .common     
+     EBToDiskPending                             F5       1       1       1   .common     
+     OBToDiskPending                             F6       1       1       1   .common     
+     u16CBufferPutter                            F7       2       2       1   .common     
+     u16CBufferGetter                            F9       2       2       1   .common     
+     u16CBufferBytes                             FB       2       2       1   .common     
+     ReadDataStop                                FD       1       1       1   .common     
 MODULE:                 -- start08_c.obj --
 - PROCEDURES:
-     loadByte                                  2ADF       E      14       5   .text       
-     Init                                      2AED      6D     109       1   .text       
-     _Startup                                  2B5A       9       9       1   .text       
+     loadByte                                  1F91       E      14       5   .text       
+     Init                                      1F9F      6D     109       1   .text       
+     _Startup                                  200C       9       9       1   .text       
 - VARIABLES:
-     _startupData                              19D3       6       6       4   .startData  
+     _startupData                              19F7       6       6       4   .startData  
 - LABELS:
-     __SEG_END_SSTACK                           3B9       0       0       1               
+     __SEG_END_SSTACK                           17E       0       0       1               
 MODULE:                 -- Cpu_c.obj --
 - PROCEDURES:
      Cpu_Interrupt                             1960       4       4      29   .init       
-     _EntryPoint                               1964      2D      45       1   .init       
-     PE_low_level_init                         1991      42      66       1   .init       
+     _EntryPoint                               1964      51      81       1   .init       
+     PE_low_level_init                         19B5      42      66       1   .init       
 - VARIABLES:
      NVPROT_INIT                               FFBD       1       1       0   .abs_section_ffbd
      NVOPT_INIT                                FFBF       1       1       0   .abs_section_ffbf
@@ -314,7 +279,7 @@ MODULE:                 -- IO_Map_c.obj --
 - VARIABLES:
      _PTAD                                        0       1       1       0   .abs_section_0
      _PTADD                                       1       1       1       0   .abs_section_1
-     _PTBD                                        2       1       1      23   .abs_section_2
+     _PTBD                                        2       1       1      13   .abs_section_2
      _PTBDD                                       3       1       1       1   .abs_section_3
      _PTCD                                        4       1       1       1   .abs_section_4
      _PTCDD                                       5       1       1       2   .abs_section_5
@@ -355,15 +320,15 @@ MODULE:                 -- IO_Map_c.obj --
      _SCI2S2                                     45       1       1       0   .abs_section_45
      _SCI2C3                                     46       1       1       0   .abs_section_46
      _SCI2D                                      47       1       1       0   .abs_section_47
-     _MCGC1                                      48       1       1       1   .abs_section_48
-     _MCGC2                                      49       1       1       1   .abs_section_49
+     _MCGC1                                      48       1       1       3   .abs_section_48
+     _MCGC2                                      49       1       1       3   .abs_section_49
      _MCGTRM                                     4A       1       1       1   .abs_section_4a
-     _MCGSC                                      4B       1       1       2   .abs_section_4b
+     _MCGSC                                      4B       1       1       7   .abs_section_4b
      _MCGC3                                      4C       1       1       1   .abs_section_4c
-     _SPI1C1                                     50       1       1       2   .abs_section_50
-     _SPI1C2                                     51       1       1       1   .abs_section_51
-     _SPI1BR                                     52       1       1       1   .abs_section_52
-     _SPI1S                                      53       1       1       1   .abs_section_53
+     _SPI1C1                                     50       1       1       0   .abs_section_50
+     _SPI1C2                                     51       1       1       0   .abs_section_51
+     _SPI1BR                                     52       1       1       0   .abs_section_52
+     _SPI1S                                      53       1       1       0   .abs_section_53
      _IICA                                       58       1       1       0   .abs_section_58
      _IICF                                       59       1       1       0   .abs_section_59
      _IICC1                                      5A       1       1       0   .abs_section_5a
@@ -403,7 +368,7 @@ MODULE:                 -- IO_Map_c.obj --
      _SRS                                      1800       1       1       0   .abs_section_1800
      _SBDFR                                    1801       1       1       0   .abs_section_1801
      _SOPT1                                    1802       1       1       1   .abs_section_1802
-     _SOPT2                                    1803       1       1       2   .abs_section_1803
+     _SOPT2                                    1803       1       1       1   .abs_section_1803
      _SPMSC1                                   1809       1       1       1   .abs_section_1809
      _SPMSC2                                   180A       1       1       1   .abs_section_180a
      _DBGC                                     1816       1       1       0   .abs_section_1816
@@ -429,7 +394,7 @@ MODULE:                 -- IO_Map_c.obj --
      _PTDDS                                    184E       1       1       1   .abs_section_184e
      _PTEPE                                    1850       1       1       0   .abs_section_1850
      _PTESE                                    1851       1       1       1   .abs_section_1851
-     _PTEDS                                    1852       1       1       2   .abs_section_1852
+     _PTEDS                                    1852       1       1       1   .abs_section_1852
      _PTFPE                                    1854       1       1       0   .abs_section_1854
      _PTFSE                                    1855       1       1       1   .abs_section_1855
      _PTFDS                                    1856       1       1       1   .abs_section_1856
@@ -448,7 +413,7 @@ MODULE:                 -- IO_Map_c.obj --
      _TPM1C5V                                    35       2       2       0   .abs_section_35
      _SCI1BD                                     38       2       2       0   .abs_section_38
      _SCI2BD                                     40       2       2       0   .abs_section_40
-     _SPI1D16                                    54       2       2       1   .abs_section_54
+     _SPI1D16                                    54       2       2       0   .abs_section_54
      _SPI1M                                      56       2       2       0   .abs_section_56
      _TPM2CNT                                    61       2       2       0   .abs_section_61
      _TPM2MOD                                    63       2       2       0   .abs_section_63
@@ -464,68 +429,35 @@ MODULE:                 -- Vectors_c.obj --
 - PROCEDURES:
 - VARIABLES:
      _vect                                     FFC4      3C      60       0   .abs_section_ffc4
-MODULE:                 -- rtshc08.o (ansiis.lib) --
-- PROCEDURES:
-     _PUSH_ARGS_L                              2B63      20      32       2   .text       
-     _ENTER_UNARY_L                            2B83      29      41       2   .text       
-     _ENTER_BINARY_L                           2BAC      16      22       1   .text       
-     _ENTER_BINARY_L_RC                        2BC2      19      25       2   .text       
-     _IDIVMOD                                  2BDB      69     105       2   .text       
-     _LADD_k_is_k_plus_j                       2C44      1F      31       2   .text       
-     _LAND_k_is_k_and_j                        2C63      1F      31       1   .text       
-     _IDIVU_STAR08                             2C82       D      13       4   .text       
-     _IMODU_STAR08                             2C8F      10      16       5   .text       
-     _ILSR                                     2C9F       C      12       2   .text       
-     _ILSL                                     2CAB       C      12       3   .text       
-     _LADD                                     2CB7       6       6       7   .text       
-     _LADD_RC                                  2CBD       6       6       2   .text       
-     _LAND_RC                                  2CC3       6       6       2   .text       
-     _LLSR                                     2CC9      16      22       2   .text       
-     _LLSL                                     2CDF      16      22       5   .text       
-     _COPY                                     2CF5      30      48       2   .text       
-     _POP32                                    2D25      1A      26       8   .text       
-- VARIABLES:
 
 *********************************************************************************************
 MODULE STATISTIC
   Name                                      Data   Code  Const
 ---------------------------------------------------------------------------------------------
-  Fat_c.obj                                  563   2297      0
   ProcessorExpert_c.obj                        0     28      0
-  SD_c.obj                                    25   1160      0
-  SPI_c.obj                                    0    101      0
-  Vib_Cont_01_c.obj                           29    760     18
+  SD_c.obj                                    25    801      0
+  SPI_c.obj                                    0     68      0
+  Vib_Cont_01_c.obj                           21    519      0
   start08_c.obj                                0    132      0
-  Cpu_c.obj                                    0    115      2
+  Cpu_c.obj                                    0    151      2
   IO_Map_c.obj                               172      0      0
   Vectors_c.obj                                0      0     60
-  rtshc08.o (ansiis.lib)                       0    476      0
   other                                      128     18      2
 
 *********************************************************************************************
 SECTION USE IN OBJECT-ALLOCATION SECTION
 ---------------------------------------------------------------------------------------------
 SECTION: ".text"
-  LWordSwap FAT_Read_Master_Block FAT_FileClose FAT_SearchAvailableFAT 
-  FAT_Entry FAT_FileNameOrganizer FAT_FileOpen main SD_Init 
-  SPI_SS_Disable_Delay SD_Write_Block SD_Erase_Blocks SD_Read_CSD SD_Read_Block 
-  SD_SendCommand SD_SendCommandR7 SD_SendCommandR3 SD_CLKDelay SPI_Init 
-  SPI1_Init SPI_Send_byte SPI_Receive_byte SPI_High_rate VibContInit 
-  ErrorPulse1 ErrorPulse2 ErrorPulse3 ErrorPulse4 vfnSDwelcome loadByte Init 
-  _Startup _PUSH_ARGS_L _ENTER_UNARY_L _ENTER_BINARY_L _ENTER_BINARY_L_RC 
-  _IDIVMOD _LADD_k_is_k_plus_j _LAND_k_is_k_and_j _IDIVU_STAR08 _IMODU_STAR08 
-  _ILSR _ILSL _LADD _LADD_RC _LAND_RC _LLSR _LLSL _COPY _POP32 
+  main SD_Init SPI_SS_Disable_Delay SD_Read_CSD SD_SendCommand 
+  SD_SendCommandR7 SD_SendCommandR3 SD_CLKDelay SPI_Init SPI_Send_byte 
+  SPI_Receive_byte SPI_High_rate VibContInit ErrorPulse1 ErrorPulse2 
+  ErrorPulse3 ErrorPulse4 loadByte Init _Startup 
 SECTION: ".bss"
-  u16Main_Offset gu8SD_Response gu8SD_CSD 
+  gu8SD_Response gu8SD_CSD 
 SECTION: ".init"
   Cpu_Interrupt _EntryPoint PE_low_level_init 
-SECTION: ".rodata1"
-  STRING.FILE.TXT.1 STRING.FILE.TXT.2 
 SECTION: ".common"
-  WHandler RHandler ag8FATReadBuffer u16FAT_Sector_Size u16FAT_Cluster_Size 
-  u16FAT_FAT_BASE u16FAT_Root_BASE u16FAT_Data_BASE u32DataSector 
-  gu8SD_Argument u8sd_status u8sd_command u16buffer_index RecordNumber 
-  InterruptNumber Counter TakeSample System_Status EvenBufferActive 
+  gu8SD_Argument u8sd_status TakeSample System_Status EvenBufferActive 
   u16Evenbuffer_index u16Oddbuffer_index EvenBufferEmpty OddBufferEmpty 
   EBToDisk OBToDisk EBToDiskPending OBToDiskPending u16CBufferPutter 
   u16CBufferGetter u16CBufferBytes ReadDataStop 
@@ -838,7 +770,7 @@ OBJECT LIST SORTED BY ADDRESS
 ---------------------------------------------------------------------------------------------
      _PTAD                                        0       1       1       0   .abs_section_0
      _PTADD                                       1       1       1       0   .abs_section_1
-     _PTBD                                        2       1       1      23   .abs_section_2
+     _PTBD                                        2       1       1      13   .abs_section_2
      _PTBDD                                       3       1       1       1   .abs_section_3
      _PTCD                                        4       1       1       1   .abs_section_4
      _PTCDD                                       5       1       1       2   .abs_section_5
@@ -891,16 +823,16 @@ OBJECT LIST SORTED BY ADDRESS
      _SCI2S2                                     45       1       1       0   .abs_section_45
      _SCI2C3                                     46       1       1       0   .abs_section_46
      _SCI2D                                      47       1       1       0   .abs_section_47
-     _MCGC1                                      48       1       1       1   .abs_section_48
-     _MCGC2                                      49       1       1       1   .abs_section_49
+     _MCGC1                                      48       1       1       3   .abs_section_48
+     _MCGC2                                      49       1       1       3   .abs_section_49
      _MCGTRM                                     4A       1       1       1   .abs_section_4a
-     _MCGSC                                      4B       1       1       2   .abs_section_4b
+     _MCGSC                                      4B       1       1       7   .abs_section_4b
      _MCGC3                                      4C       1       1       1   .abs_section_4c
-     _SPI1C1                                     50       1       1       2   .abs_section_50
-     _SPI1C2                                     51       1       1       1   .abs_section_51
-     _SPI1BR                                     52       1       1       1   .abs_section_52
-     _SPI1S                                      53       1       1       1   .abs_section_53
-     _SPI1D16                                    54       2       2       1   .abs_section_54
+     _SPI1C1                                     50       1       1       0   .abs_section_50
+     _SPI1C2                                     51       1       1       0   .abs_section_51
+     _SPI1BR                                     52       1       1       0   .abs_section_52
+     _SPI1S                                      53       1       1       0   .abs_section_53
+     _SPI1D16                                    54       2       2       0   .abs_section_54
      _SPI1M                                      56       2       2       0   .abs_section_56
      _IICA                                       58       1       1       0   .abs_section_58
      _IICF                                       59       1       1       0   .abs_section_59
@@ -944,44 +876,29 @@ OBJECT LIST SORTED BY ADDRESS
      _EPCTL4                                     A1       1       1       0   .abs_section_a1
      _EPCTL5                                     A2       1       1       0   .abs_section_a2
      _EPCTL6                                     A3       1       1       0   .abs_section_a3
-     u16Main_Offset                              D0       2       2       7   .bss        
-     gu8SD_Response                              D2       5       5      18   .bss        
-     gu8SD_CSD                                   D7      10      16       1   .bss        
-     WHandler                                    E7      19      25      37   .common     
-     RHandler                                   100       A      10       5   .common     
-     ag8FATReadBuffer                           10A     200     512      24   .common     
-     u16FAT_Sector_Size                         30A       2       2      13   .common     
-     u16FAT_Cluster_Size                        30C       2       2       2   .common     
-     u16FAT_FAT_BASE                            30E       2       2      12   .common     
-     u16FAT_Root_BASE                           310       2       2      11   .common     
-     u16FAT_Data_BASE                           312       2       2       8   .common     
-     u32DataSector                              314       4       4       2   .common     
-     gu8SD_Argument                             318       4       4      27   .common     
-     u8sd_status                                31C       1       1       7   .common     
-     u8sd_command                               31D       1       1       1   .common     
-     u16buffer_index                            31E       2       2       1   .common     
-     RecordNumber                               320       2       2       1   .common     
-     InterruptNumber                            322       2       2       1   .common     
-     Counter                                    324       1       1       1   .common     
-     TakeSample                                 325       1       1       1   .common     
-     System_Status                              326       1       1       1   .common     
-     EvenBufferActive                           327       1       1       1   .common     
-     u16Evenbuffer_index                        328       2       2       1   .common     
-     u16Oddbuffer_index                         32A       2       2       1   .common     
-     EvenBufferEmpty                            32C       1       1       1   .common     
-     OddBufferEmpty                             32D       1       1       1   .common     
-     EBToDisk                                   32E       1       1       1   .common     
-     OBToDisk                                   32F       1       1       1   .common     
-     EBToDiskPending                            330       1       1       1   .common     
-     OBToDiskPending                            331       1       1       1   .common     
-     u16CBufferPutter                           332       2       2       1   .common     
-     u16CBufferGetter                           334       2       2       1   .common     
-     u16CBufferBytes                            336       2       2       1   .common     
-     ReadDataStop                               338       1       1       1   .common     
+     gu8SD_Response                              D0       5       5      18   .bss        
+     gu8SD_CSD                                   D5      10      16       1   .bss        
+     gu8SD_Argument                              E5       4       4      15   .common     
+     u8sd_status                                 E9       1       1       3   .common     
+     TakeSample                                  EA       1       1       1   .common     
+     System_Status                               EB       1       1       1   .common     
+     EvenBufferActive                            EC       1       1       1   .common     
+     u16Evenbuffer_index                         ED       2       2       1   .common     
+     u16Oddbuffer_index                          EF       2       2       1   .common     
+     EvenBufferEmpty                             F1       1       1       1   .common     
+     OddBufferEmpty                              F2       1       1       1   .common     
+     EBToDisk                                    F3       1       1       1   .common     
+     OBToDisk                                    F4       1       1       1   .common     
+     EBToDiskPending                             F5       1       1       1   .common     
+     OBToDiskPending                             F6       1       1       1   .common     
+     u16CBufferPutter                            F7       2       2       1   .common     
+     u16CBufferGetter                            F9       2       2       1   .common     
+     u16CBufferBytes                             FB       2       2       1   .common     
+     ReadDataStop                                FD       1       1       1   .common     
      _SRS                                      1800       1       1       0   .abs_section_1800
      _SBDFR                                    1801       1       1       0   .abs_section_1801
      _SOPT1                                    1802       1       1       1   .abs_section_1802
-     _SOPT2                                    1803       1       1       2   .abs_section_1803
+     _SOPT2                                    1803       1       1       1   .abs_section_1803
      _SDID                                     1806       2       2       0   .abs_section_1806
      _SPMSC1                                   1809       1       1       1   .abs_section_1809
      _SPMSC2                                   180A       1       1       1   .abs_section_180a
@@ -1011,7 +928,7 @@ OBJECT LIST SORTED BY ADDRESS
      _PTDDS                                    184E       1       1       1   .abs_section_184e
      _PTEPE                                    1850       1       1       0   .abs_section_1850
      _PTESE                                    1851       1       1       1   .abs_section_1851
-     _PTEDS                                    1852       1       1       2   .abs_section_1852
+     _PTEDS                                    1852       1       1       1   .abs_section_1852
      _PTFPE                                    1854       1       1       0   .abs_section_1854
      _PTFSE                                    1855       1       1       1   .abs_section_1855
      _PTFDS                                    1856       1       1       1   .abs_section_1856
@@ -1019,60 +936,28 @@ OBJECT LIST SORTED BY ADDRESS
      _PTGSE                                    1859       1       1       1   .abs_section_1859
      _PTGDS                                    185A       1       1       1   .abs_section_185a
      Cpu_Interrupt                             1960       4       4      29   .init       
-     _EntryPoint                               1964      2D      45       1   .init       
-     PE_low_level_init                         1991      42      66       1   .init       
-     LWordSwap                                 19E5      7E     126       3   .text       
-     FAT_Read_Master_Block                     1A63     12B     299       2   .text       
-     FAT_FileClose                             1B8E     253     595       2   .text       
-     FAT_SearchAvailableFAT                    1DE1      9B     155       2   .text       
-     FAT_Entry                                 1E7C     101     257       2   .text       
-     FAT_FileNameOrganizer                     1F7D      43      67       1   .text       
-     FAT_FileOpen                              1FC0     31E     798      17   .text       
-     main                                      22DE      1C      28       1   .text       
-     SD_Init                                   22FA     13A     314       9   .text       
-     SPI_SS_Disable_Delay                      2434       9       9       2   .text       
-     SD_Write_Block                            243D      8A     138       3   .text       
-     SD_Erase_Blocks                           24C7      7A     122       1   .text       
-     SD_Read_CSD                               2541      43      67       1   .text       
-     SD_Read_Block                             2584      63      99       6   .text       
-     SD_SendCommand                            25E7      70     112      10   .text       
-     SD_SendCommandR7                          2657      9E     158       1   .text       
-     SD_SendCommandR3                          26F5      7E     126       2   .text       
-     SD_CLKDelay                               2773       F      15       8   .text       
-     SPI_Init                                  2782      25      37       1   .text       
-     SPI1_Init                                 27A7      21      33       1   .text       
-     SPI_Send_byte                             27C8       D      13      14   .text       
-     SPI_Receive_byte                          27D5       B      11      17   .text       
-     SPI_High_rate                             27E0       7       7       1   .text       
-     VibContInit                               27E7      95     149       1   .text       
-     ErrorPulse1                               287C      62      98       4   .text       
-     ErrorPulse2                               28DE      62      98       4   .text       
-     ErrorPulse3                               2940      62      98       7   .text       
-     ErrorPulse4                               29A2      62      98       1   .text       
-     vfnSDwelcome                              2A04      DB     219       1   .text       
-     loadByte                                  2ADF       E      14       5   .text       
-     Init                                      2AED      6D     109       1   .text       
-     _Startup                                  2B5A       9       9       1   .text       
-     _PUSH_ARGS_L                              2B63      20      32       2   .text       
-     _ENTER_UNARY_L                            2B83      29      41       2   .text       
-     _ENTER_BINARY_L                           2BAC      16      22       1   .text       
-     _ENTER_BINARY_L_RC                        2BC2      19      25       2   .text       
-     _IDIVMOD                                  2BDB      69     105       2   .text       
-     _LADD_k_is_k_plus_j                       2C44      1F      31       2   .text       
-     _LAND_k_is_k_and_j                        2C63      1F      31       1   .text       
-     _IDIVU_STAR08                             2C82       D      13       4   .text       
-     _IMODU_STAR08                             2C8F      10      16       5   .text       
-     _ILSR                                     2C9F       C      12       2   .text       
-     _ILSL                                     2CAB       C      12       3   .text       
-     _LADD                                     2CB7       6       6       7   .text       
-     _LADD_RC                                  2CBD       6       6       2   .text       
-     _LAND_RC                                  2CC3       6       6       2   .text       
-     _LLSR                                     2CC9      16      22       2   .text       
-     _LLSL                                     2CDF      16      22       5   .text       
-     _COPY                                     2CF5      30      48       2   .text       
-     _POP32                                    2D25      1A      26       8   .text       
-     STRING.FILE.TXT.1                         2D3F       9       9       1   .rodata1    
-     STRING.FILE.TXT.2                         2D48       9       9       1   .rodata1    
+     _EntryPoint                               1964      51      81       1   .init       
+     PE_low_level_init                         19B5      42      66       1   .init       
+     main                                      1A09      1C      28       1   .text       
+     SD_Init                                   1A25     13A     314       9   .text       
+     SPI_SS_Disable_Delay                      1B5F       9       9       2   .text       
+     SD_Read_CSD                               1B68      43      67       1   .text       
+     SD_SendCommand                            1BAB      70     112       5   .text       
+     SD_SendCommandR7                          1C1B      9E     158       1   .text       
+     SD_SendCommandR3                          1CB9      7E     126       2   .text       
+     SD_CLKDelay                               1D37       F      15       3   .text       
+     SPI_Init                                  1D46      25      37       1   .text       
+     SPI_Send_byte                             1D6B       D      13      10   .text       
+     SPI_Receive_byte                          1D78       B      11      10   .text       
+     SPI_High_rate                             1D83       7       7       1   .text       
+     VibContInit                               1D8A      7F     127       1   .text       
+     ErrorPulse1                               1E09      62      98       3   .text       
+     ErrorPulse2                               1E6B      62      98       3   .text       
+     ErrorPulse3                               1ECD      62      98       3   .text       
+     ErrorPulse4                               1F2F      62      98       1   .text       
+     loadByte                                  1F91       E      14       5   .text       
+     Init                                      1F9F      6D     109       1   .text       
+     _Startup                                  200C       9       9       1   .text       
      NVPROT_INIT                               FFBD       1       1       0   .abs_section_ffbd
      NVOPT_INIT                                FFBF       1       1       0   .abs_section_ffbf
      _vect                                     FFC4      3C      60       0   .abs_section_ffc4
@@ -1081,48 +966,29 @@ OBJECT LIST SORTED BY ADDRESS
 UNUSED-OBJECTS SECTION
 ---------------------------------------------------------------------------------------------
 NOT USED PROCEDURES
-Fat_c.obj:
-  FAT_DataSectorWrite FAT_FileWrite FAT_FileRead 
 SD_c.obj:
-  SD_CBufferDataSectorWrite 
+  SD_CBufferDataSectorWrite SD_Write_Block SD_Erase_Blocks SD_Read_Block 
 SPI_c.obj:
-  SPI1_Send_byte SPI1_Receive_byte 
+  SPI1_Init SPI1_Send_byte SPI1_Receive_byte 
 Vib_Cont_01_c.obj:
-  VibrationControl vfnWriteFile StringToFile Uint16ToString ToBuffer ReadData 
-  DataTest ToCBuffer FromCBuffer SampleDelay_Init 
-rtshc08.o (ansiis.lib):
-  _PUSH_ARGS_D _ENTER_UNARY_L64 _ENTER_UNARY_L64_4 _ENTER_BINARY_L_LC 
-  _ENTER_BINARY_L64 _ENTER_BINARY_L64_LC _ENTER_BINARY_L64_RC _SPLITSIGN 
-  _k_is_k_plus_j_l _k_is_k_plus_j_i _LSUB_k_is_k_minus_j _LOR_k_is_k_or_j 
-  _LXOR_k_is_k_xor_j _LMUL_k_is_k_mul_j _LDIVMOD _NEG_L_HX _ABS_L_HX 
-  _SPLITSIGN_L _LMODU_k_is_k_mod_j _LDIVU_k_is_k_div_j _LMODS_k_is_k_mod_j 
-  _LDIVS_k_is_k_div_j _LCMP_k_rel_j _CMP24_k_rel_j _BMULS _BDIVS _BMODS 
-  _IMUL_STAR08 _IDIVS_STAR08 _IMODS_STAR08 _IDIVU_8 _IMODU_8 _IASR _ICMP _LINC 
-  _LDEC _LNEG _LNOT _LSUB _LSUB_LC _LSUB_RC _LAND _LOR _LOR_RC _LXOR _LXOR_RC 
-  _LMUL _LMUL_RC _LDIVS _LDIVS_LC _LDIVS_RC _LDIVU _LDIVU_LC _LDIVU_RC _LMODS 
-  _LMODS_LC _LMODS_RC _LMODU _LMODU_LC _LMODU_RC _LASR _LCMP _LCMP_RC 
-  _PUSH_ARGS_24 _ENTER_BINARY_24_RC _ENTER_BINARY_24 _CMP24 _CMP24_RC _COPY_L 
-  _POP64 _STORE32 _STORE64 _SEXT8_32 _SEXT16_32 _CALL_STAR08 _CALL_STAR08_FAR 
-  _Jump_Table_Addr _Jump_Table_Offset _Jump_Table_Header_Addr 
-  _Jump_Table_Header_Offset _Search_Table_16_Addr _Search_Table_16_Offset 
-  _Search_Table_8_Addr _Search_Table_8_Offset _PUSH_CC _POP_CC 
-  _CONV_FAR_TO_NEAR _CONV_FAR_TO_LINEAR _CONV_LINEAR_TO_FAR 
+  VibrationControl vfnSDwelcome vfnWriteFile StringToFile Uint16ToString 
+  ToBuffer ReadData DataTest ToCBuffer FromCBuffer SampleDelay_Init 
 NOT USED VARIABLES
-Fat_c.obj:
-  ag8FATWriteBuffer 
+SD_c.obj:
+  u32DataSector 
 Vib_Cont_01_c.obj:
-  STRING.FILE.TXT.3 STRING.Hello.World.4 u8irda_status u8buffer 
-  u16file_counter Accel u8bufferEven u8bufferOdd SamplingBlocked 
-  u8CircularBuffer u16TempCBufferBytes BufferEmpty 
+  STRING.FILE.TXT.1 STRING.FILE.TXT.2 STRING.FILE.TXT.3 STRING.Hello.World.4 
+  u8sd_command u8irda_status u8buffer u16buffer_index u16file_counter Accel 
+  RecordNumber InterruptNumber Counter u8bufferEven u8bufferOdd SamplingBlocked 
+  u8CircularBuffer u16TempCBufferBytes BufferEmpty WHandler u32DataSector 
+  u16FAT_Data_BASE 
 Cpu_c.obj:
   CCR_reg 
-rtshc08.o (ansiis.lib):
-  _PowOfTwo_8 _PowOfTwo_16 _PowOfTwo_32 errno 
 
 *********************************************************************************************
 COPYDOWN SECTION
 ---------------------------------------------------------------------------------------------
-------- ROM-ADDRESS: 0x2D51 ---- SIZE       2 ---
+------- ROM-ADDRESS: 0x2015 ---- SIZE       2 ---
 Filling bytes inserted
  0000
 
@@ -1134,38 +1000,14 @@ _EntryPoint               USES _SOPT1 _SPMSC1 _SPMSC2 _MCGTRM _MCGSC _MCGC2
 PE_low_level_init         USES _PTASE _PTBSE _PTCSE _PTDSE _PTESE _PTFSE 
                                 _PTGSE _PTADS _PTBDS _PTCDS _PTDDS _PTEDS _PTFDS 
                                 _PTGDS 
-LWordSwap                 USES _LAND_RC _LLSR _POP32 _LADD _LLSL _COPY 
-FAT_Read_Master_Block     USES u16Main_Offset ag8FATReadBuffer SD_Read_Block 
-                                u16FAT_Cluster_Size FAT_Read_Master_Block u16FAT_Sector_Size 
-                                u16FAT_FAT_BASE u16FAT_Root_BASE u16FAT_Data_BASE 
-FAT_FileClose             USES u16FAT_Sector_Size _ILSR WHandler _IDIVU_STAR08 
-                                _IMODU_STAR08 u16FAT_Root_BASE _LADD ag8FATReadBuffer 
-                                SD_Read_Block _ILSL LWordSwap _COPY SD_Write_Block 
-                                u16FAT_FAT_BASE 
-FAT_SearchAvailableFAT    USES u16FAT_FAT_BASE ag8FATReadBuffer SD_Read_Block 
-                                u16FAT_Sector_Size u16FAT_Root_BASE u16Main_Offset 
-                                FAT_SearchAvailableFAT 
-FAT_Entry                 USES u16FAT_Sector_Size _IDIVU_STAR08 _IMODU_STAR08 
-                                u16FAT_FAT_BASE ag8FATReadBuffer SD_Read_Block SD_Write_Block 
-FAT_FileOpen              USES u16FAT_Data_BASE u16FAT_Root_BASE 
-                                FAT_FileNameOrganizer FAT_FileOpen ag8FATReadBuffer SD_Read_Block 
-                                RHandler LWordSwap WHandler FAT_Entry 
-                                u16FAT_Cluster_Size u16FAT_Sector_Size _ILSL _IMODU_STAR08 
-                                _IDIVU_STAR08 _ILSR FAT_SearchAvailableFAT 
 main                      USES PE_low_level_init VibContInit ErrorPulse1 
                                 ErrorPulse2 ErrorPulse3 ErrorPulse4 
 SD_Init                   USES _PTCDD _PTCPE SPI_Init _PTCD SD_CLKDelay 
                                 SPI_SS_Disable_Delay SD_Init SD_SendCommand _PTBD gu8SD_Argument 
                                 SD_SendCommandR7 SD_SendCommandR3 gu8SD_Response SD_Read_CSD 
                                 SPI_High_rate 
-SD_Write_Block            USES _PTBD gu8SD_Argument _LLSL _POP32 
-                                SD_SendCommand SPI_Send_byte SPI_Receive_byte SD_CLKDelay 
-SD_Erase_Blocks           USES _PTBD gu8SD_Argument SD_SendCommand SD_CLKDelay 
-                                SPI_Receive_byte _LLSL _POP32 
 SD_Read_CSD               USES _PTBD gu8SD_Argument SD_SendCommand 
                                 SPI_Receive_byte gu8SD_CSD SD_CLKDelay 
-SD_Read_Block             USES _PTBD gu8SD_Argument _LLSL _POP32 
-                                SD_SendCommand SPI_Receive_byte SD_CLKDelay 
 SD_SendCommand            USES SPI_Send_byte gu8SD_Argument SPI_Receive_byte 
                                 gu8SD_Response 
 SD_SendCommandR7          USES gu8SD_Response SPI_Send_byte gu8SD_Argument 
@@ -1175,8 +1017,6 @@ SD_SendCommandR3          USES gu8SD_Response SPI_Send_byte gu8SD_Argument
 SD_CLKDelay               USES SPI_Send_byte 
 SPI_Init                  USES _PTBD _PTBDD _SOPT2 _PTBDS _SPI2S _SPI2D16 
                                 _SPI2BR _SPI2C2 _SPI2C1 
-SPI1_Init                 USES _SOPT2 _PTEDS _SPI1S _SPI1D16 _SPI1BR _SPI1C2 
-                                _SPI1C1 
 SPI_Send_byte             USES _SPI2S _SPI2D16 
 SPI_Receive_byte          USES _SPI2D16 _SPI2S 
 SPI_High_rate             USES _SPI2C1 _SPI2BR 
@@ -1186,28 +1026,13 @@ VibContInit               USES _PTCDD _PTGDD _PTGD _PTFDD _PTFD _PTDDD _PTDD
                                 OddBufferEmpty EBToDisk OBToDisk EBToDiskPending 
                                 OBToDiskPending u16CBufferPutter u16CBufferGetter 
                                 u16CBufferBytes ReadDataStop System_Status TakeSample SD_Init 
-                                u8sd_status ErrorPulse2 vfnSDwelcome RecordNumber 
-                                InterruptNumber Counter SPI1_Init 
+                                u8sd_status ErrorPulse2 
 ErrorPulse1               USES _PTGD 
 ErrorPulse2               USES _PTGD 
 ErrorPulse3               USES _PTFD 
 ErrorPulse4               USES _PTFD 
-vfnSDwelcome              USES u8sd_status ErrorPulse3 ErrorPulse1 
-                                FAT_Read_Master_Block ErrorPulse2 STRING.FILE.TXT.1 FAT_FileOpen 
-                                STRING.FILE.TXT.2 WHandler FAT_Entry _LADD_RC _POP32 
-                                u16FAT_Data_BASE u32DataSector SD_Erase_Blocks FAT_FileClose 
-                                u16buffer_index u8sd_command 
 Init                      USES _startupData loadByte 
 _Startup                  USES __SEG_END_SSTACK Init main 
-_ENTER_BINARY_L           USES _PUSH_ARGS_L 
-_ENTER_BINARY_L_RC        USES _PUSH_ARGS_L 
-_IDIVU_STAR08             USES _IDIVMOD 
-_IMODU_STAR08             USES _IDIVMOD 
-_LADD                     USES _ENTER_BINARY_L _LADD_k_is_k_plus_j 
-_LADD_RC                  USES _ENTER_BINARY_L_RC _LADD_k_is_k_plus_j 
-_LAND_RC                  USES _ENTER_BINARY_L_RC _LAND_k_is_k_and_j 
-_LLSR                     USES _ENTER_UNARY_L 
-_LLSL                     USES _ENTER_UNARY_L 
 _vect                     USES Cpu_Interrupt _EntryPoint 
 
 *********************************************************************************************
@@ -1264,146 +1089,6 @@ DEPENDENCY TREE
  |  |  |  +- SPI_High_rate       
  |  |  |       
  |  |  +- ErrorPulse2         
- |  |  |    
- |  |  +- vfnSDwelcome        
- |  |  |  | 
- |  |  |  +- ErrorPulse3          (see above)
- |  |  |  |  
- |  |  |  +- ErrorPulse1          (see above)
- |  |  |  |  
- |  |  |  +- FAT_Read_Master_Block
- |  |  |  |  | 
- |  |  |  |  +- SD_Read_Block       
- |  |  |  |     | 
- |  |  |  |     +- _LLSL               
- |  |  |  |     |  | 
- |  |  |  |     |  +- _ENTER_UNARY_L      
- |  |  |  |     |       
- |  |  |  |     +- _POP32              
- |  |  |  |     |    
- |  |  |  |     +- SD_SendCommand       (see above)
- |  |  |  |     |  
- |  |  |  |     +- SPI_Receive_byte     (see above)
- |  |  |  |     |  
- |  |  |  |     +- SD_CLKDelay          (see above)
- |  |  |  |        
- |  |  |  +- ErrorPulse2          (see above)
- |  |  |  |  
- |  |  |  +- FAT_FileOpen        
- |  |  |  |  | 
- |  |  |  |  +- FAT_FileNameOrganizer
- |  |  |  |  |    
- |  |  |  |  +- SD_Read_Block        (see above)
- |  |  |  |  |  
- |  |  |  |  +- LWordSwap           
- |  |  |  |  |  | 
- |  |  |  |  |  +- _LAND_RC            
- |  |  |  |  |  |  | 
- |  |  |  |  |  |  +- _ENTER_BINARY_L_RC  
- |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  +- _PUSH_ARGS_L        
- |  |  |  |  |  |  |       
- |  |  |  |  |  |  +- _LAND_k_is_k_and_j  
- |  |  |  |  |  |       
- |  |  |  |  |  +- _LLSR               
- |  |  |  |  |  |  | 
- |  |  |  |  |  |  +- _ENTER_UNARY_L       (see above)
- |  |  |  |  |  |     
- |  |  |  |  |  +- _POP32               (see above)
- |  |  |  |  |  |  
- |  |  |  |  |  +- _LADD               
- |  |  |  |  |  |  | 
- |  |  |  |  |  |  +- _ENTER_BINARY_L     
- |  |  |  |  |  |  |  | 
- |  |  |  |  |  |  |  +- _PUSH_ARGS_L         (see above)
- |  |  |  |  |  |  |     
- |  |  |  |  |  |  +- _LADD_k_is_k_plus_j 
- |  |  |  |  |  |       
- |  |  |  |  |  +- _LLSL                (see above)
- |  |  |  |  |  |  
- |  |  |  |  |  +- _COPY               
- |  |  |  |  |       
- |  |  |  |  +- FAT_Entry           
- |  |  |  |  |  | 
- |  |  |  |  |  +- _IDIVU_STAR08       
- |  |  |  |  |  |  | 
- |  |  |  |  |  |  +- _IDIVMOD            
- |  |  |  |  |  |       
- |  |  |  |  |  +- _IMODU_STAR08       
- |  |  |  |  |  |  | 
- |  |  |  |  |  |  +- _IDIVMOD             (see above)
- |  |  |  |  |  |     
- |  |  |  |  |  +- SD_Read_Block        (see above)
- |  |  |  |  |  |  
- |  |  |  |  |  +- SD_Write_Block      
- |  |  |  |  |     | 
- |  |  |  |  |     +- _LLSL                (see above)
- |  |  |  |  |     |  
- |  |  |  |  |     +- _POP32               (see above)
- |  |  |  |  |     |  
- |  |  |  |  |     +- SD_SendCommand       (see above)
- |  |  |  |  |     |  
- |  |  |  |  |     +- SPI_Send_byte        (see above)
- |  |  |  |  |     |  
- |  |  |  |  |     +- SPI_Receive_byte     (see above)
- |  |  |  |  |     |  
- |  |  |  |  |     +- SD_CLKDelay          (see above)
- |  |  |  |  |        
- |  |  |  |  +- _ILSL               
- |  |  |  |  |    
- |  |  |  |  +- _IMODU_STAR08        (see above)
- |  |  |  |  |  
- |  |  |  |  +- _IDIVU_STAR08        (see above)
- |  |  |  |  |  
- |  |  |  |  +- _ILSR               
- |  |  |  |  |    
- |  |  |  |  +- FAT_SearchAvailableFAT
- |  |  |  |     | 
- |  |  |  |     +- SD_Read_Block        (see above)
- |  |  |  |        
- |  |  |  +- FAT_Entry            (see above)
- |  |  |  |  
- |  |  |  +- _LADD_RC            
- |  |  |  |  | 
- |  |  |  |  +- _ENTER_BINARY_L_RC   (see above)
- |  |  |  |  |  
- |  |  |  |  +- _LADD_k_is_k_plus_j  (see above)
- |  |  |  |     
- |  |  |  +- _POP32               (see above)
- |  |  |  |  
- |  |  |  +- SD_Erase_Blocks     
- |  |  |  |  | 
- |  |  |  |  +- SD_SendCommand       (see above)
- |  |  |  |  |  
- |  |  |  |  +- SD_CLKDelay          (see above)
- |  |  |  |  |  
- |  |  |  |  +- SPI_Receive_byte     (see above)
- |  |  |  |  |  
- |  |  |  |  +- _LLSL                (see above)
- |  |  |  |  |  
- |  |  |  |  +- _POP32               (see above)
- |  |  |  |     
- |  |  |  +- FAT_FileClose       
- |  |  |     | 
- |  |  |     +- _ILSR                (see above)
- |  |  |     |  
- |  |  |     +- _IDIVU_STAR08        (see above)
- |  |  |     |  
- |  |  |     +- _IMODU_STAR08        (see above)
- |  |  |     |  
- |  |  |     +- _LADD                (see above)
- |  |  |     |  
- |  |  |     +- SD_Read_Block        (see above)
- |  |  |     |  
- |  |  |     +- _ILSL                (see above)
- |  |  |     |  
- |  |  |     +- LWordSwap            (see above)
- |  |  |     |  
- |  |  |     +- _COPY                (see above)
- |  |  |     |  
- |  |  |     +- SD_Write_Block       (see above)
- |  |  |        
- |  |  +- SPI1_Init           
  |  |       
  |  +- ErrorPulse1          (see above)
  |  |  
@@ -1435,6 +1120,6 @@ STATISTIC SECTION
 
 ExeFile:
 --------
-Number of blocks to be downloaded: 8
-Total size of all blocks to be downloaded: 5169
+Number of blocks to be downloaded: 6
+Total size of all blocks to be downloaded: 1781
 

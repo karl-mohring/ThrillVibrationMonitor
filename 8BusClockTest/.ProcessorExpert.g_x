@@ -1,0 +1,39 @@
+<CodeGenerationInfo>
+  <ToolchainSettings>
+    <option>
+      <name>PE_G_4PEx_ToolChain_Compiler_SearchUserPaths</name>
+      <values lines_count="2">
+        <Line>"${ProjDirPath}/Sources"</Line>
+        <Line>"${ProjDirPath}/Generated_Code"</Line>
+      </values>
+    </option>
+  </ToolchainSettings>
+  <GeneratedFilesList>
+    <GeneratedByPE>
+      <File Name="Generated_Code/IO_Map.h" FileDate="2013-07-19, 01:06:41" FileAge="1374160001339" FileType="45637" />
+      <File Name="Generated_Code/sampleTimer.h" FileDate="2013-07-19, 01:06:41" FileAge="1374160001364" FileType="45637" CompNumb="10" />
+      <File Name="Generated_Code/filterTimer.h" FileDate="2013-07-19, 01:06:41" FileAge="1374160001354" FileType="45637" CompNumb="13" />
+      <File Name="Generated_Code/Cpu.h" FileDate="2013-07-19, 01:06:41" FileAge="1374160001308" FileType="45637" CompNumb="2" />
+      <File Name="Generated_Code/sampleTimer.c" FileDate="2013-07-19, 01:06:41" FileAge="1374160001361" FileType="45637" CompNumb="10" />
+      <File Name="Generated_Code/IO_Map.c" FileDate="2013-07-19, 01:06:41" FileAge="1374160001335" FileType="45637" />
+      <File Name="Documentation/ProcessorExpert_Settings.xml" FileDate="2013-07-19, 01:33:50" FileAge="1374161630569" FileType="3072" />
+      <File Name="Generated_Code/filterTimer.c" FileDate="2013-07-19, 01:06:41" FileAge="1374160001351" FileType="45637" CompNumb="13" />
+      <File Name="Generated_Code/Cpu.c" FileDate="2013-07-19, 01:06:40" FileAge="1374160000984" FileType="45637" CompNumb="2" />
+      <File Name="Sources/Events.h" FileDate="2013-07-19, 01:06:40" FileAge="1374160000691" FileType="131328" />
+      <File Name="Sources/Events.c" FileDate="2013-07-19, 01:06:40" FileAge="1374160000674" FileType="131328" />
+      <File Name="Documentation/ProcessorExpert_SIGNALS.txt" FileDate="2013-07-19, 01:33:50" FileAge="1374161630264" FileType="3072" />
+      <File Name="Generated_Code/PE_Const.h" FileDate="2013-07-19, 01:06:41" FileAge="1374160001342" FileType="45637" />
+      <File Name="Generated_Code/AD1.h" FileDate="2013-07-19, 01:06:41" FileAge="1374160001628" FileType="45637" CompNumb="6" />
+      <File Name="Generated_Code/AD1.c" FileDate="2013-07-19, 01:06:41" FileAge="1374160001367" FileType="45637" CompNumb="6" />
+      <File Name="Documentation/ProcessorExpert.txt" FileDate="2013-07-19, 01:33:50" FileAge="1374161630582" FileType="3072" />
+      <File Name="Sources/ProcessorExpert.c" FileDate="2013-07-19, 01:33:50" FileAge="1374161630242" FileType="128" />
+      <File Name="Project_Settings/Linker_Files/ProcessorExpert.prm" FileDate="2013-07-05, 16:34:37" FileAge="1373006077116" FileType="8" CompNumb="2" />
+      <File Name="Generated_Code/SDSerial.h" FileDate="2013-07-19, 01:33:50" FileAge="1374161630210" FileType="45637" CompNumb="31" />
+      <File Name="Generated_Code/PE_Types.h" FileDate="2013-07-19, 01:06:41" FileAge="1374160001347" FileType="45637" />
+      <File Name="Generated_Code/SDSerial.c" FileDate="2013-07-19, 01:33:50" FileAge="1374161630230" FileType="45637" CompNumb="31" />
+      <File Name="Generated_Code/PE_Error.h" FileDate="2013-07-19, 01:06:41" FileAge="1374160001344" FileType="45637" />
+      <File Name="Generated_Code/Vectors.c" FileDate="2013-07-19, 01:06:40" FileAge="1374160000718" FileType="45637" CompNumb="2" />
+    </GeneratedByPE>
+  </GeneratedFilesList>
+  <CodeGenReference>59</CodeGenReference>
+</CodeGenerationInfo>

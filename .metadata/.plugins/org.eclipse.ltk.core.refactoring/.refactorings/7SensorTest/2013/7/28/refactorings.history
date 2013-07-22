@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;7SensorTest/Sources/ProcessorExpert.c&apos; to &apos;Z&apos;" description="Rename resource &apos;ProcessorExpert.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Sources/ProcessorExpert.c" name="Z" stamp="1373551837706" updateReferences="true"/>
+</session>

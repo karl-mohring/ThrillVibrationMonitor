@@ -9,5 +9,6 @@ Generated_Code/Cpu_c.obj: \
 	E:/Dropbox/!Uni/EG4012\ -\ Thesis/ThrillVibrationMonitor/7SensorTest/Generated_Code/Cpu.h \
 	E:/Dropbox/!Uni/EG4012\ -\ Thesis/ThrillVibrationMonitor/7SensorTest/Generated_Code/sampleTimer.h \
 	E:/Dropbox/!Uni/EG4012\ -\ Thesis/ThrillVibrationMonitor/7SensorTest/Generated_Code/filterTimer.h \
+	E:/Dropbox/!Uni/EG4012\ -\ Thesis/ThrillVibrationMonitor/7SensorTest/Generated_Code/SM1.h \
 	E:/Dropbox/!Uni/EG4012\ -\ Thesis/ThrillVibrationMonitor/7SensorTest/Sources/Events.h 
 

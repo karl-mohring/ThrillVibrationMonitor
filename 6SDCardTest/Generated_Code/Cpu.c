@@ -7,7 +7,7 @@
 **     Version     : Component 01.004, Driver 01.40, CPU db: 3.00.050
 **     Datasheet   : MC9S08JM60 Rev. 1 11/2007
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2013-07-05, 16:34, # CodeGen: 0
+**     Date/Time   : 2013-07-11, 13:22, # CodeGen: 2
 **     Abstract    :
 **         This component "MC9S08JM60_64" contains initialization 
 **         of the CPU and provides basic methods and events for 
@@ -134,13 +134,31 @@ void _EntryPoint(void)
     MCGSC = *(uint8_t*)0xFFAEU;        /* Initialize MCGSC register from a non volatile memory */
   }
   /*lint -restore Enable MISRA rule (11.3) checking. */
-  /* MCGC2: BDIV=1,RANGE=0,HGO=0,LP=0,EREFS=0,ERCLKEN=0,EREFSTEN=0 */
-  setReg8(MCGC2, 0x40U);               /* Set MCGC2 register */ 
-  /* MCGC1: CLKS=0,RDIV=0,IREFS=1,IRCLKEN=1,IREFSTEN=0 */
-  setReg8(MCGC1, 0x06U);               /* Set MCGC1 register */ 
-  /* MCGC3: LOLIE=0,PLLS=0,CME=0,??=0,VDIV=1 */
-  setReg8(MCGC3, 0x01U);               /* Set MCGC3 register */ 
-  while(MCGSC_LOCK == 0U) {            /* Wait until FLL is locked */
+  /* MCGC2: BDIV=0,RANGE=1,HGO=1,LP=0,EREFS=1,ERCLKEN=1,EREFSTEN=0 */
+  setReg8(MCGC2, 0x36U);               /* Set MCGC2 register */ 
+  /* MCGC1: CLKS=2,RDIV=7,IREFS=0,IRCLKEN=0,IREFSTEN=0 */
+  setReg8(MCGC1, 0xB8U);               /* Set MCGC1 register */ 
+  while(MCGSC_OSCINIT == 0U) {         /* Wait until external reference is stable */
+  }
+  while(MCGSC_IREFST != 0U) {          /* Wait until external reference is selected */
+  }
+  while((MCGSC & 0x0CU) != 0x08U) {    /* Wait until external clock is selected as a bus clock reference */
+  }
+  /* MCGC2: BDIV=0,RANGE=1,HGO=1,LP=1,EREFS=1,ERCLKEN=1,EREFSTEN=0 */
+  setReg8(MCGC2, 0x3EU);               /* Set MCGC2 register */ 
+  /* MCGC1: CLKS=2,RDIV=3,IREFS=0,IRCLKEN=0,IREFSTEN=0 */
+  setReg8(MCGC1, 0x98U);               /* Set MCGC1 register */ 
+  /* MCGC3: LOLIE=0,PLLS=1,CME=0,??=0,VDIV=8 */
+  setReg8(MCGC3, 0x48U);               /* Set MCGC3 register */ 
+  /* MCGC2: LP=0 */
+  clrReg8Bits(MCGC2, 0x08U);            
+  while(MCGSC_PLLST == 0U) {           /* Wait until PLL is selected */
+  }
+  while(MCGSC_LOCK == 0U) {            /* Wait until PLL is locked */
+  }
+  /* MCGC1: CLKS=0,RDIV=3,IREFS=0,IRCLKEN=0,IREFSTEN=0 */
+  setReg8(MCGC1, 0x18U);               /* Set MCGC1 register */ 
+  while((MCGSC & 0x0CU) != 0x0CU) {    /* Wait until PLL clock is selected as a bus clock reference */
   }
   
 

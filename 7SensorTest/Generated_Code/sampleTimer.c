@@ -6,7 +6,7 @@
 **     Component   : TimerInt
 **     Version     : Component 02.161, Driver 01.23, CPU db: 3.00.050
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2013-07-09, 23:54, # CodeGen: 8
+**     Date/Time   : 2013-07-11, 11:42, # CodeGen: 40
 **     Abstract    :
 **         This component "TimerInt" implements a periodic interrupt.
 **         When the component and its events are enabled, the "OnInterrupt"
@@ -21,19 +21,18 @@
 **
 **         High speed mode
 **             Prescaler               : divide-by-1
-**             Clock                   : 31250 Hz
+**             Clock                   : 12000 Hz
 **           Initial period/frequency
-**             Xtal ticks              : 6144
-**             microseconds            : 512
-**             milliseconds            : 1
-**             seconds (real)          : 0.000512
-**             Hz                      : 1953
+**             Xtal ticks              : 6000
+**             microseconds            : 500
+**             seconds (real)          : 0.0005
+**             Hz                      : 2000
 **             kHz                     : 2
 **
 **         Runtime setting             : none
 **
 **         Initialization:
-**              Timer                  : Enabled
+**              Timer                  : Disabled
 **              Events                 : Enabled
 **
 **         Timer registers
@@ -127,8 +126,8 @@ static void HWEnDi(void);
 static void HWEnDi(void)
 {
   if (EnUser) {
-    /* RTCSC: RTIF=1,RTCLKS=2,RTIE=1,RTCPS=8 */
-    setReg8(RTCSC, 0xD8U);             /* Run RTC (select clock source; set frequency and enable interrupt) */ 
+    /* RTCSC: RTIF=1,RTCLKS=1,RTIE=1,RTCPS=8 */
+    setReg8(RTCSC, 0xB8U);             /* Run RTC (select clock source; set frequency and enable interrupt) */ 
   } else {
     /* RTCSC: RTCPS=0 */
     clrReg8Bits(RTCSC, 0x0FU);         /* Stop counter */ 
@@ -196,8 +195,8 @@ void sampleTimer_Init(void)
 {
   /* RTCSC: RTIF=0,RTCLKS=0,RTIE=0,RTCPS=0 */
   setReg8(RTCSC, 0x00U);               /* Stop HW */ 
-  EnUser = TRUE;                       /* Enable device */
-  sampleTimer_SetCV(0x0FU);            /* Initialize appropriate value to the compare/modulo/reload register */
+  EnUser = FALSE;                      /* Disable device */
+  sampleTimer_SetCV(0x05U);            /* Initialize appropriate value to the compare/modulo/reload register */
   RTCMOD = RTCMOD;                     /* Reset HW counter */
   HWEnDi();
 }
