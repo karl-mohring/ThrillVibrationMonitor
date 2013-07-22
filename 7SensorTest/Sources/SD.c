@@ -62,9 +62,7 @@
 
 T32_8 gu8SD_Argument;
 static UINT8 gu8SD_Response[5];
-
 static UINT8 gu8SD_CSD[16];
-
 extern UINT32 u32DataSector;
 
 /***********************************************************************
@@ -84,14 +82,17 @@ extern UINT32 u32DataSector;
  *
  *************************************************************************/
 UINT8 SD_Init(void) {
-//    UINT8 Count, res, mask, CRC7_BYTE, j, i = 0;
-	UINT8 Count, res, CRC7_BYTE, j, i = 0;
-//    UINT16 Count16;
+
+	UINT8 Count;
+	UINT8 res;
+	UINT8 CRC7_BYTE;
+	UINT8 j;
+	UINT8 i = 0;
 
 	/* Configure the SD Card inserted detection pin */_SD_PRESENT = _IN; // Configure the data direction as IN.
 	SD_PRESENT_PU = 1; // Enable Internal Pull-UP Resistor
 
-	/* Initialize SPI Module */InitSPI(); // SS high, 375kHz clock.
+	/* Initialise SPI Module */InitSPI(); // SS high, 375kHz clock.
 
 	/* Delay SD card requires a delay of at least 1mSec after power up */
 	for (j = 0; j < 200; j++) {
@@ -106,7 +107,6 @@ UINT8 SD_Init(void) {
 		return (0x11);
 
 	/*** Start SD card Init ***/
-
 	/* Minimum of 74 dummy clock cycles with MOSI high & SS enabled (low) */
 //    SPI_SS = ENABLE;           // Enable SS
 //    SD_CLKDelay(10);            // Send 80 clocks
@@ -117,12 +117,14 @@ UINT8 SD_Init(void) {
 
 	/* CMD0 - GO_IDLE_STATE
 	 Reset the sd card & place it in SPI mode.
-	 CRC must be vaild.
+	 CRC must be valid.
 	 Valid reset command is 0x40, 0x00, 0x00, 0x00, 0x00, 0x95.
 	 Correct response is R1 (1 byte) = SD_IDLE (0x01).  
 	 Note that the command frame starts with 
 	 bits 47:46=0:1 (start & transmission bits) 
-	 so the CMD byte has b6 set. */SPI_SS = ENABLE;
+	 so the CMD byte has b6 set. */
+
+	SPI_SS = ENABLE;
 	gu8SD_Argument.lword = 0; // CMD0 argument is 0x00, 0x00, 0x00, 0x00.
 	if (SD_SendCommand(SD_CMD0 | 0x40, SD_IDLE)) // returns OK (0x00) if OK
 			{
@@ -247,7 +249,7 @@ UINT8 SD_Init(void) {
 	if (gu8SD_Response[1] & 0x40)
 		return (0x1A); // return Card is not SDSC.
 
-	/*  Set the Block Length to 512 butes */SPI_SS = ENABLE;
+	/*  Set the Block Length to 512 bytes */SPI_SS = ENABLE;
 
 	gu8SD_Argument.lword = SD_BLOCK_SIZE; // 512 bytes
 	if (SD_SendCommand(SD_CMD16 | 0x40, SD_OK)) {
@@ -570,6 +572,8 @@ UINT8 SD_SendCommand(UINT8 u8SDCommand, UINT8 u8SDResponse) {
 	UINT8 u8Counter, CRC7;
 	volatile UINT8 u8Temp = 0;
 
+	loopUntilReady();
+
 	/* Send command byte */WriteSPIByte(u8SDCommand);
 
 	/* Send Argument, MSB first. */
@@ -624,32 +628,6 @@ UINT8 SD_SendCommand(UINT8 u8SDCommand, UINT8 u8SDResponse) {
 
 /*****************************************************************************
  *
- *   SD_SendCommand
- *
- *  Description:  Sends a command to the SD card and receives the response.
- *                All data is sent MSB first, and MSb first.
- *                Does not handle SS signal. 
- *                
- *  Response:     Return 1 if a response is received, 0 if not.
- *                Response is stored in response[] with the number of response
- *                     bytes controlled by response_type.
- *
- *****************************************************************************/
-//UINT8 SD_SendCommand(UINT8 u8SDCommand,UINT8 response_type, 
-//                     UINT8 *response, UINT8 *argument){
-//    UINT8 u8Counter;
-/* Send Command byte */
-//    WriteSPIByte((u8SDCommand & 0x3F) | 0x40);     // clear start bit, set Tx bit
-/* Send Argument */
-//    for(u8Counter=0;u8Counter<4;u8Counter++) 
-//        WriteSPIByte(argument[u8Counter]);
-/* Send CRC */
-//    WriteSPIByte(0x95);
-
-//}
-
-/*****************************************************************************
- *
  *   SD_SendCommandR7
  *
  *  Description:  Sends a command to the SD card that requires an R7 (5 byte) response. 
@@ -667,6 +645,8 @@ UINT8 SD_SendCommand(UINT8 u8SDCommand, UINT8 u8SDResponse) {
 UINT8 SD_SendCommandR7(UINT8 u8SDCommand, UINT8 u8CRC7) {
 	UINT8 u8Counter, mlCounter, i;
 	volatile UINT8 u8Temp = 0;
+
+	loopUntilReady();
 
 	/* Debug checks */
 	for (i = 0; i <= 4; i++) { // Initialise gu8SD_Response[] so you can be sure its changed
@@ -751,6 +731,8 @@ UINT8 SD_SendCommandR3(UINT8 u8SDCommand, UINT8 u8SDResponse, UINT8 u8CRC7) {
 	UINT8 u8Counter, mlCounter, i;
 	volatile UINT8 u8Temp = 0;
 
+	loopUntilReady();
+
 	/* Debug checks */
 	for (i = 0; i <= 4; i++) { // Initialise gu8SD_Response[] so you can be sure its changed
 		gu8SD_Response[i] = 0xAA;
@@ -811,4 +793,12 @@ UINT8 SD_SendCommandR3(UINT8 u8SDCommand, UINT8 u8SDResponse, UINT8 u8CRC7) {
 void SD_CLKDelay(UINT8 u8Frames) {
 	while (u8Frames--)
 		WriteSPIByte(0xFF);
+}
+
+void loopUntilReady() {
+	SD_CLKDelay(5);
+	//SPI_Send_byte(0xFF);
+	//while (SPI_Receive_byte() != 0xFF) {
+	//	SPI1_Send_byte(0xFF);
+	//}
 }

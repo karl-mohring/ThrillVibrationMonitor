@@ -234,5 +234,6 @@ UINT8 SD_Read_Block(UINT32,UINT8*);
 void SPI_SS_Disable_Delay(void);
 UINT8 SD_Read_CSD(void);
 void SD_CBufferDataSectorWrite(void); 
+void loopUntilReady(void);
 
 #endif /* __SD__ */

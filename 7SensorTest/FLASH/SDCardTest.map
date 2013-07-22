@@ -36,15 +36,15 @@ _startupData is allocated at 0x1A1E and uses 6 Bytes
 extern struct _tagStartup {
   unsigned nofZeroOut     1
   _Range   pZeroOut       0xD0     2671
-  _Copy    *toCopyDownBeg 0x301D
+  _Copy    *toCopyDownBeg 0x302D
 } _startupData;
 
 *********************************************************************************************
 SECTION-ALLOCATION SECTION
 Section Name                    Size  Type     From       To       Segment
 ---------------------------------------------------------------------------------------------
-.text                           5595     R     0x1A30     0x300A   ROM
-.rodata1                          18     R     0x300B     0x301C   ROM
+.text                           5611     R     0x1A30     0x301A   ROM
+.rodata1                          18     R     0x301B     0x302C   ROM
 .abs_section_ffbd                  1     R     0xFFBD     0xFFBD   .absSeg0
 .abs_section_ffbf                  1     R     0xFFBF     0xFFBF   .absSeg1
 .abs_section_0                     1   N/I        0x0        0x0   .absSeg2
@@ -201,10 +201,10 @@ Section Name                    Size  Type     From       To       Segment
 .init                            190     R     0x1960     0x1A1D   ROM
 .common                         2640   R/W       0xEF      0xB3E   RAM
 .stack                           128   R/W      0xB3F      0xBBE   RAM
-.copy                              2     R     0x301D     0x301E   ROM
+.copy                              2     R     0x302D     0x302E   ROM
 
 Summary of section sizes per section type:
-READ_ONLY (R):        16FD (dec:     5885)
+READ_ONLY (R):        170D (dec:     5901)
 READ_WRITE (R/W):      AEF (dec:     2799)
 NO_INIT (N/I):          AC (dec:      172)
 
@@ -258,42 +258,43 @@ MODULE:                 -- SD_c.obj --
      SD_Erase_Blocks                           25C5      7A     122       1   .text       
      SD_Read_CSD                               263F      43      67       1   .text       
      SD_Read_Block                             2682      63      99       6   .text       
-     SD_SendCommand                            26E5      70     112      11   .text       
-     SD_SendCommandR7                          2755      9E     158       1   .text       
-     SD_SendCommandR3                          27F3      7E     126       2   .text       
-     SD_CLKDelay                               2871       F      15       9   .text       
+     SD_SendCommand                            26E5      74     116      11   .text       
+     SD_SendCommandR7                          2759      A2     162       1   .text       
+     SD_SendCommandR3                          27FB      82     130       2   .text       
+     SD_CLKDelay                               287D       F      15      10   .text       
+     loopUntilReady                            288C       4       4       3   .text       
 - VARIABLES:
      gu8SD_Response                              D4       5       5      18   .bss        
      gu8SD_CSD                                   D9      10      16       1   .bss        
      gu8SD_Argument                             320       4       4      30   .common     
 MODULE:                 -- SPI_c.obj --
 - PROCEDURES:
-     SPI_Init                                  2880      25      37       1   .text       
-     SPI_Send_byte                             28A5       D      13      18   .text       
-     SPI_Receive_byte                          28B2       B      11      19   .text       
-     SPI_High_rate                             28BD       7       7       1   .text       
+     SPI_Init                                  2890      25      37       1   .text       
+     SPI_Send_byte                             28B5       D      13      18   .text       
+     SPI_Receive_byte                          28C2       B      11      19   .text       
+     SPI_High_rate                             28CD       7       7       1   .text       
 - VARIABLES:
 MODULE:                 -- Vib_Cont_01_c.obj --
 - PROCEDURES:
-     initialiseSensorBoard                     28C4      56      86       1   .text       
-     initialiseLEDs                            291A      11      17       1   .text       
-     pulsePowerLED                             292B      62      98       2   .text       
-     pulseStatusLED                            298D      62      98       1   .text       
-     pulseReceiveLED                           29EF      62      98       6   .text       
-     pulseTransmitLED                          2A51      62      98       3   .text       
-     startSampling                             2AB3      2D      45       1   .text       
-     vfnSDwelcome                              2AE0      D5     213       1   .text       
-     ReadData                                  2BB5       A      10       1   .text       
-     writeRecordToCBuffer                      2BBF      3C      60       1   .text       
-     ToCBuffer                                 2BFB      21      33       7   .text       
-     FromCBuffer                               2C1C      2A      42       1   .text       
-     Sample_Accel                              2C46      34      52       1   .text       
-     toggleStatusLED                           2C7A       9       9       1   .text       
-     incrementRunningClock                     2C83      19      25       1   .text       
-     stopSampling                              2C9C       9       9       1   .text       
+     initialiseSensorBoard                     28D4      56      86       1   .text       
+     initialiseLEDs                            292A      11      17       1   .text       
+     pulsePowerLED                             293B      62      98       2   .text       
+     pulseStatusLED                            299D      62      98       1   .text       
+     pulseReceiveLED                           29FF      62      98       6   .text       
+     pulseTransmitLED                          2A61      62      98       3   .text       
+     startSampling                             2AC3      2D      45       1   .text       
+     vfnSDwelcome                              2AF0      D5     213       1   .text       
+     ReadData                                  2BC5       A      10       1   .text       
+     writeRecordToCBuffer                      2BCF      3C      60       1   .text       
+     ToCBuffer                                 2C0B      21      33       7   .text       
+     FromCBuffer                               2C2C      2A      42       1   .text       
+     Sample_Accel                              2C56      34      52       1   .text       
+     toggleStatusLED                           2C8A       9       9       1   .text       
+     incrementRunningClock                     2C93      19      25       1   .text       
+     stopSampling                              2CAC       9       9       1   .text       
 - VARIABLES:
-     STRING.FILE.TXT.1                         300B       9       9       1   .rodata1    
-     STRING.FILE.TXT.2                         3014       9       9       1   .rodata1    
+     STRING.FILE.TXT.1                         301B       9       9       1   .rodata1    
+     STRING.FILE.TXT.2                         3024       9       9       1   .rodata1    
      u8sd_status                                324       1       1       7   .common     
      u8sd_command                               325       1       1       1   .common     
      u16buffer_index                            326       2       2       1   .common     
@@ -310,16 +311,16 @@ MODULE:                 -- Vib_Cont_01_c.obj --
      u8Channel                                  B3E       1       1       4   .common     
 MODULE:                 -- start08_c.obj --
 - PROCEDURES:
-     loadByte                                  2CA5       E      14       5   .text       
-     Init                                      2CB3      6D     109       1   .text       
-     _Startup                                  2D20       9       9       1   .text       
+     loadByte                                  2CB5       E      14       5   .text       
+     Init                                      2CC3      6D     109       1   .text       
+     _Startup                                  2D30       9       9       1   .text       
 - VARIABLES:
      _startupData                              1A1E       6       6       4   .startData  
 - LABELS:
      __SEG_END_SSTACK                           BBF       0       0       1               
 MODULE:                 -- AD1_c.obj --
 - PROCEDURES:
-     AD1_Init                                  2D29      10      16       1   .text       
+     AD1_Init                                  2D39      10      16       1   .text       
 - VARIABLES:
      OutFlg                                      E9       1       1       1   .bss        
      ModeFlg                                     EA       1       1       1   .bss        
@@ -484,8 +485,8 @@ MODULE:                 -- IO_Map_c.obj --
      _DBGF                                     1814       2       2       0   .abs_section_1814
 MODULE:                 -- SM1_c.obj --
 - PROCEDURES:
-     SM1_Interrupt                             2D39      52      82       1   .text       
-     SM1_Init                                  2D8B      16      22       1   .text       
+     SM1_Interrupt                             2D49      52      82       1   .text       
+     SM1_Init                                  2D9B      16      22       1   .text       
 - VARIABLES:
      SerFlag                                     EB       1       1       5   .bss        
      ErrFlag                                     EC       1       1       3   .bss        
@@ -496,40 +497,40 @@ MODULE:                 -- Vectors_c.obj --
      _vect                                     FFC4      3C      60       0   .abs_section_ffc4
 MODULE:                 -- filterTimer_c.obj --
 - PROCEDURES:
-     filterTimer_InitTO                        2DA1      12      18       1   .text       
+     filterTimer_InitTO                        2DB1      12      18       1   .text       
 - VARIABLES:
 MODULE:                 -- sampleTimer_c.obj --
 - PROCEDURES:
-     HWEnDi                                    2DB3      10      16       3   .text       
-     sampleTimer_Enable                        2DC3       E      14       1   .text       
-     sampleTimer_Disable                       2DD1       D      13       2   .text       
-     sampleTimer_Init                          2DDE       E      14       1   .text       
-     sampleTimer_Interrupt                     2DEC       8       8       1   .text       
+     HWEnDi                                    2DC3      10      16       3   .text       
+     sampleTimer_Enable                        2DD3       E      14       1   .text       
+     sampleTimer_Disable                       2DE1       D      13       2   .text       
+     sampleTimer_Init                          2DEE       E      14       1   .text       
+     sampleTimer_Interrupt                     2DFC       8       8       1   .text       
 - VARIABLES:
      EnUser                                      EE       1       1       6   .bss        
 MODULE:                 -- rtshc08.o (ansiis.lib) --
 - PROCEDURES:
-     _PUSH_ARGS_L                              2DF4      20      32       2   .text       
-     _ENTER_UNARY_L                            2E14      29      41       3   .text       
-     _ENTER_BINARY_L                           2E3D      16      22       1   .text       
-     _ENTER_BINARY_L_RC                        2E53      19      25       3   .text       
-     _IDIVMOD                                  2E6C      69     105       2   .text       
-     _LADD_k_is_k_plus_j                       2ED5      1F      31       2   .text       
-     _LAND_k_is_k_and_j                        2EF4      1F      31       1   .text       
-     _LCMP_k_rel_j                             2F13      1F      31       1   .text       
-     _IDIVU_STAR08                             2F32       D      13       4   .text       
-     _IMODU_STAR08                             2F3F      10      16       5   .text       
-     _ILSR                                     2F4F       C      12       2   .text       
-     _ILSL                                     2F5B       C      12       3   .text       
-     _LINC                                     2F67      16      22       2   .text       
-     _LADD                                     2F7D       6       6       7   .text       
-     _LADD_RC                                  2F83       6       6       2   .text       
-     _LAND_RC                                  2F89       6       6       2   .text       
-     _LLSR                                     2F8F      16      22       2   .text       
-     _LLSL                                     2FA5      16      22       6   .text       
-     _LCMP_RC                                  2FBB       6       6       1   .text       
-     _COPY                                     2FC1      30      48       2   .text       
-     _POP32                                    2FF1      1A      26      11   .text       
+     _PUSH_ARGS_L                              2E04      20      32       2   .text       
+     _ENTER_UNARY_L                            2E24      29      41       3   .text       
+     _ENTER_BINARY_L                           2E4D      16      22       1   .text       
+     _ENTER_BINARY_L_RC                        2E63      19      25       3   .text       
+     _IDIVMOD                                  2E7C      69     105       2   .text       
+     _LADD_k_is_k_plus_j                       2EE5      1F      31       2   .text       
+     _LAND_k_is_k_and_j                        2F04      1F      31       1   .text       
+     _LCMP_k_rel_j                             2F23      1F      31       1   .text       
+     _IDIVU_STAR08                             2F42       D      13       4   .text       
+     _IMODU_STAR08                             2F4F      10      16       5   .text       
+     _ILSR                                     2F5F       C      12       2   .text       
+     _ILSL                                     2F6B       C      12       3   .text       
+     _LINC                                     2F77      16      22       2   .text       
+     _LADD                                     2F8D       6       6       7   .text       
+     _LADD_RC                                  2F93       6       6       2   .text       
+     _LAND_RC                                  2F99       6       6       2   .text       
+     _LLSR                                     2F9F      16      22       2   .text       
+     _LLSL                                     2FB5      16      22       6   .text       
+     _LCMP_RC                                  2FCB       6       6       1   .text       
+     _COPY                                     2FD1      30      48       2   .text       
+     _POP32                                    3001      1A      26      11   .text       
 - VARIABLES:
 
 *********************************************************************************************
@@ -539,7 +540,7 @@ MODULE STATISTIC
   Events_c.obj                                 2     38      0
   Fat_c.obj                                  563   2297      0
   ProcessorExpert_c.obj                        0     35      0
-  SD_c.obj                                    25   1294      0
+  SD_c.obj                                    25   1310      0
   SPI_c.obj                                    0     68      0
   Vib_Cont_01_c.obj                         2075    993     18
   start08_c.obj                                0    132      0
@@ -562,16 +563,17 @@ SECTION: ".text"
   FAT_FileNameOrganizer FAT_FileOpen main SD_Init SPI_SS_Disable_Delay 
   SD_CBufferDataSectorWrite SD_Write_Block SD_Erase_Blocks SD_Read_CSD 
   SD_Read_Block SD_SendCommand SD_SendCommandR7 SD_SendCommandR3 SD_CLKDelay 
-  SPI_Init SPI_Send_byte SPI_Receive_byte SPI_High_rate initialiseSensorBoard 
-  initialiseLEDs pulsePowerLED pulseStatusLED pulseReceiveLED pulseTransmitLED 
-  startSampling vfnSDwelcome ReadData writeRecordToCBuffer ToCBuffer 
-  FromCBuffer Sample_Accel toggleStatusLED incrementRunningClock stopSampling 
-  loadByte Init _Startup AD1_Init SM1_Interrupt SM1_Init filterTimer_InitTO 
-  HWEnDi sampleTimer_Enable sampleTimer_Disable sampleTimer_Init 
-  sampleTimer_Interrupt _PUSH_ARGS_L _ENTER_UNARY_L _ENTER_BINARY_L 
-  _ENTER_BINARY_L_RC _IDIVMOD _LADD_k_is_k_plus_j _LAND_k_is_k_and_j 
-  _LCMP_k_rel_j _IDIVU_STAR08 _IMODU_STAR08 _ILSR _ILSL _LINC _LADD _LADD_RC 
-  _LAND_RC _LLSR _LLSL _LCMP_RC _COPY _POP32 
+  loopUntilReady SPI_Init SPI_Send_byte SPI_Receive_byte SPI_High_rate 
+  initialiseSensorBoard initialiseLEDs pulsePowerLED pulseStatusLED 
+  pulseReceiveLED pulseTransmitLED startSampling vfnSDwelcome ReadData 
+  writeRecordToCBuffer ToCBuffer FromCBuffer Sample_Accel toggleStatusLED 
+  incrementRunningClock stopSampling loadByte Init _Startup AD1_Init 
+  SM1_Interrupt SM1_Init filterTimer_InitTO HWEnDi sampleTimer_Enable 
+  sampleTimer_Disable sampleTimer_Init sampleTimer_Interrupt _PUSH_ARGS_L 
+  _ENTER_UNARY_L _ENTER_BINARY_L _ENTER_BINARY_L_RC _IDIVMOD 
+  _LADD_k_is_k_plus_j _LAND_k_is_k_and_j _LCMP_k_rel_j _IDIVU_STAR08 
+  _IMODU_STAR08 _ILSR _ILSL _LINC _LADD _LADD_RC _LAND_RC _LLSR _LLSL _LCMP_RC 
+  _COPY _POP32 
 SECTION: ".bss"
   ledCounter u16Main_Offset gu8SD_Response gu8SD_CSD OutFlg ModeFlg SerFlag 
   ErrFlag BufferRead EnUser 
@@ -1097,65 +1099,66 @@ OBJECT LIST SORTED BY ADDRESS
      SD_Erase_Blocks                           25C5      7A     122       1   .text       
      SD_Read_CSD                               263F      43      67       1   .text       
      SD_Read_Block                             2682      63      99       6   .text       
-     SD_SendCommand                            26E5      70     112      11   .text       
-     SD_SendCommandR7                          2755      9E     158       1   .text       
-     SD_SendCommandR3                          27F3      7E     126       2   .text       
-     SD_CLKDelay                               2871       F      15       9   .text       
-     SPI_Init                                  2880      25      37       1   .text       
-     SPI_Send_byte                             28A5       D      13      18   .text       
-     SPI_Receive_byte                          28B2       B      11      19   .text       
-     SPI_High_rate                             28BD       7       7       1   .text       
-     initialiseSensorBoard                     28C4      56      86       1   .text       
-     initialiseLEDs                            291A      11      17       1   .text       
-     pulsePowerLED                             292B      62      98       2   .text       
-     pulseStatusLED                            298D      62      98       1   .text       
-     pulseReceiveLED                           29EF      62      98       6   .text       
-     pulseTransmitLED                          2A51      62      98       3   .text       
-     startSampling                             2AB3      2D      45       1   .text       
-     vfnSDwelcome                              2AE0      D5     213       1   .text       
-     ReadData                                  2BB5       A      10       1   .text       
-     writeRecordToCBuffer                      2BBF      3C      60       1   .text       
-     ToCBuffer                                 2BFB      21      33       7   .text       
-     FromCBuffer                               2C1C      2A      42       1   .text       
-     Sample_Accel                              2C46      34      52       1   .text       
-     toggleStatusLED                           2C7A       9       9       1   .text       
-     incrementRunningClock                     2C83      19      25       1   .text       
-     stopSampling                              2C9C       9       9       1   .text       
-     loadByte                                  2CA5       E      14       5   .text       
-     Init                                      2CB3      6D     109       1   .text       
-     _Startup                                  2D20       9       9       1   .text       
-     AD1_Init                                  2D29      10      16       1   .text       
-     SM1_Interrupt                             2D39      52      82       1   .text       
-     SM1_Init                                  2D8B      16      22       1   .text       
-     filterTimer_InitTO                        2DA1      12      18       1   .text       
-     HWEnDi                                    2DB3      10      16       3   .text       
-     sampleTimer_Enable                        2DC3       E      14       1   .text       
-     sampleTimer_Disable                       2DD1       D      13       2   .text       
-     sampleTimer_Init                          2DDE       E      14       1   .text       
-     sampleTimer_Interrupt                     2DEC       8       8       1   .text       
-     _PUSH_ARGS_L                              2DF4      20      32       2   .text       
-     _ENTER_UNARY_L                            2E14      29      41       3   .text       
-     _ENTER_BINARY_L                           2E3D      16      22       1   .text       
-     _ENTER_BINARY_L_RC                        2E53      19      25       3   .text       
-     _IDIVMOD                                  2E6C      69     105       2   .text       
-     _LADD_k_is_k_plus_j                       2ED5      1F      31       2   .text       
-     _LAND_k_is_k_and_j                        2EF4      1F      31       1   .text       
-     _LCMP_k_rel_j                             2F13      1F      31       1   .text       
-     _IDIVU_STAR08                             2F32       D      13       4   .text       
-     _IMODU_STAR08                             2F3F      10      16       5   .text       
-     _ILSR                                     2F4F       C      12       2   .text       
-     _ILSL                                     2F5B       C      12       3   .text       
-     _LINC                                     2F67      16      22       2   .text       
-     _LADD                                     2F7D       6       6       7   .text       
-     _LADD_RC                                  2F83       6       6       2   .text       
-     _LAND_RC                                  2F89       6       6       2   .text       
-     _LLSR                                     2F8F      16      22       2   .text       
-     _LLSL                                     2FA5      16      22       6   .text       
-     _LCMP_RC                                  2FBB       6       6       1   .text       
-     _COPY                                     2FC1      30      48       2   .text       
-     _POP32                                    2FF1      1A      26      11   .text       
-     STRING.FILE.TXT.1                         300B       9       9       1   .rodata1    
-     STRING.FILE.TXT.2                         3014       9       9       1   .rodata1    
+     SD_SendCommand                            26E5      74     116      11   .text       
+     SD_SendCommandR7                          2759      A2     162       1   .text       
+     SD_SendCommandR3                          27FB      82     130       2   .text       
+     SD_CLKDelay                               287D       F      15      10   .text       
+     loopUntilReady                            288C       4       4       3   .text       
+     SPI_Init                                  2890      25      37       1   .text       
+     SPI_Send_byte                             28B5       D      13      18   .text       
+     SPI_Receive_byte                          28C2       B      11      19   .text       
+     SPI_High_rate                             28CD       7       7       1   .text       
+     initialiseSensorBoard                     28D4      56      86       1   .text       
+     initialiseLEDs                            292A      11      17       1   .text       
+     pulsePowerLED                             293B      62      98       2   .text       
+     pulseStatusLED                            299D      62      98       1   .text       
+     pulseReceiveLED                           29FF      62      98       6   .text       
+     pulseTransmitLED                          2A61      62      98       3   .text       
+     startSampling                             2AC3      2D      45       1   .text       
+     vfnSDwelcome                              2AF0      D5     213       1   .text       
+     ReadData                                  2BC5       A      10       1   .text       
+     writeRecordToCBuffer                      2BCF      3C      60       1   .text       
+     ToCBuffer                                 2C0B      21      33       7   .text       
+     FromCBuffer                               2C2C      2A      42       1   .text       
+     Sample_Accel                              2C56      34      52       1   .text       
+     toggleStatusLED                           2C8A       9       9       1   .text       
+     incrementRunningClock                     2C93      19      25       1   .text       
+     stopSampling                              2CAC       9       9       1   .text       
+     loadByte                                  2CB5       E      14       5   .text       
+     Init                                      2CC3      6D     109       1   .text       
+     _Startup                                  2D30       9       9       1   .text       
+     AD1_Init                                  2D39      10      16       1   .text       
+     SM1_Interrupt                             2D49      52      82       1   .text       
+     SM1_Init                                  2D9B      16      22       1   .text       
+     filterTimer_InitTO                        2DB1      12      18       1   .text       
+     HWEnDi                                    2DC3      10      16       3   .text       
+     sampleTimer_Enable                        2DD3       E      14       1   .text       
+     sampleTimer_Disable                       2DE1       D      13       2   .text       
+     sampleTimer_Init                          2DEE       E      14       1   .text       
+     sampleTimer_Interrupt                     2DFC       8       8       1   .text       
+     _PUSH_ARGS_L                              2E04      20      32       2   .text       
+     _ENTER_UNARY_L                            2E24      29      41       3   .text       
+     _ENTER_BINARY_L                           2E4D      16      22       1   .text       
+     _ENTER_BINARY_L_RC                        2E63      19      25       3   .text       
+     _IDIVMOD                                  2E7C      69     105       2   .text       
+     _LADD_k_is_k_plus_j                       2EE5      1F      31       2   .text       
+     _LAND_k_is_k_and_j                        2F04      1F      31       1   .text       
+     _LCMP_k_rel_j                             2F23      1F      31       1   .text       
+     _IDIVU_STAR08                             2F42       D      13       4   .text       
+     _IMODU_STAR08                             2F4F      10      16       5   .text       
+     _ILSR                                     2F5F       C      12       2   .text       
+     _ILSL                                     2F6B       C      12       3   .text       
+     _LINC                                     2F77      16      22       2   .text       
+     _LADD                                     2F8D       6       6       7   .text       
+     _LADD_RC                                  2F93       6       6       2   .text       
+     _LAND_RC                                  2F99       6       6       2   .text       
+     _LLSR                                     2F9F      16      22       2   .text       
+     _LLSL                                     2FB5      16      22       6   .text       
+     _LCMP_RC                                  2FCB       6       6       1   .text       
+     _COPY                                     2FD1      30      48       2   .text       
+     _POP32                                    3001      1A      26      11   .text       
+     STRING.FILE.TXT.1                         301B       9       9       1   .rodata1    
+     STRING.FILE.TXT.2                         3024       9       9       1   .rodata1    
      NVPROT_INIT                               FFBD       1       1       0   .abs_section_ffbd
      NVOPT_INIT                                FFBF       1       1       0   .abs_section_ffbf
      _vect                                     FFC4      3C      60       0   .abs_section_ffc4
@@ -1218,7 +1221,7 @@ rtshc08.o (ansiis.lib):
 *********************************************************************************************
 COPYDOWN SECTION
 ---------------------------------------------------------------------------------------------
-------- ROM-ADDRESS: 0x301D ---- SIZE       2 ---
+------- ROM-ADDRESS: 0x302D ---- SIZE       2 ---
 Filling bytes inserted
  0000
 
@@ -1269,13 +1272,14 @@ SD_Read_CSD               USES _PTBD gu8SD_Argument SD_SendCommand
                                 SPI_Receive_byte gu8SD_CSD SD_CLKDelay 
 SD_Read_Block             USES _PTBD gu8SD_Argument _LLSL _POP32 
                                 SD_SendCommand SPI_Receive_byte SD_CLKDelay 
-SD_SendCommand            USES SPI_Send_byte gu8SD_Argument SPI_Receive_byte 
-                                gu8SD_Response 
-SD_SendCommandR7          USES gu8SD_Response SPI_Send_byte gu8SD_Argument 
-                                SPI_Receive_byte 
-SD_SendCommandR3          USES gu8SD_Response SPI_Send_byte gu8SD_Argument 
-                                SPI_Receive_byte 
+SD_SendCommand            USES loopUntilReady SPI_Send_byte gu8SD_Argument 
+                                SPI_Receive_byte gu8SD_Response 
+SD_SendCommandR7          USES loopUntilReady gu8SD_Response SPI_Send_byte 
+                                gu8SD_Argument SPI_Receive_byte 
+SD_SendCommandR3          USES loopUntilReady gu8SD_Response SPI_Send_byte 
+                                gu8SD_Argument SPI_Receive_byte 
 SD_CLKDelay               USES SPI_Send_byte 
+loopUntilReady            USES SD_CLKDelay 
 SPI_Init                  USES _PTBD _PTBDD _SOPT2 _PTBDS _SPI2S _SPI2D16 
                                 _SPI2BR _SPI2C2 _SPI2C1 
 SPI_Send_byte             USES _SPI2S _SPI2D16 
@@ -1378,18 +1382,26 @@ DEPENDENCY TREE
  |  |  |  |    
  |  |  |  +- SD_SendCommand      
  |  |  |  |  | 
+ |  |  |  |  +- loopUntilReady      
+ |  |  |  |  |  | 
+ |  |  |  |  |  +- SD_CLKDelay          (see above)
+ |  |  |  |  |     
  |  |  |  |  +- SPI_Send_byte        (see above)
  |  |  |  |  |  
  |  |  |  |  +- SPI_Receive_byte    
  |  |  |  |       
  |  |  |  +- SD_SendCommandR7    
  |  |  |  |  | 
+ |  |  |  |  +- loopUntilReady       (see above)
+ |  |  |  |  |  
  |  |  |  |  +- SPI_Send_byte        (see above)
  |  |  |  |  |  
  |  |  |  |  +- SPI_Receive_byte     (see above)
  |  |  |  |     
  |  |  |  +- SD_SendCommandR3    
  |  |  |  |  | 
+ |  |  |  |  +- loopUntilReady       (see above)
+ |  |  |  |  |  
  |  |  |  |  +- SPI_Send_byte        (see above)
  |  |  |  |  |  
  |  |  |  |  +- SPI_Receive_byte     (see above)
@@ -1639,5 +1651,5 @@ STATISTIC SECTION
 ExeFile:
 --------
 Number of blocks to be downloaded: 8
-Total size of all blocks to be downloaded: 5885
+Total size of all blocks to be downloaded: 5901
 
