@@ -108,7 +108,9 @@ extern UINT16 u16buffer_index;   /* Variable to indicate position of buffer */
 extern UINT16 u16file_counter;   /* Variable to indicate remaining bytes of a file */
 
 /* Variables for storing Accelerometer readings */
+extern UINT8  u8Channel;
 extern UINT16 recordNumber;      /* Record Number: the first column of a sample record */
+extern UINT16 samples[3];
 
 /* Variables for controlling the sampling operation */
 extern UINT8  Sampling;          /* True when sampling is in progress */

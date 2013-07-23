@@ -55,7 +55,7 @@ const UINT8 RECORD_SIZE = RECORD_COUNTER_SIZE + DIVISOR_SIZE
 
 const UINT8 RUNTIME_HOURS = 0;
 const UINT8 RUNTIME_MINUTES = 0;
-const UINT8 RUNTIME_SECONDS = 10;
+const UINT8 RUNTIME_SECONDS = 4;
 
 // Runtime of the sampling session in seconds
 const UINT32 TOTAL_RUNTIME = 3600 * RUNTIME_HOURS + 60 * RUNTIME_MINUTES
@@ -95,10 +95,8 @@ UINT16 u16CBufferBytes; // # bytes in the buffer
 UINT16 u16TempCBufferBytes;
 UINT8 ReadDataStop; // Blocks reading sensor data while writing to the SD card
 
-//UINT16 LostReads;
-
 UINT8 u8AccelSamples[6]; // 3 x 16 bit results, MSB first
-UINT16 samples[3];
+static UINT16 samples[3];
 UINT8 u8Channel; // The channel that is being sampled
 
 extern UINT16 u16FAT_Data_BASE;
@@ -296,27 +294,17 @@ void pulseTransmitLED(UINT8 pulses) {
 
 }
 
-/***********************************************************************
- *
- *********** VibrationControl ***********
- *
- *  Description: Main operating function for the Vibration Controller Board.
- *               
- *                  
- *                  
- *                  
- *
- *               Called from main() in SD_Card_Writer.c
- *
- *************************************************************************/
+/**
+ * Starts the sampling procedure of the patient module.
+ * Samples are written to the SD Card when there is enough data to write to an entire block.
+ */
 void startSampling(void) {
 	samplingStatus = SAMPLING;
+	ReadDataStop = FALSE;
 
 	sampleTimer_Enable();
 
 	while (samplingStatus == SAMPLING) {
-		;
-
 		__DI();
 		u16TempCBufferBytes = u16CBufferBytes;
 		__EI();
@@ -324,7 +312,7 @@ void startSampling(void) {
 			transmitLED = ON;
 			//ReadDataStop = TRUE; // Stop data read while writing to SD card
 			SD_CBufferDataSectorWrite(); // write block to SD card
-			ReadDataStop = FALSE;
+
 			transmitLED = OFF;
 		}
 
@@ -442,20 +430,6 @@ void vfnWriteFile(void) {
 
 }
 
-/***********************************************************************
- *
- *    *** ReadData ***
- *
- *  Description: Read sampled data from the sensor boards and save in
- *               the circular buffer "u8CircularBuffer".
- *               Only if there is space in the buffer and 
- *               not writing to the SD card.
- *
- *  Calling fn:  Called from SamplingDelay_OnInterrupt() in Events.c 
- *               as part of the SamplingDelay Interrupt Service Routine.
- *                
- *
- *************************************************************************/
 void ReadData(void) {
 
 	/* Check there is space in the buffer for a sample ("SampleSize" bytes) */
@@ -559,17 +533,15 @@ UINT8 FromCBuffer(void) {
 void Sample_Accel(void) {
 	static uint16_t sampleResult;
 	UINT8 adc_result;
-	UINT8 i;
 
 // Sequentially perform ADC conversions on each channel
 	receiveLED = ON;
-	for (u8Channel = 0; u8Channel < NUM_CHANNELS; u8Channel++) {
-		//adc_result = AD1_MeasureChan(TRUE, u8Channel);
-		//AD1_GetChanValue16(u8Channel, &sampleResult);
-		//samples[u8Channel] = sampleResult;
-		
-		samples[u8Channel] = recordNumber + 1;
-	}
+
+	AD1_MeasureChan(TRUE, 0);
+	AD1_MeasureChan(TRUE, 1);
+	AD1_MeasureChan(TRUE, 2);
+
+	AD1_GetValue16(&samples);
 
 	receiveLED = OFF;
 	recordNumber++;
@@ -581,13 +553,12 @@ void Sample_Accel(void) {
  */
 void ADC_ISR(void) {
 	static uint16_t sampleResult;
-	AD1_GetChanValue16(u8Channel, &sampleResult);
+//AD1_GetChanValue16(u8Channel, &sampleResult);
 
-	samples[u8Channel] = recordNumber;
-	//samples[u8Channel] = sampleResult;
+//samples[u8Channel] = sampleResult;
 
-	//u8AccelSamples[u8Channel << 1] = ADCRH; // MSB
-	//u8AccelSamples[(u8Channel << 1) + 1] = ADCRL; // LSB
+//u8AccelSamples[u8Channel << 1] = ADCRH; // MSB
+//u8AccelSamples[(u8Channel << 1) + 1] = ADCRL; // LSB
 }
 
 /**
@@ -651,6 +622,8 @@ void incrementRunningClock(void) {
  */
 void stopSampling(void) {
 	samplingStatus = NOT_SAMPLING;
-	powerLED = OFF;
 	sampleTimer_Disable();
+
+	initialiseLEDs();
+	powerLED = ON;
 }

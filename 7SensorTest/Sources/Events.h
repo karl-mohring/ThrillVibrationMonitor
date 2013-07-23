@@ -37,10 +37,8 @@
 #include "AD1.h"
 #include "sampleTimer.h"
 #include "filterTimer.h"
-#include "SM1.h"
 
 
-void AD1_OnEnd(void);
 /*
 ** ===================================================================
 **     Event       :  AD1_OnEnd (module Events)
@@ -232,7 +230,6 @@ void sampleTimer_OnInterrupt(void);
 ** ===================================================================
 */
 
-void SM1_OnRxChar(void);
 /*
 ** ===================================================================
 **     Event       :  SM1_OnRxChar (module Events)
@@ -253,7 +250,6 @@ void SM1_OnRxChar(void);
 ** ===================================================================
 */
 
-void SM1_OnTxChar(void);
 /*
 ** ===================================================================
 **     Event       :  SM1_OnTxChar (module Events)
@@ -266,7 +262,6 @@ void SM1_OnTxChar(void);
 ** ===================================================================
 */
 
-void SM1_OnError(void);
 /*
 ** ===================================================================
 **     Event       :  SM1_OnError (module Events)

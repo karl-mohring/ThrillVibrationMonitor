@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="38" version="2.0">
+<workbench progressCount="27" version="2.0">
 <workbenchAdvisor/>
 <window height="780" maximized="true" width="1278" x="-193" y="276">
 <fastViewData fastViewLocation="1024"/>
@@ -37,25 +37,40 @@
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="Vib_Cont_01.c" partName="Vib_Cont_01.c" path="E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Sources/Vib_Cont_01.c" title="Vib_Cont_01.c" tooltip="7SensorTest/Sources/Vib_Cont_01.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/7SensorTest/Sources/Vib_Cont_01.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="8838" selectionTopPixel="1640"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="16767" selectionTopPixel="2328"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="SD.c" partName="SD.c" path="E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Sources/SD.c" title="SD.c" tooltip="7SensorTest/Sources/SD.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/7SensorTest/Sources/SD.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="9078" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="25" selectionOffset="11807" selectionTopPixel="4530"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="Events.c" partName="Events.c" path="E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Sources/Events.c" title="Events.c" tooltip="7SensorTest/Sources/Events.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/7SensorTest/Sources/Events.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2682" selectionTopPixel="1241"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2689" selectionTopPixel="810"/>
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="ProcessorExpert.c" partName="ProcessorExpert.c" path="E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Sources/ProcessorExpert.c" title="ProcessorExpert.c" tooltip="7SensorTest/Sources/ProcessorExpert.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/7SensorTest/Sources/ProcessorExpert.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1372" selectionTopPixel="748"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="45"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="SPI.c" partName="SPI.c" path="E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Sources/SPI.c" title="SPI.c" tooltip="7SensorTest/Sources/SPI.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/7SensorTest/Sources/SPI.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="16" selectionOffset="9428" selectionTopPixel="2915"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="SD.h" partName="SD.h" path="E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Sources/SD.h" title="SD.h" tooltip="7SensorTest/Sources/SD.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/7SensorTest/Sources/SD.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="Vib_Cont_01.h" partName="Vib_Cont_01.h" path="E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest/Sources/Vib_Cont_01.h" title="Vib_Cont_01.h" tooltip="7SensorTest/Sources/Vib_Cont_01.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/7SensorTest/Sources/Vib_Cont_01.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5206" selectionTopPixel="945"/>
 </editor>
 </editors>
 <views>
@@ -77,10 +92,10 @@
 <view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
 </viewState>
 </view>
-<view id="org.eclipse.debug.ui.DebugView" partName="Debug">
+<view id="com.processorexpert.ui.selector.views.BeanSelectorView" partName="Components Library">
 <viewState/>
 </view>
-<view id="com.processorexpert.ui.selector.views.BeanSelectorView" partName="Components Library">
+<view id="org.eclipse.debug.ui.DebugView" partName="Debug">
 <viewState/>
 </view>
 <view id="com.processorexpert.ui.projectview.ProjectView" partName="Components - 7SensorTest">
@@ -95,11 +110,12 @@
 <view id="org.eclipse.debug.ui.RegisterView" partName="Registers">
 <viewState/>
 </view>
+<view id="com.processorexpert.ui.inspector.views.InspectorView" partName="Component Inspector - AD1">
+<viewState page="Methods" visibility="0"/>
+</view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" detailsPane="false" detailsPaneDivider="750,250" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings (16 items)"/>
-<category IMemento.internal.id="Errors"/>
 <category IMemento.internal.id="Warnings"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="957"/>
@@ -110,9 +126,6 @@
 <visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
 </viewState>
 </view>
-<view id="com.processorexpert.ui.inspector.views.InspectorView" partName="Component Inspector - SM1">
-<viewState page="Properties" visibility="1"/>
-</view>
 <view id="org.eclipse.ui.console.ConsoleView" partName="Console">
 <viewState/>
 </view>
@@ -122,9 +135,6 @@
 <element path="7SensorTest  :  FLASH"/>
 <element path="7SensorTest  :  FLASH--restore_state_delimiter--Sources"/>
 </expanded>
-<selection>
-<element path="E:/Dropbox/!Uni/EG4012 - Thesis/ThrillVibrationMonitor/7SensorTest"/>
-</selection>
 <customFilters userDefinedPatternsEnabled="false">
 <xmlDefinedFilters>
 <child filterId="org.eclipse.cdt.internal.ui.CView.SharedFilter" isEnabled="false"/>
@@ -153,7 +163,7 @@
 <viewState disassembly.syncActiveContext="true" disassembly.trackExpression="false"/>
 </view>
 </views>
-<perspectives activePart="com.processorexpert.ui.projectview.ProjectView" activePerspective="org.eclipse.cdt.ui.CPerspective">
+<perspectives activePart="com.processorexpert.ui.inspector.views.InspectorView" activePerspective="org.eclipse.cdt.ui.CPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.cdt.internal.ui.CPerspectiveFactory" id="org.eclipse.cdt.ui.CPerspective" label="C/C++"/>
 <alwaysOnActionSet id="com.freescale.core.ide.license.manageLicenseActionSet"/>
@@ -292,14 +302,14 @@
 <hide_toolbar_item_id id="org.eclipse.cdt.ui.actions.NewTypeDropDown"/>
 <hide_toolbar_item_id id="org.eclipse.cdt.ui.buildConfigToolbarAction"/>
 <hide_toolbar_item_id id="org.eclipse.debug.internal.ui.actions.RunDropDownAction"/>
+<view id="com.freescale.core.ide.projectsview.ProjectsView"/>
+<view id="com.processorexpert.ui.selector.views.BeanSelectorView"/>
+<view id="com.processorexpert.ui.inspector.views.InspectorView"/>
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="com.freescale.targettaskframework.views.TargetTaskView"/>
 <view id="org.eclipse.ui.views.ProgressView"/>
 <view id="org.eclipse.search.ui.views.SearchView"/>
-<view id="com.freescale.core.ide.projectsview.ProjectsView"/>
-<view id="com.processorexpert.ui.selector.views.BeanSelectorView"/>
-<view id="com.processorexpert.ui.inspector.views.InspectorView"/>
 <view id="com.processorexpert.ui.projectview.ProjectView"/>
 <fastViewBars/>
 <layout>
@@ -326,7 +336,7 @@
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@2d4185" ratio="0.23181455" ratioLeft="290" ratioRight="961" relationship="2" relative="topLeft">
 <folder activePageID="com.processorexpert.ui.inspector.views.InspectorView" appearance="2" expanded="2">
 <page content="com.processorexpert.ui.selector.views.BeanSelectorView" label="Components Library"/>
-<page content="com.processorexpert.ui.inspector.views.InspectorView" label="Component Inspector - SM1"/>
+<page content="com.processorexpert.ui.inspector.views.InspectorView" label="Component Inspector - AD1"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
@@ -591,161 +601,167 @@
 <workingSets/>
 <navigationHistory>
 <editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/7SensorTest/Sources/ProcessorExpert.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/7SensorTest/Sources/Vib_Cont_01.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/7SensorTest/Sources/SD.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/7SensorTest/Sources/ProcessorExpert.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/7SensorTest/Sources/SPI.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/7SensorTest/Sources/SD.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/7SensorTest/Sources/Vib_Cont_01.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/7SensorTest/Sources/Events.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/7SensorTest/Sources/ProcessorExpert.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/7SensorTest/Sources/SPI.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/7SensorTest/Sources/SD.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/7SensorTest/Sources/Vib_Cont_01.h"/>
 </editors>
-<item historyLabel="Events.c" index="3">
-<position info="not_deleted" x="2682" y="0"/>
-</item>
-<item historyLabel="Vib_Cont_01.c" index="0">
-<position info="not_deleted" x="13199" y="8"/>
-</item>
-<item historyLabel="Vib_Cont_01.c" index="0">
-<position info="not_deleted" x="13453" y="0"/>
-</item>
-<item historyLabel="Vib_Cont_01.c" index="0">
-<position info="not_deleted" x="13620" y="20"/>
-</item>
-<item historyLabel="Vib_Cont_01.c" index="0">
-<position info="not_deleted" x="13448" y="0"/>
-</item>
-<item historyLabel="Vib_Cont_01.c" index="0">
-<position info="not_deleted" x="9102" y="0"/>
-</item>
-<item historyLabel="ProcessorExpert.c" index="2">
-<position/>
-</item>
-<item historyLabel="Vib_Cont_01.c" index="0">
-<position info="not_deleted" x="9102" y="0"/>
-</item>
-<item historyLabel="ProcessorExpert.c" index="2">
-<position info="not_deleted" x="1748" y="0"/>
-</item>
-<item historyLabel="Vib_Cont_01.c" index="0">
-<position info="not_deleted" x="4606" y="21"/>
-</item>
-<item historyLabel="Vib_Cont_01.c" index="0">
-<position/>
-</item>
-<item historyLabel="ProcessorExpert.c" index="2">
-<position/>
-</item>
-<item historyLabel="Vib_Cont_01.c" index="0">
-<position info="not_deleted" x="4433" y="0"/>
-</item>
-<item historyLabel="ProcessorExpert.c" index="2">
-<position/>
-</item>
-<item historyLabel="Vib_Cont_01.c" index="0">
-<position info="not_deleted" x="4433" y="0"/>
-</item>
-<item historyLabel="ProcessorExpert.c" index="2">
-<position/>
-</item>
-<item historyLabel="Vib_Cont_01.c" index="0">
-<position info="not_deleted" x="4433" y="0"/>
-</item>
-<item historyLabel="ProcessorExpert.c" index="2">
-<position/>
-</item>
-<item historyLabel="Events.c" index="3">
-<position info="not_deleted" x="2682" y="0"/>
-</item>
-<item historyLabel="ProcessorExpert.c" index="2">
-<position info="not_deleted" x="1689" y="0"/>
-</item>
-<item historyLabel="Events.c" index="3">
-<position info="not_deleted" x="2682" y="0"/>
-</item>
-<item historyLabel="Vib_Cont_01.c" index="0">
-<position info="not_deleted" x="8817" y="13"/>
-</item>
-<item historyLabel="Vib_Cont_01.c" index="0">
-<position info="not_deleted" x="8893" y="0"/>
-</item>
-<item historyLabel="Vib_Cont_01.c" index="0">
-<position info="not_deleted" x="16277" y="25"/>
-</item>
-<item historyLabel="Vib_Cont_01.h" index="4">
+<item historyLabel="Vib_Cont_01.c" index="1">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Vib_Cont_01.h" index="4">
-<position info="not_deleted" x="4492" y="0"/>
+<item historyLabel="ProcessorExpert.c" index="0">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="ProcessorExpert.c" index="2">
-<position info="not_deleted" x="1372" y="0"/>
+<item historyLabel="Vib_Cont_01.c" index="1">
+<position info="not_deleted" x="16708" y="0"/>
 </item>
-<item historyLabel="Vib_Cont_01.h" index="4">
-<position info="not_deleted" x="4492" y="0"/>
+<item historyLabel="SD.c" index="2">
+<position info="not_deleted" x="9036" y="0"/>
 </item>
-<item historyLabel="ProcessorExpert.c" index="2">
-<position info="not_deleted" x="1372" y="0"/>
+<item historyLabel="SD.c" index="2">
+<position info="not_deleted" x="6222" y="0"/>
 </item>
-<item historyLabel="Vib_Cont_01.c" index="0">
+<item historyLabel="SD.c" index="2">
+<position info="not_deleted" x="19572" y="14"/>
+</item>
+<item historyLabel="SD.c" index="2">
+<position info="not_deleted" x="27158" y="0"/>
+</item>
+<item historyLabel="SD.c" index="2">
+<position info="not_deleted" x="12703" y="0"/>
+</item>
+<item historyLabel="SPI.c" index="3">
+<position info="not_deleted" x="9428" y="16"/>
+</item>
+<item historyLabel="ProcessorExpert.c" index="0">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SD.c" index="2">
+<position info="not_deleted" x="12703" y="0"/>
+</item>
+<item historyLabel="SD.c" index="2">
+<position info="not_deleted" x="27214" y="0"/>
+</item>
+<item historyLabel="SD.c" index="2">
+<position info="not_deleted" x="27334" y="0"/>
+</item>
+<item historyLabel="SD.c" index="2">
+<position info="not_deleted" x="25074" y="0"/>
+</item>
+<item historyLabel="SD.c" index="2">
+<position info="not_deleted" x="27235" y="0"/>
+</item>
+<item historyLabel="SD.h" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SD.h" index="4">
+<position info="not_deleted" x="10584" y="0"/>
+</item>
+<item historyLabel="SPI.c" index="3">
+<position info="not_deleted" x="9428" y="16"/>
+</item>
+<item historyLabel="SD.c" index="2">
+<position info="not_deleted" x="27235" y="0"/>
+</item>
+<item historyLabel="Vib_Cont_01.c" index="5">
+<position info="not_deleted" x="18449" y="0"/>
+</item>
+<item historyLabel="Events.c" index="6">
+<position info="not_deleted" x="5095" y="0"/>
+</item>
+<item historyLabel="ProcessorExpert.c" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SPI.c" index="8">
+<position info="not_deleted" x="9428" y="16"/>
+</item>
+<item historyLabel="SD.h" index="9">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SD.c" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Vib_Cont_01.c" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Events.c" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ProcessorExpert.c" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="SD.h" index="9">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Vib_Cont_01.c" index="5">
+<position info="not_deleted" x="16584" y="0"/>
+</item>
+<item historyLabel="Events.c" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Events.c" index="6">
+<position info="not_deleted" x="1168" y="0"/>
+</item>
+<item historyLabel="ProcessorExpert.c" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Vib_Cont_01.h" index="10">
+<position info="not_deleted" x="4123" y="0"/>
+</item>
+<item historyLabel="Vib_Cont_01.c" index="5">
+<position info="not_deleted" x="4201" y="18"/>
+</item>
+<item historyLabel="Vib_Cont_01.h" index="10">
+<position info="not_deleted" x="5206" y="0"/>
+</item>
+<item historyLabel="Events.c" index="6">
+<position info="not_deleted" x="2689" y="0"/>
+</item>
+<item historyLabel="Vib_Cont_01.c" index="5">
+<position info="not_deleted" x="16251" y="12"/>
+</item>
+<item historyLabel="Vib_Cont_01.c" index="5">
 <position/>
 </item>
-<item historyLabel="ProcessorExpert.c" index="2">
+<item historyLabel="Vib_Cont_01.c" index="5">
+<position info="not_deleted" x="16739" y="0"/>
+</item>
+<item historyLabel="Vib_Cont_01.c" index="5">
+<position info="not_deleted" x="13424" y="0"/>
+</item>
+<item historyLabel="Vib_Cont_01.c" index="5">
+<position info="not_deleted" x="13589" y="20"/>
+</item>
+<item historyLabel="Vib_Cont_01.c" index="5">
 <position/>
 </item>
-<item historyLabel="Vib_Cont_01.c" index="0">
-<position info="not_deleted" x="4442" y="0"/>
+<item historyLabel="Vib_Cont_01.c" index="5">
+<position/>
 </item>
-<item historyLabel="SD.c" index="1">
-<position info="not_deleted" x="9118" y="0"/>
+<item historyLabel="Vib_Cont_01.c" index="5">
+<position info="not_deleted" x="9179" y="0"/>
 </item>
-<item historyLabel="ProcessorExpert.c" index="2">
-<position info="not_deleted" x="1372" y="0"/>
+<item historyLabel="SD.c" index="2">
+<position info="not_deleted" x="11807" y="25"/>
 </item>
-<item historyLabel="SD.c" index="1">
-<position info="not_deleted" x="9358" y="0"/>
+<item historyLabel="Vib_Cont_01.c" index="5">
+<position info="not_deleted" x="9066" y="0"/>
 </item>
-<item historyLabel="Vib_Cont_01.c" index="0">
-<position info="not_deleted" x="4138" y="0"/>
+<item historyLabel="Vib_Cont_01.h" index="10">
+<position info="not_deleted" x="5206" y="0"/>
 </item>
-<item historyLabel="ProcessorExpert.c" index="2">
-<position info="not_deleted" x="1372" y="0"/>
+<item historyLabel="Vib_Cont_01.c" index="5">
+<position info="not_deleted" x="16767" y="0"/>
 </item>
-<item historyLabel="Vib_Cont_01.c" index="0">
-<position info="not_deleted" x="4138" y="0"/>
-</item>
-<item historyLabel="SD.c" index="1">
-<position info="not_deleted" x="9078" y="0"/>
-</item>
-<item historyLabel="Vib_Cont_01.c" index="0">
-<position info="not_deleted" x="9102" y="0"/>
-</item>
-<item historyLabel="SD.c" index="1">
-<position info="not_deleted" x="9078" y="0"/>
-</item>
-<item historyLabel="Events.c" index="3">
-<position info="not_deleted" x="2682" y="0"/>
-</item>
-<item historyLabel="ProcessorExpert.c" index="2">
-<position info="not_deleted" x="1372" y="0"/>
-</item>
-<item historyLabel="Events.c" index="3">
-<position info="not_deleted" x="2682" y="0"/>
-</item>
-<item historyLabel="Vib_Cont_01.c" index="0">
-<position info="not_deleted" x="8838" y="0"/>
-</item>
-<item historyLabel="ProcessorExpert.c" index="2">
-<position info="not_deleted" x="1372" y="0"/>
-</item>
-<item historyLabel="Vib_Cont_01.c" index="0">
-<position info="not_deleted" x="8838" y="0"/>
-</item>
-<item historyLabel="SD.c" index="1">
-<position info="not_deleted" x="9078" y="0"/>
-</item>
-<item historyLabel="ProcessorExpert.c" index="2">
-<position info="not_deleted" x="1372" y="0"/>
-</item>
-<item active="true" historyLabel="Events.c" index="3">
-<position info="not_deleted" x="2682" y="0"/>
+<item active="true" historyLabel="ProcessorExpert.c" index="7">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -775,6 +791,12 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Vib_Cont_01.h" tooltip="7SensorTest/Sources/Vib_Cont_01.h">
 <persistable path="/7SensorTest/Sources/Vib_Cont_01.h"/>
 </file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="SD.h" tooltip="7SensorTest/Sources/SD.h">
+<persistable path="/7SensorTest/Sources/SD.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="SPI.c" tooltip="7SensorTest/Sources/SPI.c">
+<persistable path="/7SensorTest/Sources/SPI.c"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="ProcessorExpert.c" tooltip="7SensorTest/Sources/ProcessorExpert.c">
 <persistable path="/7SensorTest/Sources/ProcessorExpert.c"/>
 </file>
@@ -789,12 +811,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Vib_Cont_01.c" tooltip="7SensorTest/Sources/Vib_Cont_01.c">
 <persistable path="/7SensorTest/Sources/Vib_Cont_01.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="SPI.c" tooltip="7SensorTest/Sources/SPI.c">
-<persistable path="/7SensorTest/Sources/SPI.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="SD.h" tooltip="7SensorTest/Sources/SD.h">
-<persistable path="/7SensorTest/Sources/SD.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="SM1.c" tooltip="7SensorTest/Generated_Code/SM1.c">
 <persistable path="/7SensorTest/Generated_Code/SM1.c"/>

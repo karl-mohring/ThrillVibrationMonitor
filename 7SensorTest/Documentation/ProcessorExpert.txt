@@ -24,18 +24,6 @@ Module "sampleTimer" (component TimerInt)
 
 Module "filterTimer" (component TimerOut)
 
-Module "SM1"       (component SynchroMaster)
-   - SM1_RecvChar -If any data is received, this method returns one character, otherwise it returns an error code (it does not 
-                wait for data).   For information about SW overrun behavior please see <General info page>.
-   - SM1_SendChar -Sends one character to the channel.
-   - SM1_GetCharsInRxBuf -Returns the number of characters in the input buffer.  Note: If the Interrupt service is disabled, 
-                and the Ignore empty character is set to yes, and a character has been received, then this method returns 1 
-                although it was an empty character.
-   - SM1_GetCharsInTxBuf -Returns the number of characters in the output buffer.
-   - SM1_GetError -Returns a set of errors on the channel (errors that cannot be returned in given methods). The component 
-                accumulates errors in a set; after calling [GetError] this set is returned and cleared. This method is 
-                available only if the "Interrupt service/event" property is enabled.
-
 Module "Cpu"       (component MC9S08JM60_64)
    - Cpu_EnableInt -Enables maskable interrupts
    - Cpu_DisableInt -Disables maskable interrupts
