@@ -6,7 +6,7 @@
 **     Component   : ADC
 **     Version     : Component 01.685, Driver 01.30, CPU db: 3.00.050
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2013-07-23, 13:29, # CodeGen: 76
+**     Date/Time   : 2013-07-24, 14:32, # CodeGen: 88
 **     Abstract    :
 **         This device "ADC" implements an A/D converter,
 **         its control methods and interrupt/event handling procedure.
@@ -404,7 +404,7 @@ void AD1_Init(void)
 /*
 ** ###################################################################
 **
-**     This file was created by Processor Expert 10.2 [05.06]
+**     This file was created by Processor Expert 10.2 [05.07]
 **     for the Freescale HCS08 series of microcontrollers.
 **
 ** ###################################################################

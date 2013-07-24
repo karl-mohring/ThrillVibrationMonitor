@@ -7,7 +7,7 @@
 **     Version     : Component 01.004, Driver 01.40, CPU db: 3.00.050
 **     Datasheet   : MC9S08JM60 Rev. 1 11/2007
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2013-07-23, 12:46, # CodeGen: 71
+**     Date/Time   : 2013-07-24, 14:08, # CodeGen: 79
 **     Abstract    :
 **         This component "MC9S08JM60_64" contains initialization 
 **         of the CPU and provides basic methods and events for 
@@ -44,6 +44,7 @@
 #include "AD1.h"
 #include "sampleTimer.h"
 #include "filterTimer.h"
+#include "accelerometerSleep.h"
 #include "PE_Types.h"
 #include "PE_Error.h"
 #include "PE_Const.h"
@@ -193,6 +194,12 @@ void PE_low_level_init(void)
   clrReg8Bits(PTFD, 0x10U);             
   /* PTFDD: PTFDD4=1 */
   setReg8Bits(PTFDD, 0x10U);            
+  /* PTCD: PTCD4=0 */
+  clrReg8Bits(PTCD, 0x10U);             
+  /* PTCPE: PTCPE4=0 */
+  clrReg8Bits(PTCPE, 0x10U);            
+  /* PTCDD: PTCDD4=1 */
+  setReg8Bits(PTCDD, 0x10U);            
   /* PTASE: PTASE5=0,PTASE4=0,PTASE3=0,PTASE2=0,PTASE1=0,PTASE0=0 */
   clrReg8Bits(PTASE, 0x3FU);            
   /* PTBSE: PTBSE7=0,PTBSE6=0,PTBSE5=0,PTBSE4=0,PTBSE3=0,PTBSE2=0,PTBSE1=0,PTBSE0=0 */
@@ -228,6 +235,7 @@ void PE_low_level_init(void)
   sampleTimer_Init();
   /* ### TimerOut "filterTimer" init code ... */
   filterTimer_InitTO();
+  /* ### BitIO "accelerometerSleep" init code ... */
   __EI();                              /* Enable interrupts */
 }
 
@@ -247,7 +255,7 @@ static const uint8_t NVOPT_INIT @0x0000FFBFU = 0x7EU;
 /*
 ** ###################################################################
 **
-**     This file was created by Processor Expert 10.2 [05.06]
+**     This file was created by Processor Expert 10.2 [05.07]
 **     for the Freescale HCS08 series of microcontrollers.
 **
 ** ###################################################################

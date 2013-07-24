@@ -61,6 +61,8 @@ void sampleTimer_OnInterrupt(void) {
 		incrementRunningClock();
 		ledCounter = 0;
 	}
+	
+	AD1_Measure(TRUE);
 	Sample_Accel();
 	ReadData();
 }

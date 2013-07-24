@@ -6,7 +6,7 @@
 **     Component   : TimerOut
 **     Version     : Component 03.030, Driver 01.24, CPU db: 3.00.050
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2013-07-11, 13:24, # CodeGen: 43
+**     Date/Time   : 2013-07-24, 14:08, # CodeGen: 79
 **     Abstract    :
 **         This component implements a periodic signal generator 1:1 (Flip-Flop Output).
 **         The signal alternates the "0" and "1" output values in exactly
@@ -28,11 +28,11 @@
 **             Prescaler               : divide-by-1
 **             Clock                   : 24000000 Hz
 **           Pulse width
-**             Xtal ticks              : 400
-**             microseconds            : 33
-**             seconds (real)          : 0.000033333333
-**             Hz                      : 30000
-**             kHz                     : 30
+**             Xtal ticks              : 200
+**             microseconds            : 17
+**             seconds (real)          : 0.000016666667
+**             Hz                      : 60000
+**             kHz                     : 60
 **
 **         Runtime setting             : none
 **
@@ -100,7 +100,7 @@ void filterTimer_InitTO(void)
   setReg8(TPM2SC, 0x00U);              /* Stop HW; disable overflow interrupt and set prescaler to 0 */ 
   /* TPM2C0SC: CH0F=0,CH0IE=0,MS0B=0,MS0A=1,ELS0B=0,ELS0A=1,??=0,??=0 */
   setReg8(TPM2C0SC, 0x14U);            /* Set output comp. mode (tgg. on output); disable. comp. int. */ 
-  filterTimer_SetCV(0x031FU);          /* Store appropriate value to the compare register if selected High speed CPU mode */
+  filterTimer_SetCV(0x018FU);          /* Store appropriate value to the compare register if selected High speed CPU mode */
   /* TPM2CNTH: BIT15=0,BIT14=0,BIT13=0,BIT12=0,BIT11=0,BIT10=0,BIT9=0,BIT8=0 */
   setReg8(TPM2CNTH, 0x00U);            /* Reset HW Counter */ 
   /* TPM2SC: TOF=0,TOIE=0,CPWMS=0,CLKSB=0,CLKSA=1,PS2=0,PS1=0,PS0=0 */
@@ -116,7 +116,7 @@ void filterTimer_InitTO(void)
 /*
 ** ###################################################################
 **
-**     This file was created by Processor Expert 10.2 [05.06]
+**     This file was created by Processor Expert 10.2 [05.07]
 **     for the Freescale HCS08 series of microcontrollers.
 **
 ** ###################################################################

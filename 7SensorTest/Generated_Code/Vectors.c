@@ -5,7 +5,7 @@
 **     Processor   : MC9S08JM60CLHE
 **     Version     : Component 01.004, Driver 01.40, CPU db: 3.00.050
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2013-07-23, 13:29, # CodeGen: 76
+**     Date/Time   : 2013-07-24, 14:08, # CodeGen: 79
 **     Abstract    :
 **         This component "MC9S08JM60_64" contains initialization 
 **         of the CPU and provides basic methods and events for 
@@ -37,6 +37,7 @@
 #include "AD1.h"
 #include "sampleTimer.h"
 #include "filterTimer.h"
+#include "accelerometerSleep.h"
 
 /*lint -save  -e950 Disable MISRA rule (1.1) checking. */
 static void (* near const _vect[])(void) @0xFFC4 = { /* Interrupt vector table */
@@ -78,7 +79,7 @@ static void (* near const _vect[])(void) @0xFFC4 = { /* Interrupt vector table *
 /*
 ** ###################################################################
 **
-**     This file was created by Processor Expert 10.2 [05.06]
+**     This file was created by Processor Expert 10.2 [05.07]
 **     for the Freescale HCS08 series of microcontrollers.
 **
 ** ###################################################################

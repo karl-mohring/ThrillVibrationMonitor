@@ -6,7 +6,7 @@
 **     Component   : TimerInt
 **     Version     : Component 02.161, Driver 01.23, CPU db: 3.00.050
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2013-07-11, 11:42, # CodeGen: 40
+**     Date/Time   : 2013-07-24, 14:08, # CodeGen: 79
 **     Abstract    :
 **         This component "TimerInt" implements a periodic interrupt.
 **         When the component and its events are enabled, the "OnInterrupt"
@@ -229,7 +229,7 @@ ISR(sampleTimer_Interrupt)
 /*
 ** ###################################################################
 **
-**     This file was created by Processor Expert 10.2 [05.06]
+**     This file was created by Processor Expert 10.2 [05.07]
 **     for the Freescale HCS08 series of microcontrollers.
 **
 ** ###################################################################

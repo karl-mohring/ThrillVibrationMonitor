@@ -55,7 +55,7 @@ const UINT8 RECORD_SIZE = RECORD_COUNTER_SIZE + DIVISOR_SIZE
 
 const UINT8 RUNTIME_HOURS = 0;
 const UINT8 RUNTIME_MINUTES = 0;
-const UINT8 RUNTIME_SECONDS = 4;
+const UINT8 RUNTIME_SECONDS = 10;
 
 // Runtime of the sampling session in seconds
 const UINT32 TOTAL_RUNTIME = 3600 * RUNTIME_HOURS + 60 * RUNTIME_MINUTES
@@ -95,9 +95,7 @@ UINT16 u16CBufferBytes; // # bytes in the buffer
 UINT16 u16TempCBufferBytes;
 UINT8 ReadDataStop; // Blocks reading sensor data while writing to the SD card
 
-UINT8 u8AccelSamples[6]; // 3 x 16 bit results, MSB first
 static UINT16 samples[3];
-UINT8 u8Channel; // The channel that is being sampled
 
 extern UINT16 u16FAT_Data_BASE;
 extern WriteRHandler WHandler;
@@ -531,17 +529,20 @@ UINT8 FromCBuffer(void) {
  *
  *************************************************************************/
 void Sample_Accel(void) {
-	static uint16_t sampleResult;
 	UINT8 adc_result;
+	UINT8 i;
 
 // Sequentially perform ADC conversions on each channel
 	receiveLED = ON;
 
-	AD1_MeasureChan(TRUE, 0);
-	AD1_MeasureChan(TRUE, 1);
-	AD1_MeasureChan(TRUE, 2);
+///	for (i = 0; i < NUM_CHANNELS; i++) {
+///		AD1_MeasureChan(TRUE, i);
+///	}
+	//AD1_MeasureChan(TRUE, 0);
 
-	AD1_GetValue16(&samples);
+	// Get all sampled data at once.
+	// Doing this with the individual channel function will screw this up! Don't do it!
+	adc_result = AD1_GetValue16(&samples);
 
 	receiveLED = OFF;
 	recordNumber++;

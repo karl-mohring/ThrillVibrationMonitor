@@ -6,7 +6,7 @@
 **     Component   : TimerOut
 **     Version     : Component 03.030, Driver 01.24, CPU db: 3.00.050
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2013-07-11, 13:24, # CodeGen: 43
+**     Date/Time   : 2013-07-24, 14:08, # CodeGen: 79
 **     Abstract    :
 **         This component implements a periodic signal generator 1:1 (Flip-Flop Output).
 **         The signal alternates the "0" and "1" output values in exactly
@@ -28,11 +28,11 @@
 **             Prescaler               : divide-by-1
 **             Clock                   : 24000000 Hz
 **           Pulse width
-**             Xtal ticks              : 400
-**             microseconds            : 33
-**             seconds (real)          : 0.000033333333
-**             Hz                      : 30000
-**             kHz                     : 30
+**             Xtal ticks              : 200
+**             microseconds            : 17
+**             seconds (real)          : 0.000016666667
+**             Hz                      : 60000
+**             kHz                     : 60
 **
 **         Runtime setting             : none
 **
@@ -125,7 +125,7 @@ void filterTimer_InitTO(void);
 /*
 ** ###################################################################
 **
-**     This file was created by Processor Expert 10.2 [05.06]
+**     This file was created by Processor Expert 10.2 [05.07]
 **     for the Freescale HCS08 series of microcontrollers.
 **
 ** ###################################################################

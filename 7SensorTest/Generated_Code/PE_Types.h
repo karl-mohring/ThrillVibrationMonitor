@@ -6,7 +6,7 @@
 **     Component   : PE_Types
 **     Version     : Driver 01.11
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2013-07-09, 12:48, # CodeGen: 4
+**     Date/Time   : 2013-07-24, 14:08, # CodeGen: 79
 **     Abstract    :
 **         PE_Types.h - contains definitions of basic types,
 **         register access macros and hardware specific macros
@@ -278,7 +278,7 @@ typedef union {
 /*
 ** ###################################################################
 **
-**     This file was created by Processor Expert 10.2 [05.06]
+**     This file was created by Processor Expert 10.2 [05.07]
 **     for the Freescale HCS08 series of microcontrollers.
 **
 ** ###################################################################
